@@ -1,4 +1,5 @@
-import { Image, RichText, Text, types } from 'react-bricks/frontend'
+import { Image, RichText, Text, types, Repeater } from 'react-bricks/frontend'
+import blockNames from '../react-bricks-ui/blockNames'
 
 //=============================
 // Local Types
@@ -16,19 +17,8 @@ interface HeroUnitProps {
 //=============================
 const MyHeroUnit: types.Brick<HeroUnitProps> = ({ padding }) => {
   return (
-    <div
-      className={`max-w-xl mx-auto px-6 ${
-        padding === 'big' ? 'py-20' : 'py-12'
-      }`}
-    >
+    <div className="flex max-w-xl mx-auto p-6">
       <div>
-        <Image
-          propName="icon"
-          alt="Icon"
-          maxWidth={200}
-          aspectRatio={1}
-          imageClassName="w-20 mb-5 mx-auto"
-        />
         <Text
           renderBlock={(props) => (
             <h1 className="text-3xl sm:text-4xl text-center font-black text-gray-900 dark:text-white leading-tight mb-3">
@@ -59,7 +49,23 @@ const MyHeroUnit: types.Brick<HeroUnitProps> = ({ padding }) => {
             </code>
           )}
         />
+        <Repeater
+          propName="buttons"
+          renderWrapper={(items) => (
+            <div className="flex flex-row space-x-5 items-center justify-center mt-6">
+              {items}
+            </div>
+          )}
+        />
       </div>
+
+      <Image
+        propName="icon"
+        alt="Icon"
+        maxWidth={200}
+        aspectRatio={1}
+        imageClassName="w-20 mb-5 mx-auto"
+      />
     </div>
   )
 }
@@ -73,23 +79,39 @@ MyHeroUnit.schema = {
   previewImageUrl: `/bricks-preview-images/custom-hero-unit.png`,
   getDefaultProps: () => ({
     padding: 'big',
-    title: 'This is a custom Hero Unit',
-    text: "We are a hi-tech web development company committed to deliver great products on time. We love to understand our customers' needs and exceed expectations.",
-  }),
-  sideEditProps: [
-    {
-      name: 'padding',
-      label: 'Padding',
-      type: types.SideEditPropType.Select,
-      selectOptions: {
-        display: types.OptionsDisplay.Select,
-        options: [
-          { value: 'big', label: 'Big Padding' },
-          { value: 'small', label: 'Small Padding' },
-        ],
+    title: 'Rimani connesso, protetto e produttivo.',
+    text: 'Scopri la piattaforma di sicurezza e le soluzioni aziendali Knox',
+    buttons: [
+      {
+        type: 'link',
+        text: 'Get Started',
+        href: '',
+        isTargetBlank: false,
+        buttonColor: '#000',
+        variant: 'solid',
+        padding: 'normal',
       },
+      {
+        type: 'link',
+        text: 'Learn more',
+        href: '',
+        isTargetBlank: false,
+        buttonColor: '#000',
+        variant: 'outline',
+        padding: 'normal',
+      },
+    ],
+  }),
+  repeaterItems: [
+    {
+      name: 'buttons',
+      itemType: blockNames.Button,
+      itemLabel: 'Button',
+      min: 0,
+      max: 2,
     },
   ],
+  sideEditProps: [],
 }
 
 export default MyHeroUnit
