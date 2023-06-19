@@ -1,9 +1,9 @@
 import { types } from 'react-bricks/frontend'
 
 // LAYOUT
-import Header from './layout/Header'
-import HeaderMenuItem from './layout/HeaderMenuItem'
-import HeaderMenuSubItem from './layout/HeaderMenuSubItem'
+import Header from '../custom/Header'
+import HeaderMenuItem from '../custom/HeaderMenuItem'
+import HeaderMenuSubItem from '../custom/HeaderMenuSubItem'
 import Footer from './layout/Footer'
 import FooterColumn from './layout/FooterColumn'
 import FooterLink from './layout/FooterLink'

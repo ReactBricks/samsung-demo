@@ -1,19 +1,19 @@
 import React, { useState, useRef, useEffect } from 'react'
-import { Image, Repeater, types, Link } from 'react-bricks/frontend'
+import { Image, Repeater, types, Link, Text } from 'react-bricks/frontend'
 import { useReactBricksContext } from 'react-bricks/frontend'
 import { FiMenu, FiX } from 'react-icons/fi'
 import { BsMoonFill, BsSunFill } from 'react-icons/bs'
-import blockNames from '../blockNames'
-import { bgColors, buttonColors } from '../colors'
+import blockNames from '../react-bricks-ui/blockNames'
+import { bgColors, buttonColors } from '../react-bricks-ui/colors'
 import {
   backgroundColorsEditProps,
   borderBottomEditProp,
   LayoutProps,
   sectionDefaults,
-} from '../LayoutSideProps'
-import Section from '../shared/components/Section'
+} from '../react-bricks-ui/LayoutSideProps'
+import Section from '../react-bricks-ui/shared/components/Section'
 import useOnClickOutside from './useClickOutside'
-
+import classNames from 'classnames'
 interface HeaderProps extends LayoutProps {
   menuItems: any[]
   logo: types.IImageSource
@@ -27,76 +27,103 @@ const Header: types.Brick<HeaderProps> = ({
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const { isDarkColorMode, toggleColorMode } = useReactBricksContext()
   const [mounted, setMounted] = useState(false)
+  const [open, setOpen] = useState(false)
+  const ref = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     setMounted(true)
   }, [])
-
-  const ref = useRef<HTMLDivElement>(null)
-
+  useOnClickOutside(ref, () => setOpen(false))
   useOnClickOutside(ref, () => setMobileMenuOpen(false))
 
   return (
-    <Section
-      backgroundColor={backgroundColor}
-      borderBottom={borderBottom ? 'full' : 'none'}
-    >
-      <nav className="py-5 px-5 sm:mx-[5.55555%] xl:mx-[11.1111%] flex justify-start items-center">
+    <Section backgroundColor={backgroundColor} borderBottom={'none'}>
+      <nav className="mx-auto max-w-[1440px] h-[80px] border-b border-[#dddddd] flex items-center px-[16px] relative">
         <Link
           href="/"
           aria-label="home"
-          className="inline-flex py-1.5 px-2 mr-6"
+          className="inline-flex py-[0.25rem] mr-[16px]"
         >
           <Image
             propName="logo"
             alt="Logo"
             maxWidth={300}
-            imageClassName="block w-32 h-7 object-contain object-left"
+            imageClassName="block w-[169px] h-4 object-contain object-left"
           />
         </Link>
-        <div className="hidden lg:flex items-center space-x-2">
-          <Repeater
-            propName="menuItems"
-            itemProps={{ mobileRef: ref, setMobileMenuOpen }}
-          />
-        </div>
-        <div className="hidden lg:block ml-auto">
-          <Repeater
-            propName="buttons"
-            // No local link to avoid prefetching
-            // of the Admin bundle in case of link
-            // to Edit content
-            itemProps={{ simpleAnchorLink: true }}
-            renderWrapper={(item) => (
-              <div
-                key={item.key}
-                className="flex flex-row space-x-5 items-center justify-end"
+        <div className="flex flex-grow  space-x-2 px-[15px] ml-[3%] h-full justify-between">
+          <div className="flex h-full items-centers">
+            <Repeater
+              propName="menuItems"
+              itemProps={{ mobileRef: setMobileMenuOpen }}
+              renderItemWrapper={(item) => (
+                <div
+                  key={item.key}
+                  className="px-[7px] h-full flex items-center"
+                >
+                  {item}
+                </div>
+              )}
+            />
+          </div>
+
+          <div
+            ref={ref}
+            className="flex h-[80px] transition-all"
+            onMouseEnter={() => setOpen(true)}
+            onMouseLeave={() => setOpen(false)}
+          >
+            <button
+              className={classNames(
+                'inline-flex hover:text-[#565656] items-center text-sm font-bold py-1.5 px-2 rounded-[5px] transition-colors ease-out'
+              )}
+            >
+              <Text
+                propName="partners"
+                placeholder="Type a text..."
+                renderBlock={({ children }) => (
+                  <div className="min-w-[20px]">{children}</div>
+                )}
+              />
+
+              <svg
+                viewBox="0 1 13 13"
+                width="14px"
+                height="14px"
+                stroke="black"
+                className="inline-block w-[12px] h-[12px] ml-[6px]"
               >
-                {item}
+                <path
+                  d="m1.15 5.6 5.5 5.5c.2.2.5.2.7 0l5.5-5.5a.5.5 0 0 0-.7-.7L7 10.04 1.85 4.9a.5.5 0 1 0-.7.7Z"
+                  fill="currentColor"
+                ></path>
+              </svg>
+            </button>
+
+            {open && (
+              <div
+                className={classNames(
+                  open ? 'h-[140px]' : 'h-0',
+                  'transition-all delay-150 duration-300 overflow-hidden w-full'
+                )}
+              >
+                <Repeater
+                  propName="submenuItems"
+                  renderItemWrapper={(item) => (
+                    <div
+                      key={item.key}
+                      onClick={() => setOpen((current) => !current)}
+                    >
+                      {item}
+                    </div>
+                  )}
+                />
               </div>
             )}
-          />
+          </div>
         </div>
 
-        {/* DARK MODE BUTTON DESKTOP */}
-        {mounted && (
-          <button
-            type="button"
-            className="flex items-center justify-center w-8 h-8 mr-4 ml-auto lg:ml-8 text-gray-400 dark:text-gray-200"
-            onClick={toggleColorMode}
-          >
-            {!isDarkColorMode ? (
-              <BsMoonFill />
-            ) : (
-              <BsSunFill className="text-xl" />
-            )}
-          </button>
-        )}
-
-        <div
-          ref={ref}
-          className="relative lg:hidden flex items-center h-full sm:gap-x-4"
-        >
+        <div className="relative lg:hidden flex items-center h-full sm:gap-x-4">
           <button
             className="group p-1 w-7 h-7 flex justify-center items-center rounded-[5px] bg-gray-200 dark:bg-transparent hover:bg-sky-500/20 dark:hover:bg-sky-500/40 hover:text-sky-600 dark:hover:text-sky-500 focus:bg-sky-500/20 dark:focus:bg-sky-500/40 focus:text-sky-600 dark:focus:text-sky-500"
             onClick={() => setMobileMenuOpen((current) => !current)}
@@ -139,6 +166,10 @@ Header.schema = {
       max: 6,
     },
     {
+      name: 'submenuItems',
+      itemType: blockNames.HeaderMenuSubItem,
+    },
+    {
       name: 'buttons',
       itemType: blockNames.Button,
       itemLabel: 'Button',
@@ -156,6 +187,7 @@ Header.schema = {
   getDefaultProps: () => ({
     backgroundColor: bgColors.WHITE.value,
     borderBottom: 'none',
+    partners: 'Partners',
     menuItems: [
       {
         linkPath: '/',

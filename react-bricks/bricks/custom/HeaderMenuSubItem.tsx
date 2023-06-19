@@ -1,5 +1,5 @@
 import { Menu } from '@headlessui/react'
-import blockNames from '../blockNames'
+import blockNames from '../react-bricks-ui/blockNames'
 import React from 'react'
 import { Text, types, Link } from 'react-bricks/frontend'
 import classNames from 'classnames'
