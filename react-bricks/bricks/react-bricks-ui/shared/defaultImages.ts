@@ -55,6 +55,49 @@ export const customers = {
   },
 } as const satisfies Images
 
+export const customersSamsung = {
+  WALMART: {
+    src: 'https://kp4-cdn.samsungknox.com/resource/walmart-cov1_McqX.png',
+    placeholderSrc:
+      'https://kp4-cdn.samsungknox.com/resource/walmart-cov1_McqX.png',
+    srcSet: '',
+    alt: 'Walmart',
+    seoName: 'walmart',
+    width: 997.334,
+    height: 198.205,
+  },
+  PEPSICO: {
+    src: 'https://kp4-cdn.samsungknox.com/resource/pepsico-cov1_T66v.png',
+    placeholderSrc:
+      'https://kp4-cdn.samsungknox.com/resource/pepsico-cov1_T66v.png',
+    srcSet: '',
+    alt: 'Pepsico',
+    seoName: 'pepsico',
+    width: 1000,
+    height: 300,
+  },
+  HARLEY_DAVISON: {
+    src: 'https://kp4-cdn.samsungknox.com/resource/harley-davidson-cov1_duQr.png',
+    placeholderSrc:
+      'https://kp4-cdn.samsungknox.com/resource/harley-davidson-cov1_duQr.png',
+    srcSet: '',
+    alt: 'Harley Davison',
+    seoName: 'harley-davison',
+    width: 520.76,
+    height: 135.83,
+  },
+  KIA: {
+    src: 'https://kp4-cdn.samsungknox.com/resource/kia-cov1_Mh-H.png',
+    placeholderSrc:
+      'https://kp4-cdn.samsungknox.com/resource/kia-cov1_Mh-H.png',
+    srcSet: '',
+    alt: 'Kia',
+    seoName: 'kia',
+    width: 2698.39,
+    height: 585.2,
+  },
+} as const satisfies Images
+
 export const logos = {
   REACT: {
     src: 'https://images.reactbricks.com/original/5a717763-afd5-4ec5-8a68-12a0d6e4fd08.svg',

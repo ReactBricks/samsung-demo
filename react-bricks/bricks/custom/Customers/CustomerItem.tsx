@@ -1,26 +1,22 @@
 import classNames from 'classnames'
 import * as React from 'react'
 import { Image, types } from 'react-bricks/frontend'
-import { logos } from '../../shared/defaultImages'
-import blockNames from '../../blockNames'
-
+import blockNames from '../../react-bricks-ui/blockNames'
+import { customersSamsung } from '../../react-bricks-ui/shared/defaultImages'
 export interface CustomerProps {
   grayscale?: boolean
   image: types.IImageSource
 }
 
-const Customer: types.Brick<CustomerProps> = ({ grayscale = true }) => {
+const Customer: types.Brick<CustomerProps> = ({ grayscale = false }) => {
   return (
-    <div className="inline-flex items-center px-4 py-4 md:px-5">
+    <div className="inline-flex items-center px-[15px] md:px-5 h-full max-w-[25%] no-wrap">
       <Image
         propName="image"
         alt="customer"
-        imageClassName={classNames(
-          'block object-contain w-[80px] h-[20px] md:w-[96px] md:h-[24px] lg:w-[116px] lg:h-[29px]',
-          {
-            'opacity-50 grayscale dark:invert': grayscale,
-          }
-        )}
+        imageClassName={classNames('block object-contain', {
+          'opacity-50 grayscale dark:invert': grayscale,
+        })}
       />
     </div>
   )
@@ -36,7 +32,7 @@ Customer.schema = {
     'https://github.com/ReactBricks/react-bricks-ui/blob/master/src/website/Customers/CustomerItem.tsx',
 
   getDefaultProps: () => ({
-    image: logos.REACT_BRICKS,
+    image: customersSamsung.KIA,
   }),
 }
 

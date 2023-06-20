@@ -2,7 +2,7 @@ import React from 'react'
 import { types, usePageValues } from 'react-bricks/frontend'
 import BlogListItem from '../../../components/PostListItem'
 import Section from '../react-bricks-ui/shared/components/Section'
-import Container from '../react-bricks-ui/shared/components/Container'
+//import Container from '../react-bricks-ui/shared/components/Container'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
@@ -14,27 +14,6 @@ interface ExternalData {
 
 const BlogList: types.Brick = () => {
   const [pageValues] = usePageValues()
-
-  function SampleNextArrow(props) {
-    const { className, style, onClick } = props
-    return (
-      <div
-        className={className}
-        style={{
-          ...style,
-          display: 'block',
-          background: 'black',
-          opacity: 0.5,
-        }}
-        onClick={onClick}
-      />
-    )
-  }
-
-  function SamplePrevArrow(props) {
-    const { className, style, onClick } = props
-    return <div className="text-red-500" onClick={onClick} />
-  }
 
   const settings = {
     arrows: true,
@@ -59,8 +38,8 @@ const BlogList: types.Brick = () => {
     ),
   }
 
-  const { customValues, externalData } = pageValues
-  const { allTags, pagesByTag } = externalData as ExternalData
+  const { externalData } = pageValues
+  const { pagesByTag } = externalData as ExternalData
 
   return (
     <Section className="max-w-[1440px] mx-auto">

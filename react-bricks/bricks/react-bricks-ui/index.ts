@@ -51,8 +51,8 @@ import Testimonial3Cols from './testimonials/Testimonial3Cols/Testimonial3Cols'
 import Testimonial3ColsItem from './testimonials/Testimonial3Cols/Testimonial3ColsItem'
 
 // LOGO SECTIONS
-import Customers from './logos/Customers/Customers'
-import Customer from './logos/Customers/CustomerItem'
+import Customers from '../custom/Customers/Customers'
+import Customer from '../custom/Customers/CustomerItem'
 import LogoGrid from './logos/LogoGrid/LogoGrid'
 import LogoGridItem from './logos/LogoGrid/LogoGridItem'
 import SmallLogoGrid from './logos/SmallLogoGrid/SmallLogoGrid'

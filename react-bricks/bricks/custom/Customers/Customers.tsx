@@ -5,12 +5,12 @@ import {
   LayoutProps,
   neutralBackgroundSideGroup,
   paddingBordersSideGroup,
-} from '../../LayoutSideProps'
-import { customers } from '../../shared/defaultImages'
-import blockNames from '../../blockNames'
-import { bgColors } from '../../colors'
-import Container from '../../shared/components/Container'
-import Section from '../../shared/components/Section'
+} from '../../react-bricks-ui/LayoutSideProps'
+import { customersSamsung } from '../../react-bricks-ui/shared/defaultImages'
+import blockNames from '../../react-bricks-ui/blockNames'
+import { bgColors } from '../../react-bricks-ui/colors'
+import Container from '../../react-bricks-ui/shared/components/Container'
+import Section from '../../react-bricks-ui/shared/components/Section'
 
 export interface CustomersProps extends LayoutProps {
   grayscale?: boolean
@@ -23,19 +23,36 @@ const Customers: types.Brick<CustomersProps> = ({
   borderBottom,
   paddingTop,
   paddingBottom,
-  grayscale,
+  grayscale = false,
   customers,
 }) => {
   return (
-    <Section backgroundColor={backgroundColor} borderTop={borderTop} borderBottom={borderBottom}>
-      <Container paddingTop={paddingTop} paddingBottom={paddingBottom}>
+    <Section
+      backgroundColor={backgroundColor}
+      borderTop={borderTop}
+      borderBottom={borderBottom}
+      className="max-w-[1440px] mx-auto"
+    >
+      <Container
+        paddingTop={paddingTop}
+        paddingBottom={paddingBottom}
+        className="mx-0 xl:mx-0 px-[24px]"
+      >
+        <p className="mb-[32px] font-bold text-5xl leading-[60px] text-center">
+          Success stories
+        </p>
+
         <div
-          className={classNames('flex flex-wrap justify-center items-center -mx-4 md:-mx-5 -my-4', {
-            'md:justify-between': customers.length >= 4 && customers.length <= 5,
-          })}
+          className={classNames(
+            'flex no-wrap justify-center items-center mx-auto h-[100px] w-[936px]'
+          )}
         >
           <Repeater propName="customers" itemProps={{ grayscale }} />
         </div>
+        <p className="mt-[64px]  text-lg leading-[24px] text-center mx-auto">
+          Knox has helped over 20,000 businesses in 100+ countries achieve their
+          goalss
+        </p>
       </Container>
     </Section>
   )
@@ -59,19 +76,16 @@ Customers.schema = {
     grayscale: true,
     customers: [
       {
-        image: customers.WOOSMAP,
+        image: customersSamsung.WALMART,
       },
       {
-        image: customers.CAPBASE,
+        image: customersSamsung.PEPSICO,
       },
       {
-        image: customers.CASAVO,
+        image: customersSamsung.HARLEY_DAVISON,
       },
       {
-        image: customers.EVERFUND,
-      },
-      {
-        image: customers.NEOSKOP,
+        image: customersSamsung.KIA,
       },
     ],
   }),

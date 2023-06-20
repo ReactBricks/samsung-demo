@@ -2,6 +2,7 @@ import { types } from 'react-bricks/frontend'
 import HeroUnit from './custom/MyHeroUnit'
 import reactBricksUITheme from './react-bricks-ui'
 import BlogList from './custom/BlogList'
+import Customer from './custom/Customers/Customers'
 const bricks: types.Theme[] = [
   reactBricksUITheme, // React Bricks UI
   {
@@ -9,7 +10,7 @@ const bricks: types.Theme[] = [
     categories: [
       {
         categoryName: 'Samsung knox',
-        bricks: [HeroUnit, BlogList], // Custom Bricks
+        bricks: [HeroUnit, BlogList, Customer], // Custom Bricks
       },
     ],
   },
