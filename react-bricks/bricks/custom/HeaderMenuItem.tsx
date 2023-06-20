@@ -86,21 +86,24 @@ const HeaderMenuItem: types.Brick<HeaderMenuItemProps> = ({
           </svg>
         </button>
 
-        {open && (
-          <div className="w-[1440px] bg-white p-3 border absolute top-[80px] start-[0] z-[1000] border-t-0">
-            <Repeater
-              propName="submenuItems"
-              renderItemWrapper={(item) => (
-                <div
-                  key={item.key}
-                  onClick={() => setOpen((current) => !current)}
-                >
-                  {item}
-                </div>
-              )}
-            />
-          </div>
-        )}
+        <div
+          className={classNames(
+            open ? 'visible opacity-100' : 'invisible',
+            'transition-all delay-0 duration-500 opacity-0 overflow-hidden ease-in-out w-[1440px] bg-white p-3 border absolute top-[80px] start-[0] z-[1000] border-t-0'
+          )}
+        >
+          <Repeater
+            propName="submenuItems"
+            renderItemWrapper={(item) => (
+              <div
+                key={item.key}
+                onClick={() => setOpen((current) => !current)}
+              >
+                {item}
+              </div>
+            )}
+          />
+        </div>
       </div>
 
       <div className="lg:hidden mb-6" role="group">

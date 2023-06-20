@@ -100,26 +100,24 @@ const Header: types.Brick<HeaderProps> = ({
               </svg>
             </button>
 
-            {open && (
-              <div
-                className={classNames(
-                  open ? 'h-[140px]' : 'h-0',
-                  'transition-all delay-150 duration-300 overflow-hidden w-full'
+            <div
+              className={classNames(
+                open ? 'visible opacity-100' : 'invisible',
+                'transition-all delay-0 duration-500 opacity-0 overflow-hidden absolute top-[70px] bg-white border-2 rounded-3xl w-[200px] right-2'
+              )}
+            >
+              <Repeater
+                propName="submenuItems"
+                renderItemWrapper={(item) => (
+                  <div
+                    key={item.key}
+                    onClick={() => setOpen((current) => !current)}
+                  >
+                    {item}
+                  </div>
                 )}
-              >
-                <Repeater
-                  propName="submenuItems"
-                  renderItemWrapper={(item) => (
-                    <div
-                      key={item.key}
-                      onClick={() => setOpen((current) => !current)}
-                    >
-                      {item}
-                    </div>
-                  )}
-                />
-              </div>
-            )}
+              />
+            </div>
           </div>
         </div>
 
