@@ -7,48 +7,35 @@ interface PostListItemProps {
   title: string
   href: string
   content: string
-  author: types.Author
-  date: string
+  tag: string[]
   featuredImg?: string
 }
 
-const PostListItem: React.FC<PostListItemProps> = ({
+const BlogListItem: React.FC<PostListItemProps> = ({
   title,
   href,
   content,
-  author,
-  date,
+  tag,
   featuredImg,
 }) => {
   return (
     <Link
       href={`/blog/post/${href}`}
-      className="flex flex-col hover:-translate-y-2 transition-transform duration-300"
+      className="flex flex-col hover:shadow-2xl group transition-transform ease-in-out duration-300 my-[16px] border border-[#cccccc] mx-[12px] rounded-xl h-[500px]"
     >
-      <img src={featuredImg} className="aspect-video object-cover rounded-sm" />
+      <img
+        src={featuredImg}
+        className="aspect-video object-cover rounded-t-xl"
+      />
 
       {/* justify-between */}
-      <div className="flex flex-col h-full">
-        <div className="my-6">
-          <h3 className="font-bold text-xl dark:text-white">{title}</h3>
-          <p className="mt-2 leading-6 text-gray-800 dark:text-gray-100">{content}</p>
-        </div>
+      <div className="flex flex-col h-full max-h-[233px] p-[24px] text-left cursor-pointer">
+        <h6 className="text-xs font-medium mb-[8px]">{tag[0]}</h6>
 
-        <div className="flex items-center space-x-4">
-          <img
-            src={author.avatarUrl}
-            alt={author.firstName + ' ' + author.lastName}
-            className="w-8 rounded-full"
-          />
-          <div>
-            <div className="text-sm text-gray-800 dark:text-gray-100">
-              {author.firstName} {author.lastName}
-            </div>
-            <div className="text-xs text-gray-500 dark:text-gray-400">
-              {dayjs(date).format('DD MMM YYYY')}
-            </div>
-          </div>
-        </div>
+        <h5 className="font-bold text-xl dark:text-white my-[8px] leading-8 text-2xl font-medium group-hover:underline">
+          {title}
+        </h5>
+        <p className="my-[8px] h-[76px] leading-6 ">{content}</p>
       </div>
 
       {/* <div className="flex-1 my-4 bg-gray-100 block group py-4 text-gray-900 hover:bg-gray-50 transition-colors duration-300 p-6 -m-6 rounded">
@@ -65,4 +52,4 @@ const PostListItem: React.FC<PostListItemProps> = ({
   )
 }
 
-export default PostListItem
+export default BlogListItem
