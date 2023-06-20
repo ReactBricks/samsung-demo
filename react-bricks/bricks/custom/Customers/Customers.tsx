@@ -1,6 +1,6 @@
 import classNames from 'classnames'
 import * as React from 'react'
-import { Repeater, types } from 'react-bricks/frontend'
+import { Repeater, types, RichText, Text } from 'react-bricks/frontend'
 import {
   LayoutProps,
   neutralBackgroundSideGroup,
@@ -23,7 +23,7 @@ const Customers: types.Brick<CustomersProps> = ({
   borderBottom,
   paddingTop,
   paddingBottom,
-  grayscale = false,
+  grayscale,
   customers,
 }) => {
   return (
@@ -38,9 +38,18 @@ const Customers: types.Brick<CustomersProps> = ({
         paddingBottom={paddingBottom}
         className="mx-0 xl:mx-0 px-[24px]"
       >
-        <p className="mb-[32px] font-bold text-5xl leading-[60px] text-center">
-          Success stories
-        </p>
+        <Text
+          propName="title"
+          renderBlock={(props) => (
+            <p
+              className="mb-[32px] font-bold text-5xl leading-[60px] text-center"
+              {...props.attributes}
+            >
+              {props.children}
+            </p>
+          )}
+          placeholder="Title..."
+        />
 
         <div
           className={classNames(
@@ -49,10 +58,18 @@ const Customers: types.Brick<CustomersProps> = ({
         >
           <Repeater propName="customers" itemProps={{ grayscale }} />
         </div>
-        <p className="mt-[64px]  text-lg leading-[24px] text-center mx-auto">
-          Knox has helped over 20,000 businesses in 100+ countries achieve their
-          goalss
-        </p>
+        <RichText
+          propName="description"
+          renderBlock={(props) => (
+            <p
+              className="mt-[64px] text-lg leading-[24px] text-center mx-auto"
+              {...props.attributes}
+            >
+              {props.children}
+            </p>
+          )}
+          placeholder="Description..."
+        />
       </Container>
     </Section>
   )
@@ -73,7 +90,10 @@ Customers.schema = {
     paddingBottom: '12',
     borderTop: 'none',
     borderBottom: 'none',
-    grayscale: true,
+    grayscale: false,
+    title: 'Success stories',
+    description:
+      'Knox has developed over 20,000 business in 100+ countries achieve their goals',
     customers: [
       {
         image: customersSamsung.WALMART,

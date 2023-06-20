@@ -1,5 +1,5 @@
 import React from 'react'
-import { types, usePageValues } from 'react-bricks/frontend'
+import { types, usePageValues, Text } from 'react-bricks/frontend'
 import BlogListItem from '../../../components/PostListItem'
 import Section from '../react-bricks-ui/shared/components/Section'
 //import Container from '../react-bricks-ui/shared/components/Container'
@@ -44,9 +44,18 @@ const BlogList: types.Brick = () => {
   return (
     <Section className="max-w-[1440px] mx-auto">
       <div className="px-[24px] pt-[96px] ">
-        <p className="mb-[8px] font-bold text-5xl leading-[60px] text-center">
-          What's new
-        </p>
+        <Text
+          propName="title"
+          renderBlock={(props) => (
+            <p
+              className="mb-[8px] font-bold text-5xl leading-[60px] text-center"
+              {...props.attributes}
+            >
+              {props.children}
+            </p>
+          )}
+          placeholder="Title..."
+        />
 
         <ArrowStyles />
 
@@ -76,6 +85,9 @@ const BlogList: types.Brick = () => {
 BlogList.schema = {
   name: 'blog-list',
   label: 'Blog List',
+  getDefaultProps: () => ({
+    title: "What's new",
+  }),
 
   // Sidebar Edit controls for props
   sideEditProps: [],

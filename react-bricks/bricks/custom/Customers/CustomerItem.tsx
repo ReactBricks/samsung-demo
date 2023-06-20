@@ -8,7 +8,7 @@ export interface CustomerProps {
   image: types.IImageSource
 }
 
-const Customer: types.Brick<CustomerProps> = ({ grayscale = false }) => {
+const Customer: types.Brick<CustomerProps> = ({ grayscale }) => {
   return (
     <div className="inline-flex items-center px-[15px] md:px-5 h-full max-w-[25%] no-wrap">
       <Image
