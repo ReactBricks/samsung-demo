@@ -4,6 +4,9 @@ import reactBricksUITheme from './react-bricks-ui'
 import BlogList from './custom/BlogList'
 import Customer from './custom/Customers/Customers'
 import CtaSamsung from './custom/ctaSamsung'
+import StateInfo from './custom/StateInfo'
+import CustomButton from './custom/CustomButton'
+
 const bricks: types.Theme[] = [
   reactBricksUITheme, // React Bricks UI
   {
@@ -11,7 +14,14 @@ const bricks: types.Theme[] = [
     categories: [
       {
         categoryName: 'Samsung knox',
-        bricks: [HeroUnit, BlogList, Customer, CtaSamsung], // Custom Bricks
+        bricks: [
+          HeroUnit,
+          CustomButton,
+          BlogList,
+          StateInfo,
+          Customer,
+          CtaSamsung,
+        ], // Custom Bricks
       },
     ],
   },

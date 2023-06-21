@@ -82,7 +82,6 @@ const Button: types.Brick<ButtonProps> = ({
         {
           [buttonColor?.classNameOutline]: variant === 'outline',
         },
-
         className
       )}
     >
