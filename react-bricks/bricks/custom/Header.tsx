@@ -107,7 +107,7 @@ const Header: types.Brick<HeaderProps> = ({
               )}
             >
               <Repeater
-                propName="submenuItems"
+                propName="submenuColumns"
                 renderItemWrapper={(item) => (
                   <div
                     key={item.key}
@@ -119,30 +119,6 @@ const Header: types.Brick<HeaderProps> = ({
               />
             </div>
           </div>
-        </div>
-
-        <div className="relative lg:hidden flex items-center h-full sm:gap-x-4">
-          <button
-            className="group p-1 w-7 h-7 flex justify-center items-center rounded-[5px] bg-gray-200 dark:bg-transparent hover:bg-sky-500/20 dark:hover:bg-sky-500/40 hover:text-sky-600 dark:hover:text-sky-500 focus:bg-sky-500/20 dark:focus:bg-sky-500/40 focus:text-sky-600 dark:focus:text-sky-500"
-            onClick={() => setMobileMenuOpen((current) => !current)}
-          >
-            {mobileMenuOpen ? (
-              <FiX className="text-gray-600 dark:text-white" size={18} />
-            ) : (
-              <FiMenu className="text-gray-600 dark:text-white" size={20} />
-            )}
-          </button>
-          {mobileMenuOpen && (
-            <div className="absolute top-8 right-0 w-64 bg-white p-5 border rounded-lg shadow-lg z-10">
-              <Repeater
-                propName="menuItems"
-                itemProps={{
-                  mobileRef: ref,
-                  setMobileMenuOpen,
-                }}
-              />
-            </div>
-          )}
         </div>
       </nav>
     </Section>
@@ -164,15 +140,8 @@ Header.schema = {
       max: 6,
     },
     {
-      name: 'submenuItems',
-      itemType: blockNames.HeaderMenuSubItem,
-    },
-    {
-      name: 'buttons',
-      itemType: blockNames.Button,
-      itemLabel: 'Button',
-      min: 0,
-      max: 2,
+      name: 'submenuColumns',
+      itemType: 'header-menu-sub-column',
     },
   ],
   sideEditProps: [
@@ -188,35 +157,144 @@ Header.schema = {
     partners: 'Partners',
     menuItems: [
       {
-        linkPath: '/',
-        linkText: 'Home',
-      },
-      {
-        linkPath: '/about-us',
-        linkText: 'About us',
-      },
-      {
         linkPath: '',
-        linkText: 'Features',
-        submenuItems: [
+        linkText: 'Solutions',
+        submenuColumns: [
           {
-            linkText: 'Visual editing',
-            linkDescription:
-              'The best visual experience for your content editors',
-            linkPath: '/',
+            title: 'FOR IT ADMINS',
+            submenuItems: [
+              {
+                linkText: 'Unified Endpoint Management',
+                linkDescription: 'Secure, deploy, manage, and analyze',
+                linkPath: '/',
+              },
+              {
+                linkText: 'For Frontline',
+                linkDescription: 'Maximize productivity for field force and IT',
+                linkPath: '/',
+              },
+              {
+                linkText: 'For School',
+                linkDescription: 'Digital classroom under control',
+                linkPath: '/',
+              },
+            ],
+          },
+          {
+            title: 'FOR SERVICE PROVIDERS',
+            submenuItems: [
+              {
+                linkText: 'Rebranding and Customization',
+                linkDescription: 'Tailor our devices to your business needs',
+                linkPath: '/',
+              },
+              {
+                linkText: 'For Kids Phone',
+                linkDescription: 'Create segment-specific devices',
+                linkPath: '/',
+              },
+              {
+                linkText: 'Fraud and Theft Protection',
+                linkDescription: 'Reduce financial risks for devices',
+                linkPath: '/',
+              },
+            ],
+          },
+          {
+            title: 'FOR EVERYONE',
+            submenuItems: [
+              {
+                linkText: 'Secured by Knox',
+                linkDescription: '',
+                linkPath: '/',
+              },
+              {
+                linkText: 'Knox devices',
+                linkDescription: '',
+                linkPath: '/',
+              },
+              {
+                linkText: 'Knox certifications',
+                linkDescription: '',
+                linkPath: '/',
+              },
+            ],
           },
         ],
       },
+      {
+        linkPath: '',
+        linkText: 'Products',
+        submenuColumns: [
+          {
+            title: 'UNIFIED ENDPOINT MANAGEMENT',
+            submenuItems: [
+              {
+                linkText: 'Knox Suite',
+                linkDescription: 'All-in-one bundle for managing work devices',
+                linkPath: '/',
+              },
+              {
+                linkText: 'Knox Platform for Enterprise',
+                linkDescription: 'Government-grade security for businesses',
+                linkPath: '/',
+              },
+              {
+                linkText: 'Knox Mobile Enrollment',
+                linkDescription: 'ulk device setup and deployment',
+                linkPath: '/',
+              },
+            ],
+          },
+          {
+            title: 'REBRANDING AND CUSTOMIZATION',
+            submenuItems: [
+              {
+                linkText: 'Knox Configure',
+                linkDescription: 'Remotely tailor Samsung devices',
+                linkPath: '/',
+              },
+            ],
+          },
+          {
+            title: 'BUSINESS SERVICES',
+            submenuItems: [
+              {
+                linkText: 'Samsung Care+ for Business',
+                linkDescription: 'Protection plan for corporate devices',
+                linkPath: '/',
+              },
+              {
+                linkText: 'Samsung Enterprise Technical Support',
+                linkDescription: 'Tier 3 premium technical support',
+                linkPath: '/',
+              },
+            ],
+          },
+        ],
+      },
+      {
+        linkPath: '/',
+        linkText: 'About Knox',
+      },
+      {
+        linkPath: '/',
+        linkText: 'Support',
+      },
+      {
+        linkPath: '/',
+        linkText: 'Blog',
+      },
     ],
     logo: {
-      src: 'https://images.reactbricks.com/original/a63a73db-8df4-4a01-9084-44b8217332cf.svg',
+      src: 'https://kp4-cdn.samsungknox.com/resource/iUxOLMPWhXEJheVY.svg',
       placeholderSrc:
-        'https://images.reactbricks.com/original/a63a73db-8df4-4a01-9084-44b8217332cf.svg',
+        'https://kp4-cdn.samsungknox.com/resource/iUxOLMPWhXEJheVY.svg',
       srcSet: '',
       width: 450,
       height: 100,
-      alt: 'React Bricks',
-      seoName: 'react-bricks',
+      alt: 'knox logo',
+      seoName: 'samsung-knox',
     },
     buttons: [
       {

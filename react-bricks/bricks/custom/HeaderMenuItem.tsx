@@ -8,7 +8,7 @@ import { textColors } from '../react-bricks-ui/colors'
 interface HeaderMenuItemProps {
   linkPath: string
   linkText: any
-  submenuItems?: any
+  submenuColumns?: any
   mobileRef?: React.MutableRefObject<HTMLDivElement>
   setMobileMenuOpen?: React.Dispatch<React.SetStateAction<boolean>>
 }
@@ -16,7 +16,7 @@ interface HeaderMenuItemProps {
 const HeaderMenuItem: types.Brick<HeaderMenuItemProps> = ({
   linkPath,
   linkText,
-  submenuItems,
+  submenuColumns,
   mobileRef,
   setMobileMenuOpen,
 }) => {
@@ -25,7 +25,7 @@ const HeaderMenuItem: types.Brick<HeaderMenuItemProps> = ({
 
   useOnClickOutside(ref, () => setOpen(false))
   useOnClickOutside(mobileRef, () => setMobileMenuOpen(false))
-  if (!submenuItems || !submenuItems.length) {
+  if (!submenuColumns || !submenuColumns.length) {
     return (
       <div>
         <Link
@@ -89,37 +89,22 @@ const HeaderMenuItem: types.Brick<HeaderMenuItemProps> = ({
         <div
           className={classNames(
             open ? 'visible opacity-100' : 'invisible',
-            'transition-all delay-0 duration-500 opacity-0 overflow-hidden ease-in-out w-[1440px] bg-white p-3 border absolute top-[80px] start-[0] z-[1000] border-t-0'
+            'transition-all delay-0 duration-500 opacity-0 overflow-hidden ease-in-out w-[1440px] bg-white p-3 border absolute top-[80px] start-[0] z-[1000] border-t-0 flex'
           )}
         >
           <Repeater
-            propName="submenuItems"
+            propName="submenuColumns"
             renderItemWrapper={(item) => (
               <div
                 key={item.key}
-                onClick={() => setOpen((current) => !current)}
+                //onClick={() => setOpen((current) => !current)}
+                className="flex-col"
               >
                 {item}
               </div>
             )}
           />
         </div>
-      </div>
-
-      <div className="lg:hidden mb-6" role="group">
-        <div
-          className={`text-xs font-extrabold text-gray-500 uppercase tracking-[0.35rem] mb-4`}
-        >
-          {typeof linkText === 'string' ? linkText : Plain.serialize(linkText)}
-        </div>
-        <Repeater
-          propName="submenuItems"
-          renderItemWrapper={(item) => (
-            <div key={item.key} onClick={() => setMobileMenuOpen(false)}>
-              {item}
-            </div>
-          )}
-        />
       </div>
     </div>
   )
@@ -136,11 +121,15 @@ HeaderMenuItem.schema = {
       name: 'submenuItems',
       itemType: blockNames.HeaderMenuSubItem,
     },
+    {
+      name: 'submenuColumns',
+      itemType: 'header-menu-sub-column',
+    },
   ],
 
   getDefaultProps: () => ({
-    linkPath: '/about-us',
-    linkText: 'About us',
+    linkPath: '/',
+    linkText: 'Solutions',
   }),
 
   sideEditProps: [

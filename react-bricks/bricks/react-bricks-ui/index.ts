@@ -4,6 +4,7 @@ import { types } from 'react-bricks/frontend'
 import Header from '../custom/Header'
 import HeaderMenuItem from '../custom/HeaderMenuItem'
 import HeaderMenuSubItem from '../custom/HeaderMenuSubItem'
+import HeaderMenuSubColumn from '../custom/HeaderMenuColumn'
 import Footer from './layout/Footer'
 import FooterColumn from './layout/FooterColumn'
 import FooterLink from './layout/FooterLink'
@@ -199,6 +200,7 @@ const allBricks: types.Theme = {
         Header,
         HeaderMenuItem,
         HeaderMenuSubItem,
+        HeaderMenuSubColumn,
         Footer,
         FooterColumn,
         FooterLink,
@@ -216,6 +218,7 @@ export {
   Header,
   HeaderMenuItem,
   HeaderMenuSubItem,
+  HeaderMenuSubColumn,
   Footer,
   FooterColumn,
   FooterLink,

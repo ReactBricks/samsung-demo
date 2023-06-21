@@ -29,10 +29,10 @@ const CtaSamsung: types.Brick<CallToActionProps> = ({
       className="max-w-[1440px] mx-auto"
     >
       <Container
-        size="small"
+        size="full"
         paddingTop={paddingTop}
         paddingBottom={paddingBottom}
-        className="mx-0 xl:mx-0 px-[142px] pt-[96px] pb-[96px] lg:pb-[96px]"
+        className="mx-0 xl:mx-0 px-[142px] pt-[96px] pb-[96px] lg:pb-[96px] sm:mx-0"
       >
         <div className="flex">
           <div className="basis-9/12 px-[15px]">
