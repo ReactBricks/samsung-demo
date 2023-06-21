@@ -53,7 +53,7 @@ const Customers: types.Brick<CustomersProps> = ({
 
         <div
           className={classNames(
-            'flex no-wrap justify-center items-center mx-auto h-[100px] w-[936px]'
+            'flex no-wrap justify-center items-center mx-auto h-[100px]'
           )}
         >
           <Repeater propName="customers" itemProps={{ grayscale }} />

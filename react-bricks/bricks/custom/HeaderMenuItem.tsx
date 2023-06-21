@@ -1,30 +1,20 @@
 import blockNames from '../react-bricks-ui/blockNames'
 import classNames from 'classnames'
-import React, { useRef, useState } from 'react'
-import { Text, Repeater, types, Link, Plain } from 'react-bricks/frontend'
-import useOnClickOutside from './useClickOutside'
-import { textColors } from '../react-bricks-ui/colors'
+import React, { useState } from 'react'
+import { Text, Repeater, types, Link } from 'react-bricks/frontend'
 
 interface HeaderMenuItemProps {
   linkPath: string
   linkText: any
   submenuColumns?: any
-  mobileRef?: React.MutableRefObject<HTMLDivElement>
-  setMobileMenuOpen?: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 const HeaderMenuItem: types.Brick<HeaderMenuItemProps> = ({
   linkPath,
-  linkText,
   submenuColumns,
-  mobileRef,
-  setMobileMenuOpen,
 }) => {
   const [open, setOpen] = useState(false)
-  const ref = useRef<HTMLDivElement>(null)
 
-  useOnClickOutside(ref, () => setOpen(false))
-  useOnClickOutside(mobileRef, () => setMobileMenuOpen(false))
   if (!submenuColumns || !submenuColumns.length) {
     return (
       <div>
@@ -38,17 +28,6 @@ const HeaderMenuItem: types.Brick<HeaderMenuItemProps> = ({
             renderBlock={({ children }) => <span>{children}</span>}
           />
         </Link>
-        <Link
-          href={linkPath}
-          className="block lg:hidden text-sm mb-3 transition-colors ease-out text-gray-800 hover:text-sky-600"
-        >
-          <div onClick={() => setMobileMenuOpen(false)}>
-            {' '}
-            {typeof linkText === 'string'
-              ? linkText
-              : Plain.serialize(linkText)}
-          </div>
-        </Link>
       </div>
     )
   }
@@ -56,7 +35,6 @@ const HeaderMenuItem: types.Brick<HeaderMenuItemProps> = ({
   return (
     <div>
       <div
-        ref={ref}
         className="flex h-[80px]"
         onMouseEnter={() => setOpen(true)}
         onMouseLeave={() => setOpen(false)}
@@ -89,19 +67,19 @@ const HeaderMenuItem: types.Brick<HeaderMenuItemProps> = ({
         <div
           className={classNames(
             open ? 'visible opacity-100' : 'invisible',
-            'transition-all delay-0 duration-500 opacity-0 overflow-hidden ease-in-out w-[1440px] bg-white p-3 border absolute top-[80px] start-[0] z-[1000] border-t-0 flex'
+            'transition-all delay-0 duration-500 opacity-0 overflow-hidden ease-in-out w-full bg-white p-3 border absolute top-[80px] start-[0] z-[1000] border-t-0  pt-[47px] pb-[28px] px-[150px]'
           )}
         >
           <Repeater
             propName="submenuColumns"
+            itemProps={{ handler: setOpen }}
             renderItemWrapper={(item) => (
-              <div
-                key={item.key}
-                //onClick={() => setOpen((current) => !current)}
-                className="flex-col"
-              >
+              <div key={item.key} className="flex-col">
                 {item}
               </div>
+            )}
+            renderWrapper={(item) => (
+              <div className="flex gap-x-[5px]">{item}</div>
             )}
           />
         </div>
@@ -117,10 +95,6 @@ HeaderMenuItem.schema = {
   hideFromAddMenu: true,
 
   repeaterItems: [
-    {
-      name: 'submenuItems',
-      itemType: blockNames.HeaderMenuSubItem,
-    },
     {
       name: 'submenuColumns',
       itemType: 'header-menu-sub-column',

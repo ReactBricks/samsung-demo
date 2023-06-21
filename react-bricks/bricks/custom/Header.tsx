@@ -1,8 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { Image, Repeater, types, Link, Text } from 'react-bricks/frontend'
 import { useReactBricksContext } from 'react-bricks/frontend'
-import { FiMenu, FiX } from 'react-icons/fi'
-import { BsMoonFill, BsSunFill } from 'react-icons/bs'
 import blockNames from '../react-bricks-ui/blockNames'
 import { bgColors, buttonColors } from '../react-bricks-ui/colors'
 import {
@@ -12,7 +10,6 @@ import {
   sectionDefaults,
 } from '../react-bricks-ui/LayoutSideProps'
 import Section from '../react-bricks-ui/shared/components/Section'
-import useOnClickOutside from './useClickOutside'
 import classNames from 'classnames'
 interface HeaderProps extends LayoutProps {
   menuItems: any[]
@@ -24,17 +21,13 @@ const Header: types.Brick<HeaderProps> = ({
   backgroundColor,
   borderBottom,
 }) => {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const { isDarkColorMode, toggleColorMode } = useReactBricksContext()
   const [mounted, setMounted] = useState(false)
   const [open, setOpen] = useState(false)
-  const ref = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     setMounted(true)
   }, [])
-  useOnClickOutside(ref, () => setOpen(false))
-  useOnClickOutside(ref, () => setMobileMenuOpen(false))
 
   return (
     <Section backgroundColor={backgroundColor} borderBottom={'none'}>
@@ -55,7 +48,6 @@ const Header: types.Brick<HeaderProps> = ({
           <div className="flex h-full items-centers">
             <Repeater
               propName="menuItems"
-              itemProps={{ mobileRef: setMobileMenuOpen }}
               renderItemWrapper={(item) => (
                 <div
                   key={item.key}
@@ -68,7 +60,6 @@ const Header: types.Brick<HeaderProps> = ({
           </div>
 
           <div
-            ref={ref}
             className="flex h-[80px] transition-all"
             onMouseEnter={() => setOpen(true)}
             onMouseLeave={() => setOpen(false)}
@@ -108,14 +99,8 @@ const Header: types.Brick<HeaderProps> = ({
             >
               <Repeater
                 propName="submenuColumns"
-                renderItemWrapper={(item) => (
-                  <div
-                    key={item.key}
-                    onClick={() => setOpen((current) => !current)}
-                  >
-                    {item}
-                  </div>
-                )}
+                itemProps={{ handler: setOpen }}
+                renderItemWrapper={(item) => <div key={item.key}>{item}</div>}
               />
             </div>
           </div>

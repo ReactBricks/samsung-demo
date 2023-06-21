@@ -1,31 +1,33 @@
-import { Menu } from '@headlessui/react'
 import blockNames from '../react-bricks-ui/blockNames'
+import { Text, types, Repeater } from 'react-bricks/frontend'
 import React from 'react'
-import { Text, types, Link, Repeater } from 'react-bricks/frontend'
-import classNames from 'classnames'
-import { FiChevronRight } from 'react-icons/fi'
-
 interface HeaderMenuSubColumnProps {
   title: string
+  refs?: React.MutableRefObject<HTMLDivElement>
+  handler?: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 const HeaderMenuSubColumn: types.Brick<HeaderMenuSubColumnProps> = ({
-  title,
+  handler,
 }) => {
   return (
-    <div>
-      <div>
+    <div className="max-w-3/12">
+      <div className="px-[15px]">
         <Text
           propName="title"
           placeholder="Column title.."
           renderBlock={({ children }) => (
-            <div className="px-[15px]">{children}</div>
+            <div className="mb-[8px] text-sm uppercase">{children}</div>
           )}
         />
       </div>
       <Repeater
         propName="submenuItems"
-        renderItemWrapper={(item) => <div className="px-[15px]">{item}</div>}
+        renderItemWrapper={(item) => (
+          <div onClick={() => handler(false)} className="px-[15px]">
+            {item}
+          </div>
+        )}
       />
     </div>
   )

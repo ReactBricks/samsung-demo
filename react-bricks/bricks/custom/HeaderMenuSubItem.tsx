@@ -24,7 +24,7 @@ const HeaderMenuSubItem: types.Brick<HeaderMenuSubItemProps> = ({
           renderBlock={({ children }) => (
             <div
               className={classNames(
-                'text-sm truncate lg:overflow-auto lg:whitespace-normal lg:font-bold transition-colors ease-out text-gray-900 group-hover:text-sky-600'
+                'text-sm truncate lg:overflow-auto lg:whitespace-normal font-bold transition-colors ease-out group-hover:underline leading-4'
               )}
             >
               {children}
