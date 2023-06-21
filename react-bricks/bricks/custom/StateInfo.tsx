@@ -1,4 +1,4 @@
-import { Image, RichText, Text, types, Repeater } from 'react-bricks/frontend'
+import { Image, RichText, Text, types, Link } from 'react-bricks/frontend'
 import { LayoutProps } from '../react-bricks-ui/LayoutSideProps'
 import { useState } from 'react'
 
@@ -19,15 +19,27 @@ interface StateInfoProps extends LayoutProps {
 
   sideTitleFeature1: string
   sideTextFeature1: string
+  sideButtonLinkFeature1: string
+  sideButtonLabelFeature1: string
+  sideImageFeature1: types.IImageSource
 
   sideTitleFeature2: string
   sideTextFeature2: string
+  sideButtonLinkFeature2: string
+  sideButtonLabelFeature2: string
+  sideImageFeature2: types.IImageSource
 
   sideTitleFeature3: string
   sideTextFeature3: string
+  sideButtonLinkFeature3: string
+  sideButtonLabelFeature3: string
+  sideImageFeature3: types.IImageSource
 
   sideTitleFeature4: string
   sideTextFeature4: string
+  sideButtonLinkFeature4: string
+  sideButtonLabelFeature4: string
+  sideImageFeature4: types.IImageSource
 }
 
 //=============================
@@ -36,16 +48,28 @@ interface StateInfoProps extends LayoutProps {
 const StateInfo: types.Brick<StateInfoProps> = ({
   sideTitleFeature1,
   sideTextFeature1,
+  sideButtonLinkFeature1,
+  sideButtonLabelFeature1,
+  sideImageFeature1,
   sideTitleFeature2,
   sideTextFeature2,
+  sideButtonLinkFeature2,
+  sideButtonLabelFeature2,
+  sideImageFeature2,
   sideTitleFeature3,
   sideTextFeature3,
+  sideButtonLinkFeature3,
+  sideButtonLabelFeature3,
+  sideImageFeature3,
   sideTitleFeature4,
   sideTextFeature4,
+  sideButtonLinkFeature4,
+  sideButtonLabelFeature4,
+  sideImageFeature4,
 }) => {
   const [currentRow, setCurrentRow] = useState(1)
   return (
-    <div className="md:pl-14 pl-3 lg:pl-[90px] mt-[56px]">
+    <div className="px-3 md:pl-14 lg:pl-[90px] md:pr-6 mt-[56px]">
       <Text
         renderBlock={(props) => (
           <h2 className="mt-0 mb-12 text-center md:text-left font-bold text-[36px] leading-[45px] text-gray-900 dark:text-white">
@@ -262,21 +286,84 @@ const StateInfo: types.Brick<StateInfoProps> = ({
 
         {/* Preview */}
         <div className="basis-2/3">
-          <div className={`${currentRow === 1 ? 'block' : 'hidden'} h-full`}>
-            <h3>{sideTitleFeature1}</h3>
-            <p>{sideTextFeature1}</p>
+          <div
+            className={`${
+              currentRow === 1 ? 'block' : 'hidden'
+            } h-full bg-no-repeat bg-cover`}
+            style={{ backgroundImage: `url("${sideImageFeature1?.src}")` }}
+          >
+            <div className="p-11 w-3/5 text-white">
+              <h3 className="text-[24px] tracking-[0.01rem] font-bold mb-6">
+                {sideTitleFeature1}
+              </h3>
+              <p className="text-base mb-4">{sideTextFeature1}</p>
+              <Link
+                href={sideButtonLinkFeature1}
+                className="border-2 rounded-full py-2 px-6 mt-2 hover:bg-white hover:text-black transition text-[12px] font-bold"
+              >
+                {sideButtonLabelFeature1}
+              </Link>
+            </div>
           </div>
-          <div className={`${currentRow === 2 ? 'block' : 'hidden'}`}>
-            <h3>{sideTitleFeature2}</h3>
-            <p>{sideTextFeature2}</p>
+
+          <div
+            className={`${
+              currentRow === 2 ? 'block' : 'hidden'
+            } h-full bg-no-repeat bg-cover`}
+            style={{ backgroundImage: `url("${sideImageFeature2?.src}")` }}
+          >
+            <div className="p-11 w-3/5 text-white">
+              <h3 className="text-[24px] tracking-[0.01rem] font-bold mb-6">
+                {sideTitleFeature2}
+              </h3>
+              <p className="text-base mb-4">{sideTextFeature2}</p>
+              <Link
+                href={sideButtonLinkFeature2}
+                className="border-2 rounded-full py-2 px-6 mt-2 hover:bg-white hover:text-black transition text-[12px] font-bold"
+              >
+                {sideButtonLabelFeature2}
+              </Link>
+            </div>
           </div>
-          <div className={`${currentRow === 3 ? 'block' : 'hidden'}`}>
-            <h3>{sideTitleFeature3}</h3>
-            <p>{sideTextFeature3}</p>
+
+          <div
+            className={`${
+              currentRow === 3 ? 'block' : 'hidden'
+            } h-full  bg-no-repeat bg-cover`}
+            style={{ backgroundImage: `url("${sideImageFeature3?.src}")` }}
+          >
+            <div className="p-11 w-3/5 text-white">
+              <h3 className="text-[24px] tracking-[0.01rem] font-bold mb-6">
+                {sideTitleFeature3}
+              </h3>
+              <p className="text-base mb-4">{sideTextFeature3}</p>
+              <Link
+                href={sideButtonLinkFeature3}
+                className="border-2 rounded-full py-2 px-6 mt-2 hover:bg-white hover:text-black transition text-[12px] font-bold"
+              >
+                {sideButtonLabelFeature3}
+              </Link>
+            </div>
           </div>
-          <div className={`${currentRow === 4 ? 'block' : 'hidden'}`}>
-            <h3>{sideTitleFeature4}</h3>
-            <p>{sideTextFeature4}</p>
+
+          <div
+            className={`${
+              currentRow === 4 ? 'block' : 'hidden'
+            } h-full  bg-no-repeat bg-cover`}
+            style={{ backgroundImage: `url("${sideImageFeature4?.src}")` }}
+          >
+            <div className="p-11 w-3/5 text-white">
+              <h3 className="text-[24px] tracking-[0.01rem] font-bold mb-6">
+                {sideTitleFeature4}
+              </h3>
+              <p className="text-base mb-4">{sideTextFeature4}</p>
+              <Link
+                href={sideButtonLinkFeature4}
+                className="border-2 rounded-full py-2 px-6 mt-2 hover:bg-white hover:text-black transition text-[12px] font-bold"
+              >
+                {sideButtonLabelFeature4}
+              </Link>
+            </div>
           </div>
         </div>
       </div>
@@ -320,6 +407,21 @@ StateInfo.schema = {
           label: 'Side text feature',
           type: types.SideEditPropType.Text,
         },
+        {
+          name: 'sideButtonLinkFeature1',
+          label: 'Side button link feature',
+          type: types.SideEditPropType.Text,
+        },
+        {
+          name: 'sideButtonLabelFeature1',
+          label: 'Side button label feature',
+          type: types.SideEditPropType.Text,
+        },
+        {
+          name: 'sideImageFeature1',
+          label: 'Side image feature',
+          type: types.SideEditPropType.Image,
+        },
       ],
     },
 
@@ -336,6 +438,21 @@ StateInfo.schema = {
           name: 'sideTextFeature2',
           label: 'Side text feature',
           type: types.SideEditPropType.Text,
+        },
+        {
+          name: 'sideButtonLinkFeature2',
+          label: 'Side button link feature',
+          type: types.SideEditPropType.Text,
+        },
+        {
+          name: 'sideButtonLabelFeature2',
+          label: 'Side button label feature',
+          type: types.SideEditPropType.Text,
+        },
+        {
+          name: 'sideImageFeature2',
+          label: 'Side image feature',
+          type: types.SideEditPropType.Image,
         },
       ],
     },
@@ -354,6 +471,21 @@ StateInfo.schema = {
           label: 'Side text feature',
           type: types.SideEditPropType.Text,
         },
+        {
+          name: 'sideButtonLinkFeature3',
+          label: 'Side button link feature',
+          type: types.SideEditPropType.Text,
+        },
+        {
+          name: 'sideButtonLabelFeature3',
+          label: 'Side button label feature',
+          type: types.SideEditPropType.Text,
+        },
+        {
+          name: 'sideImageFeature3',
+          label: 'Side image feature',
+          type: types.SideEditPropType.Image,
+        },
       ],
     },
 
@@ -370,6 +502,21 @@ StateInfo.schema = {
           name: 'sideTextFeature4',
           label: 'Side text feature',
           type: types.SideEditPropType.Text,
+        },
+        {
+          name: 'sideButtonLinkFeature4',
+          label: 'Side button link feature',
+          type: types.SideEditPropType.Text,
+        },
+        {
+          name: 'sideButtonLabelFeature4',
+          label: 'Side button label feature',
+          type: types.SideEditPropType.Text,
+        },
+        {
+          name: 'sideImageFeature4',
+          label: 'Side image feature',
+          type: types.SideEditPropType.Image,
         },
       ],
     },

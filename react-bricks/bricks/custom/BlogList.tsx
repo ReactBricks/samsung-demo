@@ -61,21 +61,16 @@ const BlogList: types.Brick = () => {
 
         <Slider {...settings}>
           {/*@ts-ignore*/}
-          {pagesByTag?.map(
-            (post) => (
-              console.log(post),
-              (
-                <BlogListItem
-                  key={post.id}
-                  title={post.meta.title}
-                  href={post.slug}
-                  content={post.meta.description}
-                  tag={post.tags}
-                  featuredImg={post.meta.featuredImage || ''}
-                />
-              )
-            )
-          )}
+          {pagesByTag?.map((post) => (
+            <BlogListItem
+              key={post.id}
+              title={post.meta.title}
+              href={post.slug}
+              content={post.meta.description}
+              tag={post.tags}
+              featuredImg={post.meta.featuredImage || ''}
+            />
+          ))}
         </Slider>
       </div>
     </Section>
