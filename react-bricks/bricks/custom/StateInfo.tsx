@@ -22,24 +22,28 @@ interface StateInfoProps extends LayoutProps {
   sideButtonLinkFeature1: string
   sideButtonLabelFeature1: string
   sideImageFeature1: types.IImageSource
+  overlayFeature1: string
 
   sideTitleFeature2: string
   sideTextFeature2: string
   sideButtonLinkFeature2: string
   sideButtonLabelFeature2: string
   sideImageFeature2: types.IImageSource
+  overlayFeature2: string
 
   sideTitleFeature3: string
   sideTextFeature3: string
   sideButtonLinkFeature3: string
   sideButtonLabelFeature3: string
   sideImageFeature3: types.IImageSource
+  overlayFeature3: string
 
   sideTitleFeature4: string
   sideTextFeature4: string
   sideButtonLinkFeature4: string
   sideButtonLabelFeature4: string
   sideImageFeature4: types.IImageSource
+  overlayFeature4: string
 }
 
 //=============================
@@ -51,28 +55,32 @@ const StateInfo: types.Brick<StateInfoProps> = ({
   sideButtonLinkFeature1,
   sideButtonLabelFeature1,
   sideImageFeature1,
+  overlayFeature1 = 'black',
   sideTitleFeature2,
   sideTextFeature2,
   sideButtonLinkFeature2,
   sideButtonLabelFeature2,
   sideImageFeature2,
+  overlayFeature2 = 'blue',
   sideTitleFeature3,
   sideTextFeature3,
   sideButtonLinkFeature3,
   sideButtonLabelFeature3,
   sideImageFeature3,
+  overlayFeature3 = 'cerulean',
   sideTitleFeature4,
   sideTextFeature4,
   sideButtonLinkFeature4,
   sideButtonLabelFeature4,
   sideImageFeature4,
+  overlayFeature4 = 'green',
 }) => {
   const [currentRow, setCurrentRow] = useState(1)
   return (
     <div className="px-3 md:pl-14 lg:pl-[90px] md:pr-6 mt-[86px] font-samsung">
       <Text
         renderBlock={(props) => (
-          <h2 className="mt-0 mb-12 text-center md:text-left font-bold text-[36px] leading-[45px] w-1/3 text-gray-900 dark:text-white">
+          <h2 className="mt-0 mb-12 text-center md:text-left font-bold text-[36px] leading-[45px] text-gray-900 dark:text-white">
             {props.children}
           </h2>
         )}
@@ -80,7 +88,7 @@ const StateInfo: types.Brick<StateInfoProps> = ({
         propName="title"
       />
 
-      <div className="flex my-8 gap-4">
+      <div className="flex my-8 gap-4 items-center">
         {/* Single features */}
         <div className="basis-1/3">
           {/* Feature 1 */}
@@ -299,14 +307,13 @@ const StateInfo: types.Brick<StateInfoProps> = ({
               aspectRatio={1}
             />
 
-            <Image
-              propName="sideImageOverlayFeature1"
+            <img
               alt="Icon"
-              maxWidth={805}
-              imageClassName="absolute h-[-webkit-fill-available] top-0 bottom-0 z-10"
+              src={`/overlay/${overlayFeature1}.png`}
+              className="absolute h-full top-0 bottom-0 z-10"
             />
 
-            <div className="px-11 py-3 w-full lg:w-3/5 xl:w-2/5 h-fit text-white absolute top-0 bottom-0 mx-auto z-20">
+            <div className="px-11 py-3 w-full lg:w-3/5 xl:w-2/5 h-fit text-white absolute top-1/2 bottom-1/2 m-auto z-20">
               <h3 className="text-[24px] tracking-[0.01rem] font-bold mb-6">
                 {sideTitleFeature1}
               </h3>
@@ -333,13 +340,12 @@ const StateInfo: types.Brick<StateInfoProps> = ({
               aspectRatio={1}
               imageClassName="mb-5"
             />
-            <Image
-              propName="sideImageOverlayFeature2"
+            <img
               alt="Icon"
-              maxWidth={805}
-              imageClassName="absolute h-[-webkit-fill-available] top-0 bottom-0"
+              src={`/overlay/${overlayFeature2}.png`}
+              className="absolute h-full top-0 bottom-0 z-10"
             />
-            <div className="px-11 py-3 w-full lg:w-3/5 xl:w-2/5 h-fit text-white absolute top-0 bottom-0 mx-auto">
+            <div className="px-11 py-3 w-full lg:w-3/5 xl:w-2/5 h-fit text-white absolute top-1/2 bottom-1/2 m-auto z-20">
               <h3 className="text-[24px] tracking-[0.01rem] font-bold mb-6">
                 {sideTitleFeature2}
               </h3>
@@ -366,13 +372,12 @@ const StateInfo: types.Brick<StateInfoProps> = ({
               aspectRatio={1}
               imageClassName="mb-5"
             />
-            <Image
-              propName="sideImageOverlayFeature3"
+            <img
               alt="Icon"
-              maxWidth={805}
-              imageClassName="absolute h-[-webkit-fill-available] top-0 bottom-0"
+              src={`/overlay/${overlayFeature3}.png`}
+              className="absolute h-full top-0 bottom-0 z-10"
             />
-            <div className="px-11 py-3 w-full lg:w-3/5 xl:w-2/5 h-fit text-white absolute top-0 bottom-0 mx-auto">
+            <div className="px-11 py-3 w-full lg:w-3/5 xl:w-2/5 h-fit text-white absolute top-1/2 bottom-1/2 m-auto z-20">
               <h3 className="text-[24px] tracking-[0.01rem] font-bold mb-6">
                 {sideTitleFeature3}
               </h3>
@@ -399,13 +404,12 @@ const StateInfo: types.Brick<StateInfoProps> = ({
               aspectRatio={1}
               imageClassName="mb-5"
             />
-            <Image
-              propName="sideImageOverlayFeature4"
+            <img
               alt="Icon"
-              maxWidth={805}
-              imageClassName="absolute h-[-webkit-fill-available] top-0 bottom-0"
+              src={`/overlay/${overlayFeature4}.png`}
+              className="absolute h-full top-0 bottom-0 z-10"
             />
-            <div className="px-11 py-3 w-full lg:w-3/5 xl:w-2/5 h-fit text-white absolute top-0 bottom-0 mx-auto">
+            <div className="px-11 py-3 w-full lg:w-3/5 xl:w-2/5 h-fit text-white absolute top-1/2 bottom-1/2 m-auto z-20">
               <h3 className="text-[24px] tracking-[0.01rem] font-bold mb-6">
                 {sideTitleFeature4}
               </h3>
@@ -444,6 +448,34 @@ StateInfo.schema = {
 
     titleFeature4: 'Fraud and Theft Protection',
     textFeature4: 'Safeguards for businesses with device financing plans',
+
+    sideTitleFeature1: 'Secured by Knox',
+    sideTextFeature1:
+      'At every layer of Samsung Galaxy devices, Knox ensures that confidential and sensitive data stays safe, no matter where your life takes you. Your entire device: safeguarded from the inside out, and in real time. This is protection you can be sure of.',
+    sideButtonLinkFeature1: '/',
+    sideButtonLabelFeature1: 'Learn more',
+    overlayFeature1: 'black',
+
+    sideTitleFeature2: 'Unified Endpoint Management',
+    sideTextFeature2:
+      'Knox solutions allow enterprise IT admins to easily secure, deploy, manage, and analyze mobile devices for business use, while allowing device users to stay protected and productive. Ensure your devices for work are always under IT control with Knox.',
+    sideButtonLinkFeature2: '/',
+    sideButtonLabelFeature2: 'Learn more',
+    overlayFeature2: 'blue',
+
+    sideTitleFeature3: 'Rebranding and Customization',
+    sideTextFeature3:
+      'With Samsung Knox, any off-the-shelf Samsung devices can turn into a special edition, or the unique tool for your business. Transform devices and fulfill use cases such as media-bundled tablets, interactive store kiosks and more – all without opening the box.',
+    sideButtonLinkFeature3: '/',
+    sideButtonLabelFeature3: 'Learn more',
+    overlayFeature3: 'cerulean',
+
+    sideTitleFeature4: 'Fraud and Theft Protection',
+    sideTextFeature4:
+      'Guard your company’s device payment plans and maintain control of mobile device assets outside your reach. Knox allows carriers, insurance firms, or any businesses to remotely protect Samsung devices against financial risk.',
+    sideButtonLinkFeature4: '/',
+    sideButtonLabelFeature4: 'Learn more',
+    overlayFeature4: 'green',
   }),
   sideEditProps: [
     {
@@ -474,6 +506,20 @@ StateInfo.schema = {
           name: 'sideImageFeature1',
           label: 'Side image feature',
           type: types.SideEditPropType.Image,
+        },
+        {
+          name: 'overlayFeature1',
+          label: 'Overlay color',
+          type: types.SideEditPropType.Select,
+          selectOptions: {
+            display: types.OptionsDisplay.Select,
+            options: [
+              { value: 'black', label: 'Black' },
+              { value: 'blue', label: 'Blue' },
+              { value: 'cerulean', label: 'Cerulean' },
+              { value: 'green', label: 'Green' },
+            ],
+          },
         },
       ],
     },
@@ -507,6 +553,20 @@ StateInfo.schema = {
           label: 'Side image feature',
           type: types.SideEditPropType.Image,
         },
+        {
+          name: 'overlayFeature2',
+          label: 'Overlay color',
+          type: types.SideEditPropType.Select,
+          selectOptions: {
+            display: types.OptionsDisplay.Select,
+            options: [
+              { value: 'black', label: 'Black' },
+              { value: 'blue', label: 'Blue' },
+              { value: 'cerulean', label: 'Cerulean' },
+              { value: 'green', label: 'Green' },
+            ],
+          },
+        },
       ],
     },
 
@@ -539,6 +599,20 @@ StateInfo.schema = {
           label: 'Side image feature',
           type: types.SideEditPropType.Image,
         },
+        {
+          name: 'overlayFeature3',
+          label: 'Overlay color',
+          type: types.SideEditPropType.Select,
+          selectOptions: {
+            display: types.OptionsDisplay.Select,
+            options: [
+              { value: 'black', label: 'Black' },
+              { value: 'blue', label: 'Blue' },
+              { value: 'cerulean', label: 'Cerulean' },
+              { value: 'green', label: 'Green' },
+            ],
+          },
+        },
       ],
     },
 
@@ -570,6 +644,20 @@ StateInfo.schema = {
           name: 'sideImageFeature4',
           label: 'Side image feature',
           type: types.SideEditPropType.Image,
+        },
+        {
+          name: 'overlayFeature4',
+          label: 'Overlay color',
+          type: types.SideEditPropType.Select,
+          selectOptions: {
+            display: types.OptionsDisplay.Select,
+            options: [
+              { value: 'black', label: 'Black' },
+              { value: 'blue', label: 'Blue' },
+              { value: 'cerulean', label: 'Cerulean' },
+              { value: 'green', label: 'Green' },
+            ],
+          },
         },
       ],
     },
