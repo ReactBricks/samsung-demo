@@ -80,15 +80,27 @@ const StateInfo: types.Brick<StateInfoProps> = ({
   sideButtonLabelFeature4,
   sideImageFeature4,
   overlayFeature4 = 'green',
+  backgroundColor,
+  borderTop,
+  borderBottom,
+  paddingTop,
+  paddingBottom,
 }) => {
   const [currentRow, setCurrentRow] = useState(1)
   return (
-    <Section className="max-w-[1440px] mx-auto font-samsung dark:bg-[#101827]">
+    <Section
+      backgroundColor={backgroundColor}
+      borderTop={borderTop}
+      borderBottom={borderBottom}
+      className="max-w-[1440px] mx-auto font-samsung dark:bg-[#101827]"
+    >
       <Container
+        paddingTop={paddingTop}
+        paddingBottom={paddingBottom}
         size="full"
-        className="mx-0 xl:mx-0 px-[142px] pt-[96px] pb-[96px] lg:pb-[96px] sm:mx-0"
+        className="mx-0 xl:mx-0 sm:mx-0"
       >
-        <div className="p-3">
+        <div className="px-[142px] pt-[96px] pb-[96px]">
           <Text
             renderBlock={(props) => (
               <h2 className="mt-0 mb-12 text-center md:text-left font-bold text-[36px] leading-[45px] text-gray-900 dark:text-white">
@@ -489,6 +501,10 @@ StateInfo.schema = {
     sideButtonLinkFeature4: '/',
     sideButtonLabelFeature4: 'Learn more',
     overlayFeature4: 'green',
+    paddingBottom: '0',
+    paddingTop: '0',
+    borderBottom: 'none',
+    borderTop: 'none',
   }),
   sideEditProps: [
     neutralBackgroundSideGroup,

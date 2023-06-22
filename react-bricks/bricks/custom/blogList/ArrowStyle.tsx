@@ -12,9 +12,6 @@ const ArrowStyles = () => {
         transition-delay: 0s;
         transition-property: all;
     }
-    .dark .slick-prev , .dark .slick-next{
-      
-    }
     .slick-prev{
         left:1px;
     }
