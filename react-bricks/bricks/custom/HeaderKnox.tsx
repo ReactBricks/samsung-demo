@@ -1,18 +1,18 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Repeater, types, Link, Text } from 'react-bricks/frontend'
 import { useReactBricksContext, useAdminContext } from 'react-bricks/frontend'
-import blockNames from '../react-bricks-ui/blockNames'
-import { bgColors, buttonColors } from '../react-bricks-ui/colors'
+import { bgColors } from '../react-bricks-ui/colors'
 import {
   backgroundColorsEditProps,
   borderBottomEditProp,
   LayoutProps,
-  sectionDefaults,
 } from '../react-bricks-ui/LayoutSideProps'
 import Section from '../react-bricks-ui/shared/components/Section'
 import classNames from 'classnames'
 import { BsMoonFill, BsSunFill } from 'react-icons/bs'
 import Image from 'next/image'
+import { useTheme } from 'next-themes'
+
 interface HeaderKnoxProps extends LayoutProps {
   menuItems: any[]
   buttons: any[]
@@ -22,16 +22,15 @@ const HeaderKnox: types.Brick<HeaderKnoxProps> = ({
   backgroundColor,
   borderBottom,
 }) => {
-  const { isDarkColorMode, toggleColorMode } = useReactBricksContext()
+  const { toggleColorMode } = useReactBricksContext()
+  const { theme } = useTheme()
+  const { isAdmin } = useAdminContext()
   const [mounted, setMounted] = useState(false)
   const [open, setOpen] = useState(false)
-  const [src, setSrc] = useState<any>()
+
   useEffect(() => {
     setMounted(true)
-    isDarkColorMode ? setSrc('/image.png') : setSrc('/image_black.png')
-  }, [isDarkColorMode])
-
-  const { isAdmin } = useAdminContext()
+  }, [])
 
   const eventHandlers = isAdmin
     ? { onClick: () => setOpen((open) => !open) }
@@ -49,14 +48,16 @@ const HeaderKnox: types.Brick<HeaderKnoxProps> = ({
           aria-label="home"
           className="inline-flex py-[0.25rem] mr-[16px]"
         >
-          <Image
-            priority={true}
-            className="block object-contain object-left"
-            alt="samsung-knox"
-            src={src}
-            width={169}
-            height={16}
-          />
+          {mounted && (
+            <Image
+              priority={true}
+              className="block object-contain object-left"
+              alt="samsung-knox"
+              src={`${theme === 'light' ? '/image_black.png' : '/image.png'}`}
+              width={169}
+              height={16}
+            />
+          )}
         </Link>
         <div className="flex flex-grow space-x-2 px-[15px] ml-[3%] h-full justify-between">
           <div className="flex h-full items-centers">
@@ -72,19 +73,6 @@ const HeaderKnox: types.Brick<HeaderKnoxProps> = ({
               )}
             />
           </div>
-          {mounted && (
-            <button
-              type="button"
-              className="flex items-center justify-center w-8 h-8 mr-4 ml-auto text-gray-400 dark:text-gray-200 my-auto"
-              onClick={toggleColorMode}
-            >
-              {!isDarkColorMode ? (
-                <BsMoonFill />
-              ) : (
-                <BsSunFill className="text-xl" />
-              )}
-            </button>
-          )}
 
           <div className="flex h-[80px] transition-all" {...eventHandlers}>
             <button
@@ -129,6 +117,19 @@ const HeaderKnox: types.Brick<HeaderKnoxProps> = ({
                 renderItemWrapper={(item) => <div key={item.key}>{item}</div>}
               />
             </div>
+            {mounted && (
+              <button
+                type="button"
+                className="flex items-center justify-center w-8 h-8 mr-4 ml-auto text-gray-400 dark:text-gray-200 my-auto"
+                onClick={toggleColorMode}
+              >
+                {theme === 'light' ? (
+                  <BsMoonFill />
+                ) : (
+                  <BsSunFill className="text-xl" />
+                )}
+              </button>
+            )}
           </div>
         </div>
       </nav>
