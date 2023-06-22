@@ -34,7 +34,7 @@ const BlogList: types.Brick<BlogListProps> = ({
 }) => {
   const [pageValues] = usePageValues()
   const { theme } = useTheme()
-  const [src, setSrc] = useState<any>()
+  const [src, setSrc] = useState<src>()
 
   useEffect(() => {
     if (theme === 'light')
