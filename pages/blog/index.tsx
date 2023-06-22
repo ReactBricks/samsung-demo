@@ -10,7 +10,7 @@ import {
   useReactBricksContext,
 } from 'react-bricks/frontend'
 
-import PostListItem from '../../components/PostListItem'
+import PostListItem from '../../components/BlogListItem'
 import TagListItem from '../../components/TagListItem'
 import ErrorNoFooter from '../../components/errorNoFooter'
 import ErrorNoHeader from '../../components/errorNoHeader'
@@ -62,8 +62,8 @@ const BlogList: React.FC<HomeProps> = ({
 
               <div className="flex flex-wrap items-center">
                 {tags?.map((tag) => (
-                    <TagListItem tag={tag} key={tag} />
-                  ))}
+                  <TagListItem tag={tag} key={tag} />
+                ))}
               </div>
 
               <hr className="mt-6 mb-10 dark:border-gray-600" />
