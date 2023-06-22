@@ -5,9 +5,9 @@ import Header from '../custom/Header'
 import HeaderMenuItem from '../custom/HeaderMenuItem'
 import HeaderMenuSubItem from '../custom/HeaderMenuSubItem'
 import HeaderMenuSubColumn from '../custom/HeaderMenuColumn'
-import Footer from './layout/Footer'
-import FooterColumn from './layout/FooterColumn'
-import FooterLink from './layout/FooterLink'
+import Footer from '../custom/Footer'
+import FooterColumn from '../custom/FooterColumn'
+import FooterLink from '../custom/FooterLink'
 
 // SHARED
 import Badge from './shared/bricks/Badge'

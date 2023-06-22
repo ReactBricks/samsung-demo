@@ -1,6 +1,6 @@
 import React from 'react'
 import { types, usePageValues, Text } from 'react-bricks/frontend'
-import BlogListItem from '../../../components/PostListItem'
+import BlogListItem from '../../../components/BlogListItem'
 import Section from '../react-bricks-ui/shared/components/Section'
 //import Container from '../react-bricks-ui/shared/components/Container'
 import Slider from 'react-slick'

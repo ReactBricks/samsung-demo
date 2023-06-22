@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { Image, Repeater, types, Link, Text } from 'react-bricks/frontend'
-import { useReactBricksContext } from 'react-bricks/frontend'
+import { useReactBricksContext, useAdminContext } from 'react-bricks/frontend'
 import blockNames from '../react-bricks-ui/blockNames'
 import { bgColors, buttonColors } from '../react-bricks-ui/colors'
 import {
@@ -28,6 +28,12 @@ const Header: types.Brick<HeaderProps> = ({
   useEffect(() => {
     setMounted(true)
   }, [])
+
+  const { isAdmin } = useAdminContext()
+
+  const eventHandlers = isAdmin
+    ? { onClick: () => setOpen((open) => !open) }
+    : { onMouseEnter: () => setOpen(true), onMouseLeave: () => setOpen(false) }
 
   return (
     <Section
@@ -63,11 +69,7 @@ const Header: types.Brick<HeaderProps> = ({
             />
           </div>
 
-          <div
-            className="flex h-[80px] transition-all"
-            onMouseEnter={() => setOpen(true)}
-            onMouseLeave={() => setOpen(false)}
-          >
+          <div className="flex h-[80px] transition-all" {...eventHandlers}>
             <button
               className={classNames(
                 'inline-flex hover:text-[#565656] items-center text-sm font-bold py-1.5 px-2 rounded-[5px] transition-colors ease-out'
