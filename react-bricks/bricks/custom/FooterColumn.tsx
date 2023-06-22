@@ -7,26 +7,31 @@ import {
   Repeater,
   types,
 } from 'react-bricks/frontend'
-import blockNames from '../blockNames'
-import { textColors } from '../colors'
+import blockNames from '../react-bricks-ui/blockNames'
+import { textColors } from '../react-bricks-ui/colors'
 
 interface FooterColumnProps {}
 
 const FooterColumn: types.Brick<FooterColumnProps> = (props) => {
   return (
-    <div className="w-1/2 sm:w-auto sm:mr-8 mb-8">
+    <div className="mb-8">
       <Text
         propName="title"
         placeholder="Title..."
         renderBlock={({ children }) => (
           <div
-            className={`mb-3 text-xs font-extrabold uppercase tracking-[0.35em] min-w-[120px] ${textColors.GRAY_400}`}
+            className={`mb-3 text-lg font-bold uppercase  min-w-[120px] leading-6`}
           >
             {children}
           </div>
         )}
       />
-      <Repeater propName="links" />
+      <Repeater
+        propName="links"
+        renderWrapper={(props) => (
+          <div className="flex flex-col flex-wrap max-h-[400px]">{props}</div>
+        )}
+      />
     </div>
   )
 }

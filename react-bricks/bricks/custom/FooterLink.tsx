@@ -1,4 +1,4 @@
-import blockNames from '../blockNames'
+import blockNames from '../react-bricks-ui/blockNames'
 import React from 'react'
 import {
   Text,
@@ -9,7 +9,7 @@ import {
   types,
   Link,
 } from 'react-bricks/frontend'
-import { textColors } from '../colors'
+import { textColors } from '../react-bricks-ui/colors'
 
 interface FooterLinkProps {
   linkPath: string
@@ -22,9 +22,7 @@ const FooterLink: types.Brick<FooterLinkProps> = ({ linkPath }) => {
         propName="linkText"
         placeholder="Link..."
         renderBlock={({ children }) => (
-          <div
-            className={`text-sm mb-3 ${textColors.GRAY_500} hover:text-gray-600 dark:hover:text-white transition-all ease-out duration-150 hover:-translate-y-px`}
-          >
+          <div className={`text-sm mb-3 hover:underline dark:text-white `}>
             {children}
           </div>
         )}

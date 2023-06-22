@@ -1,16 +1,16 @@
 import React from 'react'
 import { RichText, Image, Repeater, types, Link } from 'react-bricks/frontend'
-import blockNames from '../blockNames'
-import { bgColors, textColors } from '../colors'
+import blockNames from '../react-bricks-ui/blockNames'
+import { bgColors, textColors } from '../react-bricks-ui/colors'
 import {
   LayoutProps,
   neutralBackgroundSideGroup,
   paddingBordersSideGroup,
   sectionDefaults,
-} from '../LayoutSideProps'
-import { logos } from '../shared/defaultImages'
-import Container from '../shared/components/Container'
-import Section from '../shared/components/Section'
+} from '../react-bricks-ui/LayoutSideProps'
+import { logos } from '../react-bricks-ui/shared/defaultImages'
+import Container from '../react-bricks-ui/shared/components/Container'
+import Section from '../react-bricks-ui/shared/components/Section'
 
 interface FooterProps extends LayoutProps {
   siteUrl: string
@@ -30,39 +30,22 @@ const Footer: types.Brick<FooterProps> = ({
         backgroundColor={backgroundColor}
         borderTop={borderTop}
         borderBottom={borderBottom}
+        className="mx-auto max-w-[1440px]"
       >
         <Container
           paddingTop={paddingTop}
           paddingBottom={paddingBottom}
-          className="flex justify-between flex-wrap"
+          className=" xl:ml-0 xl:mr-0"
         >
-          <div className="w-full mb-12 lg:w-auto lg:mb-0 lg:mr-8">
-            <Link href={siteUrl} className="block mb-4">
-              <Image
-                propName="logo"
-                alt="Logo"
-                maxWidth={300}
-                imageClassName="w-48 h-7 object-contain object-left"
-              />
-            </Link>
-            <RichText
-              propName="copyright"
-              placeholder="Copyright notice"
-              renderBlock={({ children }) => (
-                <p className={`text-sm ${textColors.GRAY_500}`}>{children}</p>
-              )}
-              allowedFeatures={[types.RichTextFeatures.Link]}
-              renderLink={({ children, href }) => (
-                <Link
-                  href={href}
-                  className="text-sky-500 hover:text-sky-600 hover:-translate-y-px transition-all ease-out duration-150"
-                >
-                  {children}
-                </Link>
-              )}
-            />
-          </div>
-          <Repeater propName="columns" />
+          <Repeater
+            propName="columns"
+            renderWrapper={(props) => (
+              <div className="pt-[56px] flex w-full ">{props}</div>
+            )}
+            renderItemWrapper={(props) => (
+              <div className="p-[24px] w-1/4">{props}</div>
+            )}
+          />
         </Container>
       </Section>
     </footer>
@@ -86,7 +69,7 @@ Footer.schema = {
   // Defaults when a new brick is added
   getDefaultProps: () => ({
     ...sectionDefaults,
-    backgroundColor: bgColors.LIGHT_GRAY.value,
+    backgroundColor: { color: 'ffffff', className: 'bg-white' },
     borderTop: 'full',
     logo: logos.REACT_BRICKS,
     siteUrl: '',
@@ -110,43 +93,51 @@ Footer.schema = {
     ],
     columns: [
       {
-        title: 'Company',
+        title: 'Solutions',
         links: [
           {
-            linkText: 'About us',
+            linkText: 'Unified Endpoint Management',
             linkPath: '/',
           },
           {
-            linkText: 'Why React Bricks?',
+            linkText: 'For School',
             linkPath: '/',
           },
           {
-            linkText: 'Terms of service',
+            linkText: 'For Transportation',
             linkPath: '/',
           },
           {
-            linkText: 'Privacy',
+            linkText: 'For Frontline',
+            linkPath: '/',
+          },
+          {
+            linkText: 'Rebranding and Customization',
+            linkPath: '/',
+          },
+          {
+            linkText: 'Fraud and Theft Protection',
             linkPath: '/',
           },
         ],
       },
       {
-        title: 'Features',
+        title: 'Products',
         links: [
           {
-            linkText: 'Visual editing',
+            linkText: 'Unified Endpoint Management',
             linkPath: '/',
           },
           {
-            linkText: 'React components',
+            linkText: 'Knox Platform for Enterprise',
             linkPath: '/',
           },
           {
-            linkText: 'Enterprise-ready',
+            linkText: 'Knox Mobile Enrollment',
             linkPath: '/',
           },
           {
-            linkText: 'Roadmap',
+            linkText: 'Knox Asset Intelligence',
             linkPath: '/',
           },
         ],
@@ -169,22 +160,18 @@ Footer.schema = {
         ],
       },
       {
-        title: 'Learn',
+        title: 'Partners',
         links: [
           {
-            linkText: 'Tutorial',
+            linkText: 'For resellers',
             linkPath: '/',
           },
           {
-            linkText: 'Documentation',
+            linkText: 'For partners',
             linkPath: '/',
           },
           {
-            linkText: 'Videos',
-            linkPath: '/',
-          },
-          {
-            linkText: 'Blog',
+            linkText: 'For developers',
             linkPath: '/',
           },
         ],
