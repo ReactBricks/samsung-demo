@@ -74,11 +74,12 @@ const HeaderKnox: types.Brick<HeaderKnoxProps> = ({
             />
           </div>
 
-          <div className="flex h-[80px] transition-all" {...eventHandlers}>
+          <div className="flex h-[80px] transition-all">
             <button
               className={classNames(
                 'inline-flex hover:text-[#565656] items-center text-sm font-bold py-1.5 px-2 rounded-[5px] transition-colors ease-out dark:text-white'
               )}
+              {...eventHandlers}
             >
               <Text
                 propName="partners"
