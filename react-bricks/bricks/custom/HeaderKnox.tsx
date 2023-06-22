@@ -14,13 +14,13 @@ import classNames from 'classnames'
 import { BsMoonFill, BsSunFill } from 'react-icons/bs'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
-interface HeaderProps extends LayoutProps {
+interface HeaderKnoxProps extends LayoutProps {
   menuItems: any[]
   logo: types.IImageSource
   buttons: any[]
 }
 
-const Header: types.Brick<HeaderProps> = ({
+const HeaderKnox: types.Brick<HeaderKnoxProps> = ({
   backgroundColor,
   borderBottom,
 }) => {
@@ -32,7 +32,6 @@ const Header: types.Brick<HeaderProps> = ({
   useEffect(() => {
     setMounted(true)
     isDarkColorMode ? setSrc('/image.png') : setSrc('/image_black.png')
-    console.log('ciao')
   }, [isDarkColorMode])
 
   const { isAdmin } = useAdminContext()
@@ -142,8 +141,8 @@ const Header: types.Brick<HeaderProps> = ({
   )
 }
 
-Header.schema = {
-  name: blockNames.Header,
+HeaderKnox.schema = {
+  name: 'header-knox',
   label: 'Header',
   category: 'layout',
   tags: ['header', 'menu'],
@@ -151,7 +150,7 @@ Header.schema = {
   repeaterItems: [
     {
       name: 'menuItems',
-      itemType: blockNames.HeaderMenuItem,
+      itemType: 'header-menu-item-knox',
       itemLabel: 'Item',
       min: 0,
       max: 6,
@@ -381,4 +380,4 @@ Header.schema = {
   ],
 }
 
-export default Header
+export default HeaderKnox

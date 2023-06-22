@@ -1,4 +1,4 @@
-import blockNames from '../react-bricks-ui/blockNames'
+import blockNames from '../blockNames'
 import React from 'react'
 import {
   Text,
@@ -9,20 +9,22 @@ import {
   types,
   Link,
 } from 'react-bricks/frontend'
-import { textColors } from '../react-bricks-ui/colors'
+import { textColors } from '../colors'
 
-interface FooterLinkKnoxProps {
+interface FooterLinkProps {
   linkPath: string
 }
 
-const FooterLinkKnox: types.Brick<FooterLinkKnoxProps> = ({ linkPath }) => {
+const FooterLink: types.Brick<FooterLinkProps> = ({ linkPath }) => {
   return (
     <Link href={linkPath}>
       <Text
         propName="linkText"
         placeholder="Link..."
         renderBlock={({ children }) => (
-          <div className={`text-sm mb-3 hover:underline dark:text-white/80 `}>
+          <div
+            className={`text-sm mb-3 ${textColors.GRAY_500} hover:text-gray-600 dark:hover:text-white transition-all ease-out duration-150 hover:-translate-y-px`}
+          >
             {children}
           </div>
         )}
@@ -31,8 +33,8 @@ const FooterLinkKnox: types.Brick<FooterLinkKnoxProps> = ({ linkPath }) => {
   )
 }
 
-FooterLinkKnox.schema = {
-  name: 'footer-link-knox',
+FooterLink.schema = {
+  name: blockNames.FooterLink,
   label: 'Link',
   category: 'layout',
   hideFromAddMenu: true,
@@ -54,4 +56,4 @@ FooterLinkKnox.schema = {
   ],
 }
 
-export default FooterLinkKnox
+export default FooterLink

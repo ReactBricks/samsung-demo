@@ -9,13 +9,13 @@ import {
   useAdminContext,
 } from 'react-bricks/frontend'
 
-interface HeaderMenuItemProps {
+interface HeaderMenuItemKnoxProps {
   linkPath: string
   linkText: any
   submenuColumns?: any
 }
 
-const HeaderMenuItem: types.Brick<HeaderMenuItemProps> = ({
+const HeaderMenuItemKnox: types.Brick<HeaderMenuItemKnoxProps> = ({
   linkPath,
   submenuColumns,
 }) => {
@@ -102,8 +102,8 @@ const HeaderMenuItem: types.Brick<HeaderMenuItemProps> = ({
   )
 }
 
-HeaderMenuItem.schema = {
-  name: blockNames.HeaderMenuItem,
+HeaderMenuItemKnox.schema = {
+  name: 'header-menu-item-knox',
   label: 'Menu Item',
   category: 'layout',
   hideFromAddMenu: true,
@@ -129,4 +129,4 @@ HeaderMenuItem.schema = {
   ],
 }
 
-export default HeaderMenuItem
+export default HeaderMenuItemKnox

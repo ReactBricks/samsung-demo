@@ -1,13 +1,12 @@
 import { types } from 'react-bricks/frontend'
 
 // LAYOUT
-import Header from '../custom/HeaderKnox'
-import HeaderMenuItem from '../custom/HeaderMenuItemKnox'
-import HeaderMenuSubItem from '../custom/HeaderMenuSubItemKnox'
-import HeaderMenuSubColumn from '../custom/HeaderMenuColumnKnox'
-import Footer from '../custom/FooterKnox'
-import FooterColumn from '../custom/FooterColumnKnox'
-import FooterLink from '../custom/FooterLinkKnox'
+import Header from './layout/Header'
+import HeaderMenuItem from './layout/HeaderMenuItem'
+import HeaderMenuSubItem from './layout/HeaderMenuSubItem'
+import Footer from './layout/Footer'
+import FooterColumn from './layout/FooterColumn'
+import FooterLink from './layout/FooterLink'
 
 // SHARED
 import Badge from './shared/bricks/Badge'
@@ -200,7 +199,6 @@ const allBricks: types.Theme = {
         Header,
         HeaderMenuItem,
         HeaderMenuSubItem,
-        HeaderMenuSubColumn,
         Footer,
         FooterColumn,
         FooterLink,
@@ -218,7 +216,6 @@ export {
   Header,
   HeaderMenuItem,
   HeaderMenuSubItem,
-  HeaderMenuSubColumn,
   Footer,
   FooterColumn,
   FooterLink,

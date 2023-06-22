@@ -1,22 +1,22 @@
 import React from 'react'
 import { RichText, Image, Repeater, types, Link } from 'react-bricks/frontend'
-import blockNames from '../react-bricks-ui/blockNames'
-import { bgColors, textColors } from '../react-bricks-ui/colors'
+import blockNames from '../blockNames'
+import { bgColors, textColors } from '../colors'
 import {
   LayoutProps,
   neutralBackgroundSideGroup,
   paddingBordersSideGroup,
   sectionDefaults,
-} from '../react-bricks-ui/LayoutSideProps'
-import { logos } from '../react-bricks-ui/shared/defaultImages'
-import Container from '../react-bricks-ui/shared/components/Container'
-import Section from '../react-bricks-ui/shared/components/Section'
+} from '../LayoutSideProps'
+import { logos } from '../shared/defaultImages'
+import Container from '../shared/components/Container'
+import Section from '../shared/components/Section'
 
-interface FooterKnoxProps extends LayoutProps {
+interface FooterProps extends LayoutProps {
   siteUrl: string
 }
 
-const FooterKnox: types.Brick<FooterKnoxProps> = ({
+const Footer: types.Brick<FooterProps> = ({
   backgroundColor,
   borderTop,
   borderBottom,
@@ -30,35 +30,55 @@ const FooterKnox: types.Brick<FooterKnoxProps> = ({
         backgroundColor={backgroundColor}
         borderTop={borderTop}
         borderBottom={borderBottom}
-        className="mx-auto max-w-[1440px] dark:bg-[#101827]"
       >
         <Container
           paddingTop={paddingTop}
           paddingBottom={paddingBottom}
-          className=" xl:ml-0 xl:mr-0"
+          className="flex justify-between flex-wrap"
         >
-          <Repeater
-            propName="columns"
-            renderWrapper={(props) => (
-              <div className="pt-[56px] flex w-full ">{props}</div>
-            )}
-            renderItemWrapper={(props) => (
-              <div className="p-[24px] w-1/4">{props}</div>
-            )}
-          />
+          <div className="w-full mb-12 lg:w-auto lg:mb-0 lg:mr-8">
+            <Link href={siteUrl} className="block mb-4">
+              <Image
+                propName="logo"
+                alt="Logo"
+                maxWidth={300}
+                imageClassName="w-48 h-7 object-contain object-left"
+              />
+            </Link>
+            <RichText
+              propName="copyright"
+              placeholder="Copyright notice"
+              renderBlock={({ children }) => (
+                <p className={`text-sm ${textColors.GRAY_500}`}>{children}</p>
+              )}
+              allowedFeatures={[types.RichTextFeatures.Link]}
+              renderLink={({ children, href }) => (
+                <Link
+                  href={href}
+                  className="text-sky-500 hover:text-sky-600 hover:-translate-y-px transition-all ease-out duration-150"
+                >
+                  {children}
+                </Link>
+              )}
+            />
+          </div>
+          <Repeater propName="columns" />
         </Container>
       </Section>
     </footer>
   )
 }
 
-FooterKnox.schema = {
-  name: 'footer-knox',
+Footer.schema = {
+  name: blockNames.Footer,
   label: 'Footer',
+  category: 'layout',
+  tags: ['footer'],
+  previewImageUrl: `/bricks-preview-images/${blockNames.Footer}.png`,
   repeaterItems: [
     {
       name: 'columns',
-      itemType: 'footer-column-knox',
+      itemType: blockNames.FooterColumn,
       max: 4,
     },
   ],
@@ -66,8 +86,9 @@ FooterKnox.schema = {
   // Defaults when a new brick is added
   getDefaultProps: () => ({
     ...sectionDefaults,
-    backgroundColor: { color: 'ffffff', className: 'bg-white' },
+    backgroundColor: bgColors.LIGHT_GRAY.value,
     borderTop: 'full',
+    logo: logos.REACT_BRICKS,
     siteUrl: '',
     copyright: [
       {
@@ -89,51 +110,43 @@ FooterKnox.schema = {
     ],
     columns: [
       {
-        title: 'Solutions',
+        title: 'Company',
         links: [
           {
-            linkText: 'Unified Endpoint Management',
+            linkText: 'About us',
             linkPath: '/',
           },
           {
-            linkText: 'For School',
+            linkText: 'Why React Bricks?',
             linkPath: '/',
           },
           {
-            linkText: 'For Transportation',
+            linkText: 'Terms of service',
             linkPath: '/',
           },
           {
-            linkText: 'For Frontline',
-            linkPath: '/',
-          },
-          {
-            linkText: 'Rebranding and Customization',
-            linkPath: '/',
-          },
-          {
-            linkText: 'Fraud and Theft Protection',
+            linkText: 'Privacy',
             linkPath: '/',
           },
         ],
       },
       {
-        title: 'Products',
+        title: 'Features',
         links: [
           {
-            linkText: 'Unified Endpoint Management',
+            linkText: 'Visual editing',
             linkPath: '/',
           },
           {
-            linkText: 'Knox Platform for Enterprise',
+            linkText: 'React components',
             linkPath: '/',
           },
           {
-            linkText: 'Knox Mobile Enrollment',
+            linkText: 'Enterprise-ready',
             linkPath: '/',
           },
           {
-            linkText: 'Knox Asset Intelligence',
+            linkText: 'Roadmap',
             linkPath: '/',
           },
         ],
@@ -156,18 +169,22 @@ FooterKnox.schema = {
         ],
       },
       {
-        title: 'Partners',
+        title: 'Learn',
         links: [
           {
-            linkText: 'For resellers',
+            linkText: 'Tutorial',
             linkPath: '/',
           },
           {
-            linkText: 'For partners',
+            linkText: 'Documentation',
             linkPath: '/',
           },
           {
-            linkText: 'For developers',
+            linkText: 'Videos',
+            linkPath: '/',
+          },
+          {
+            linkText: 'Blog',
             linkPath: '/',
           },
         ],
@@ -179,4 +196,4 @@ FooterKnox.schema = {
   sideEditProps: [neutralBackgroundSideGroup, paddingBordersSideGroup],
 }
 
-export default FooterKnox
+export default Footer
