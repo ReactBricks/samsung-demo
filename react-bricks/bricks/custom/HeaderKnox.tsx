@@ -13,10 +13,8 @@ import Section from '../react-bricks-ui/shared/components/Section'
 import classNames from 'classnames'
 import { BsMoonFill, BsSunFill } from 'react-icons/bs'
 import Image from 'next/image'
-import { useRouter } from 'next/navigation'
 interface HeaderKnoxProps extends LayoutProps {
   menuItems: any[]
-  logo: types.IImageSource
   buttons: any[]
 }
 
@@ -24,7 +22,6 @@ const HeaderKnox: types.Brick<HeaderKnoxProps> = ({
   backgroundColor,
   borderBottom,
 }) => {
-  const router = useRouter()
   const { isDarkColorMode, toggleColorMode } = useReactBricksContext()
   const [mounted, setMounted] = useState(false)
   const [open, setOpen] = useState(false)
@@ -40,11 +37,10 @@ const HeaderKnox: types.Brick<HeaderKnoxProps> = ({
     ? { onClick: () => setOpen((open) => !open) }
     : { onMouseEnter: () => setOpen(true), onMouseLeave: () => setOpen(false) }
 
-  console.log(isDarkColorMode)
   return (
     <Section
       backgroundColor={backgroundColor}
-      borderBottom={'none'}
+      borderBottom={borderBottom}
       className="font-samsung"
     >
       <nav className="mx-auto max-w-[1440px] h-[80px] border-b border-[#dddddd] flex items-center px-[16px] relative">
@@ -55,15 +51,14 @@ const HeaderKnox: types.Brick<HeaderKnoxProps> = ({
         >
           <Image
             priority={true}
-            //loader={myLoader}
-            className="block object-contain object-left max-w-[300px]"
+            className="block object-contain object-left"
             alt="samsung-knox"
             src={src}
             width={169}
             height={16}
           />
         </Link>
-        <div className="flex flex-grow  space-x-2 px-[15px] ml-[3%] h-full justify-between">
+        <div className="flex flex-grow space-x-2 px-[15px] ml-[3%] h-full justify-between">
           <div className="flex h-full items-centers">
             <Repeater
               propName="menuItems"
@@ -80,7 +75,7 @@ const HeaderKnox: types.Brick<HeaderKnoxProps> = ({
           {mounted && (
             <button
               type="button"
-              className="flex items-center justify-center w-8 h-8 mr-4 ml-auto lg:ml-8 text-gray-400 dark:text-gray-200 my-auto"
+              className="flex items-center justify-center w-8 h-8 mr-4 ml-auto text-gray-400 dark:text-gray-200 my-auto"
               onClick={toggleColorMode}
             >
               {!isDarkColorMode ? (
@@ -143,10 +138,7 @@ const HeaderKnox: types.Brick<HeaderKnoxProps> = ({
 
 HeaderKnox.schema = {
   name: 'header-knox',
-  label: 'Header',
-  category: 'layout',
-  tags: ['header', 'menu'],
-  previewImageUrl: `/bricks-preview-images/${blockNames.Header}.png`,
+  label: 'Header Knox',
   repeaterItems: [
     {
       name: 'menuItems',
@@ -158,6 +150,7 @@ HeaderKnox.schema = {
     {
       name: 'submenuColumns',
       itemType: 'header-menu-sub-column',
+      max: 4,
     },
   ],
   sideEditProps: [
@@ -302,82 +295,8 @@ HeaderKnox.schema = {
         linkText: 'Blog',
       },
     ],
-    logo: {
-      src: 'https://kp4-cdn.samsungknox.com/resource/iUxOLMPWhXEJheVY.svg',
-      placeholderSrc:
-        'https://kp4-cdn.samsungknox.com/resource/iUxOLMPWhXEJheVY.svg',
-      srcSet: '',
-      width: 450,
-      height: 100,
-      alt: 'knox logo',
-      seoName: 'samsung-knox',
-    },
-    buttons: [
-      {
-        type: 'link',
-        text: 'Edit content',
-        href: '/admin',
-        isTargetBlank: true,
-        buttonType: 'submit',
-        buttonColor: buttonColors.SKY.value,
-        variant: 'solid',
-        padding: 'small',
-        simpleAnchorLink: true,
-      },
-    ],
   }),
-  stories: [
-    {
-      id: 'header-dark',
-      name: 'Header dark',
-      previewImageUrl: `/bricks-preview-images/header-dark.png`,
-      showAsBrick: true,
-      props: {
-        ...sectionDefaults,
-        borderBottom: 'none',
-        backgroundColor: bgColors.DARK_GRAY.value,
-        menuItems: [
-          {
-            linkPath: '/',
-            linkText: 'Home',
-          },
-          {
-            linkPath: '/about-us',
-            linkText: 'About us',
-          },
-        ],
-        logo: {
-          src: 'https://images.reactbricks.com/original/881feb54-54af-46d5-8825-31e22ccbac25.webp',
-          placeholderSrc:
-            'https://images.reactbricks.com/placeholder/881feb54-54af-46d5-8825-31e22ccbac25.jpg',
-          srcSet:
-            'https://images.reactbricks.com/src_set/881feb54-54af-46d5-8825-31e22ccbac25-600.webp 600w,\nhttps://images.reactbricks.com/src_set/881feb54-54af-46d5-8825-31e22ccbac25-450.webp 450w,\nhttps://images.reactbricks.com/src_set/881feb54-54af-46d5-8825-31e22ccbac25-300.webp 300w,\nhttps://images.reactbricks.com/src_set/881feb54-54af-46d5-8825-31e22ccbac25-150.webp 150w,\nhttps://images.reactbricks.com/src_set/881feb54-54af-46d5-8825-31e22ccbac25-75.webp 75w',
-          width: 5314,
-          height: 1181,
-          alt: 'React Bricks',
-          seoName: 'react-bricks',
-          fallbackSrc:
-            'https://images.reactbricks.com/original/881feb54-54af-46d5-8825-31e22ccbac25.png',
-          fallbackSrcSet:
-            'https://images.reactbricks.com/src_set/881feb54-54af-46d5-8825-31e22ccbac25-600.png 600w,\nhttps://images.reactbricks.com/src_set/881feb54-54af-46d5-8825-31e22ccbac25-450.png 450w,\nhttps://images.reactbricks.com/src_set/881feb54-54af-46d5-8825-31e22ccbac25-300.png 300w,\nhttps://images.reactbricks.com/src_set/881feb54-54af-46d5-8825-31e22ccbac25-150.png 150w,\nhttps://images.reactbricks.com/src_set/881feb54-54af-46d5-8825-31e22ccbac25-75.png 75w',
-          fallbackType: 'image/png',
-        },
-        buttons: [
-          {
-            type: 'link',
-            text: 'Edit content',
-            href: '/admin',
-            isTargetBlank: true,
-            buttonType: 'submit',
-            buttonColor: buttonColors.SKY.value,
-            variant: 'outline',
-            padding: 'small',
-            simpleAnchorLink: true,
-          },
-        ],
-      },
-    },
-  ],
+  // aggiungere story di prova
 }
 
 export default HeaderKnox

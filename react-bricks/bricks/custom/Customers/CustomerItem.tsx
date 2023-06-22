@@ -13,7 +13,7 @@ const Customer: types.Brick<CustomerProps> = ({ grayscale, href }) => {
   return (
     <Link
       href={href}
-      className="inline-flex items-center px-[15px] md:px-5 h-full max-w-[25%] no-wrap font-samsung"
+      className="inline-flex items-center px-[15px] h-full max-w-[25%] no-wrap font-samsung"
     >
       <Image
         propName="image"

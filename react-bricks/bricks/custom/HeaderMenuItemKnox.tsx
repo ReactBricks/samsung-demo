@@ -1,4 +1,3 @@
-import blockNames from '../react-bricks-ui/blockNames'
 import classNames from 'classnames'
 import React, { useState } from 'react'
 import {
@@ -20,9 +19,7 @@ const HeaderMenuItemKnox: types.Brick<HeaderMenuItemKnoxProps> = ({
   submenuColumns,
 }) => {
   const [open, setOpen] = useState(false)
-
   const { isAdmin } = useAdminContext()
-
   const eventHandlers = isAdmin
     ? { onClick: () => setOpen((open) => !open) }
     : { onMouseEnter: () => setOpen(true), onMouseLeave: () => setOpen(false) }
@@ -32,7 +29,7 @@ const HeaderMenuItemKnox: types.Brick<HeaderMenuItemKnoxProps> = ({
       <div className="font-samsung">
         <Link
           href={linkPath}
-          className="hidden lg:inline-flex justify-center items-center text-sm font-bold px-[8px] py-[7px] hover:text-[#565656] dark:text-white"
+          className="inline-flex justify-center items-center text-sm font-bold px-[8px] py-[7px] hover:text-[#565656] dark:text-white"
         >
           <Text
             propName="linkText"

@@ -1,8 +1,5 @@
 import React from 'react'
 import Link from 'next/link'
-import { types } from 'react-bricks/frontend'
-import dayjs from 'dayjs'
-
 interface PostListItemProps {
   title: string
   href: string
@@ -21,7 +18,7 @@ const BlogListItem: React.FC<PostListItemProps> = ({
   return (
     <Link
       href={`/blog/post/${href}`}
-      className="flex flex-col hover:shadow-2xl group transition-transform ease-in-out duration-300 my-[16px] border border-[#cccccc] mx-[12px] rounded-xl h-[460px] dark:border-white"
+      className="flex flex-col hover:shadow-2xl group transition-shadow duration-500 my-[16px] border border-[#cccccc] mx-[12px] rounded-xl h-[460px] dark:border-white"
     >
       <img
         src={featuredImg}
@@ -41,17 +38,6 @@ const BlogListItem: React.FC<PostListItemProps> = ({
           {content}
         </p>
       </div>
-
-      {/* <div className="flex-1 my-4 bg-gray-100 block group py-4 text-gray-900 hover:bg-gray-50 transition-colors duration-300 p-6 -m-6 rounded">
-        <div className="flex items-center space-x-4">
-        <div className="flex items-center mt-4 text-cyan-500 group-hover:text-cyan-600 font-semibold">
-          <div className="mr-2 group-hover:mr-4 transition-all duration-300">
-            Read More
-          </div>
-          &raquo;
-        </div>
-        </div>
-      </div> */}
     </Link>
   )
 }
