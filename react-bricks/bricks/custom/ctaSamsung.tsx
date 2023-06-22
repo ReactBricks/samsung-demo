@@ -26,7 +26,7 @@ const CtaSamsung: types.Brick<CallToActionProps> = ({
       backgroundColor={backgroundColor}
       borderTop={borderTop}
       borderBottom={borderBottom}
-      className="max-w-[1440px] mx-auto font-samsung"
+      className="max-w-[1440px] mx-auto font-samsung dark:bg-[#101827]"
     >
       <Container
         size="full"
@@ -41,7 +41,7 @@ const CtaSamsung: types.Brick<CallToActionProps> = ({
               renderBlock={(props) => (
                 <h2
                   className={classNames(
-                    'font-bold text-5xl leading-[60px] mb-[16px]'
+                    'font-black text-5xl leading-[60px] mb-[16px] dark:text-white'
                   )}
                   {...props.attributes}
                 >
@@ -53,7 +53,10 @@ const CtaSamsung: types.Brick<CallToActionProps> = ({
             <RichText
               propName="description"
               renderBlock={(props) => (
-                <p className="leading-6 mb-[32px]" {...props.attributes}>
+                <p
+                  className="leading-6 mb-[32px] dark:text-white/80"
+                  {...props.attributes}
+                >
                   {props.children}
                 </p>
               )}

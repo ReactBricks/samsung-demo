@@ -22,7 +22,7 @@ const FooterLink: types.Brick<FooterLinkProps> = ({ linkPath }) => {
         propName="linkText"
         placeholder="Link..."
         renderBlock={({ children }) => (
-          <div className={`text-sm mb-3 hover:underline dark:text-white `}>
+          <div className={`text-sm mb-3 hover:underline dark:text-white/80 `}>
             {children}
           </div>
         )}

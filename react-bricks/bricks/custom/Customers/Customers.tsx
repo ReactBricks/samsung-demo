@@ -42,7 +42,7 @@ const Customers: types.Brick<CustomersProps> = ({
           propName="title"
           renderBlock={(props) => (
             <p
-              className="mb-[32px] font-bold text-5xl leading-[60px] text-center"
+              className="mb-[32px] font-black text-5xl leading-[60px] text-center dark:text-white"
               {...props.attributes}
             >
               {props.children}
@@ -50,7 +50,6 @@ const Customers: types.Brick<CustomersProps> = ({
           )}
           placeholder="Title..."
         />
-
         <div
           className={classNames(
             'flex no-wrap justify-center items-center mx-auto h-[100px]'
@@ -62,7 +61,7 @@ const Customers: types.Brick<CustomersProps> = ({
           propName="description"
           renderBlock={(props) => (
             <p
-              className="mt-[64px] text-lg leading-[24px] text-center mx-auto"
+              className="mt-[64px] text-lg leading-[24px] text-center mx-auto tracking-[0.16px] dark:text-white/80"
               {...props.attributes}
             >
               {props.children}

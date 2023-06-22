@@ -40,10 +40,16 @@ Customer.schema = {
   }),
   sideEditProps: [
     {
-      name: 'href',
-      label: 'Link (external or path)',
-      type: types.SideEditPropType.Text,
-      show: (props) => props.type === 'link',
+      groupName: 'functionality',
+      defaultOpen: true,
+      props: [
+        {
+          name: 'href',
+          label: 'Link (external or path)',
+          type: types.SideEditPropType.Text,
+          show: (props) => props.type === 'link',
+        },
+      ],
     },
   ],
 }

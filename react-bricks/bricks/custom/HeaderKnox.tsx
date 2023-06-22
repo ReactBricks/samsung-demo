@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react'
-import { Image, Repeater, types, Link, Text } from 'react-bricks/frontend'
+import { Repeater, types, Link, Text } from 'react-bricks/frontend'
 import { useReactBricksContext, useAdminContext } from 'react-bricks/frontend'
 import blockNames from '../react-bricks-ui/blockNames'
 import { bgColors, buttonColors } from '../react-bricks-ui/colors'
@@ -11,6 +11,9 @@ import {
 } from '../react-bricks-ui/LayoutSideProps'
 import Section from '../react-bricks-ui/shared/components/Section'
 import classNames from 'classnames'
+import { BsMoonFill, BsSunFill } from 'react-icons/bs'
+import Image from 'next/image'
+import { useRouter } from 'next/navigation'
 interface HeaderProps extends LayoutProps {
   menuItems: any[]
   logo: types.IImageSource
@@ -21,13 +24,16 @@ const Header: types.Brick<HeaderProps> = ({
   backgroundColor,
   borderBottom,
 }) => {
+  const router = useRouter()
   const { isDarkColorMode, toggleColorMode } = useReactBricksContext()
   const [mounted, setMounted] = useState(false)
   const [open, setOpen] = useState(false)
-
+  const [src, setSrc] = useState<any>()
   useEffect(() => {
     setMounted(true)
-  }, [])
+    isDarkColorMode ? setSrc('/image.png') : setSrc('/image_black.png')
+    console.log('ciao')
+  }, [isDarkColorMode])
 
   const { isAdmin } = useAdminContext()
 
@@ -35,6 +41,7 @@ const Header: types.Brick<HeaderProps> = ({
     ? { onClick: () => setOpen((open) => !open) }
     : { onMouseEnter: () => setOpen(true), onMouseLeave: () => setOpen(false) }
 
+  console.log(isDarkColorMode)
   return (
     <Section
       backgroundColor={backgroundColor}
@@ -48,10 +55,13 @@ const Header: types.Brick<HeaderProps> = ({
           className="inline-flex py-[0.25rem] mr-[16px]"
         >
           <Image
-            propName="logo"
-            alt="Logo"
-            maxWidth={300}
-            imageClassName="block w-[169px] h-4 object-contain object-left"
+            priority={true}
+            //loader={myLoader}
+            className="block object-contain object-left max-w-[300px]"
+            alt="samsung-knox"
+            src={src}
+            width={169}
+            height={16}
           />
         </Link>
         <div className="flex flex-grow  space-x-2 px-[15px] ml-[3%] h-full justify-between">
@@ -68,18 +78,34 @@ const Header: types.Brick<HeaderProps> = ({
               )}
             />
           </div>
+          {mounted && (
+            <button
+              type="button"
+              className="flex items-center justify-center w-8 h-8 mr-4 ml-auto lg:ml-8 text-gray-400 dark:text-gray-200 my-auto"
+              onClick={toggleColorMode}
+            >
+              {!isDarkColorMode ? (
+                <BsMoonFill />
+              ) : (
+                <BsSunFill className="text-xl" />
+              )}
+            </button>
+          )}
 
           <div className="flex h-[80px] transition-all" {...eventHandlers}>
             <button
               className={classNames(
-                'inline-flex hover:text-[#565656] items-center text-sm font-bold py-1.5 px-2 rounded-[5px] transition-colors ease-out'
+                'inline-flex hover:text-[#565656] items-center text-sm font-bold py-1.5 px-2 rounded-[5px] transition-colors ease-out dark:text-white'
               )}
             >
               <Text
                 propName="partners"
                 placeholder="Type a text..."
+                renderPlaceholder={(props) => (
+                  <div className="w-[40px]">{props.children}</div>
+                )}
                 renderBlock={({ children }) => (
-                  <div className="min-w-[20px]">{children}</div>
+                  <div className="">{children}</div>
                 )}
               />
 
@@ -87,7 +113,7 @@ const Header: types.Brick<HeaderProps> = ({
                 viewBox="0 1 13 13"
                 width="14px"
                 height="14px"
-                stroke="black"
+                stroke="black dark:text-white"
                 className="inline-block w-[12px] h-[12px] ml-[6px]"
               >
                 <path
@@ -100,7 +126,7 @@ const Header: types.Brick<HeaderProps> = ({
             <div
               className={classNames(
                 open ? 'visible opacity-100' : 'invisible',
-                'transition-all delay-0 duration-500 opacity-0 overflow-hidden absolute top-[70px] bg-white border-2 rounded-3xl w-[200px] right-2'
+                'transition-all delay-0 duration-500 opacity-0 overflow-hidden absolute top-[70px] bg-white border-2 rounded-3xl w-[200px] right-2 z-[99999] dark:bg-[#101827] dark:border-white'
               )}
             >
               <Repeater
