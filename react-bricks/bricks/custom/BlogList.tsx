@@ -42,7 +42,7 @@ const BlogList: types.Brick = () => {
   const { pagesByTag } = externalData as ExternalData
 
   return (
-    <Section className="max-w-[1440px] mx-auto">
+    <Section className="max-w-[1440px] mx-auto font-samsung">
       <div className="px-[24px] pt-[96px] ">
         <Text
           propName="title"

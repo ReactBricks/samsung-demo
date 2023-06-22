@@ -26,7 +26,7 @@ const CtaSamsung: types.Brick<CallToActionProps> = ({
       backgroundColor={backgroundColor}
       borderTop={borderTop}
       borderBottom={borderBottom}
-      className="max-w-[1440px] mx-auto"
+      className="max-w-[1440px] mx-auto font-samsung"
     >
       <Container
         size="full"

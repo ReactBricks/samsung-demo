@@ -31,7 +31,7 @@ const Customers: types.Brick<CustomersProps> = ({
       backgroundColor={backgroundColor}
       borderTop={borderTop}
       borderBottom={borderBottom}
-      className="max-w-[1440px] mx-auto"
+      className="max-w-[1440px] mx-auto font-samsung"
     >
       <Container
         paddingTop={paddingTop}

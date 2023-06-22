@@ -10,7 +10,7 @@ export interface CustomerProps {
 
 const Customer: types.Brick<CustomerProps> = ({ grayscale }) => {
   return (
-    <div className="inline-flex items-center px-[15px] md:px-5 h-full max-w-[25%] no-wrap">
+    <div className="inline-flex items-center px-[15px] md:px-5 h-full max-w-[25%] no-wrap font-samsung">
       <Image
         propName="image"
         alt="customer"

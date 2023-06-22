@@ -69,7 +69,7 @@ const StateInfo: types.Brick<StateInfoProps> = ({
 }) => {
   const [currentRow, setCurrentRow] = useState(1)
   return (
-    <div className="px-3 md:pl-14 lg:pl-[90px] md:pr-6 mt-[56px]">
+    <div className="px-3 md:pl-14 lg:pl-[90px] md:pr-6 mt-[56px] font-samsung">
       <Text
         renderBlock={(props) => (
           <h2 className="mt-0 mb-12 text-center md:text-left font-bold text-[36px] leading-[45px] text-gray-900 dark:text-white">

@@ -11,7 +11,7 @@ const HeaderMenuSubColumn: types.Brick<HeaderMenuSubColumnProps> = ({
   handler,
 }) => {
   return (
-    <div className="max-w-3/12">
+    <div className="max-w-3/12 font-samsung">
       <div className="px-[15px]">
         <Text
           propName="title"

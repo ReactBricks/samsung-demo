@@ -30,7 +30,11 @@ const Header: types.Brick<HeaderProps> = ({
   }, [])
 
   return (
-    <Section backgroundColor={backgroundColor} borderBottom={'none'}>
+    <Section
+      backgroundColor={backgroundColor}
+      borderBottom={'none'}
+      className="font-samsung"
+    >
       <nav className="mx-auto max-w-[1440px] h-[80px] border-b border-[#dddddd] flex items-center px-[16px] relative">
         <Link
           href="/"

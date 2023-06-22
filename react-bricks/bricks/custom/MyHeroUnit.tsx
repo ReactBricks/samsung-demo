@@ -25,7 +25,7 @@ const MyHeroUnit: types.Brick<HeroUnitProps> = ({
       backgroundColor={backgroundColor}
       backgroundImage={backgroundImage}
       backgroundImageDark={backgroundImageDark}
-      className="relative bg-opacity-50 lg:bg-opacity-100"
+      className="relative bg-opacity-50 lg:bg-opacity-100 font-samsung"
     >
       <div className="flex flex-col lg:flex-row justify-around max-w-[1600px] mx-auto py-12 md:pl-14 pl-3 pr-3 lg:py-20 lg:pl-[90px] lg:pr-[24px] items-center">
         <div className="text-left basis-0">

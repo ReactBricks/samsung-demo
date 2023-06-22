@@ -41,7 +41,7 @@ const Button: types.Brick<ButtonProps> = ({
         href={href}
         {...target}
         className={classNames(
-          'inline-block whitespace-nowrap text-center rounded-full font-bold leading-none hover:shadow-lg transition-all ease-out duration-150 hover:-translate-y-0.5',
+          'inline-block whitespace-nowrap text-center rounded-full font-samsung font-bold leading-none hover:shadow-lg transition-all ease-out duration-150 hover:-translate-y-0.5',
           padding === 'small'
             ? 'py-2 px-4 text-sm min-w-[75px]'
             : 'py-3 px-5 min-w-[120px]',
@@ -72,7 +72,7 @@ const Button: types.Brick<ButtonProps> = ({
       type={isAdmin && !previewMode ? 'button' : buttonType}
       //disabled={isAdmin && !previewMode}
       className={classNames(
-        'inline-block whitespace-nowrap text-center rounded-full font-bold leading-none hover:shadow-lg transition-all ease-out duration-150 hover:-translate-y-0.5',
+        'inline-block whitespace-nowrap text-center rounded-full font-samsung font-bold leading-none hover:shadow-lg transition-all ease-out duration-150 hover:-translate-y-0.5',
         padding === 'small'
           ? 'py-2 px-4 text-sm min-w-[75px]'
           : 'py-3 px-5 min-w-[120px]',

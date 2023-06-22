@@ -17,7 +17,7 @@ const HeaderMenuItem: types.Brick<HeaderMenuItemProps> = ({
 
   if (!submenuColumns || !submenuColumns.length) {
     return (
-      <div>
+      <div className="font-samsung">
         <Link
           href={linkPath}
           className="hidden lg:inline-flex justify-center items-center text-sm font-bold px-[8px] py-[7px] hover:text-[#565656]"
