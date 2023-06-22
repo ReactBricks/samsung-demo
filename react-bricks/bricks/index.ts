@@ -2,7 +2,6 @@ import { types } from 'react-bricks/frontend'
 import HeroUnit from './custom/MyHeroUnit'
 import reactBricksUITheme from './react-bricks-ui'
 import BlogList from './custom/BlogList'
-import Customer from './custom/Customers/Customers'
 import CtaSamsung from './custom/ctaSamsung'
 import StateInfo from './custom/StateInfo'
 import CustomButton from './custom/CustomButton'
@@ -13,6 +12,8 @@ import HeaderMenuSubItemKnox from './custom/HeaderMenuSubItemKnox'
 import FooterKnox from './custom/FooterKnox'
 import FooterColumnKnox from './custom/FooterColumnKnox'
 import FooterLinkKnox from './custom/FooterLinkKnox'
+import CustomerItemKnox from './custom/Customers/CustomerItemKnox'
+import CustomersKnox from './custom/Customers/CustomersKnox'
 const bricks: types.Theme[] = [
   reactBricksUITheme, // React Bricks UI
   {
@@ -25,7 +26,6 @@ const bricks: types.Theme[] = [
           CustomButton,
           BlogList,
           StateInfo,
-          Customer,
           CtaSamsung,
           HeaderKnox,
           HeaderMenuItemKnox,
@@ -34,6 +34,8 @@ const bricks: types.Theme[] = [
           FooterKnox,
           FooterColumnKnox,
           FooterLinkKnox,
+          CustomerItemKnox,
+          CustomersKnox,
         ], // Custom Bricks
       },
     ],

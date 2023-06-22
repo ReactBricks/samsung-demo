@@ -1,16 +1,16 @@
 import classNames from 'classnames'
 import * as React from 'react'
-import { Repeater, types, RichText, Text } from 'react-bricks/frontend'
+import { Repeater, types } from 'react-bricks/frontend'
 import {
   LayoutProps,
   neutralBackgroundSideGroup,
   paddingBordersSideGroup,
-} from '../../react-bricks-ui/LayoutSideProps'
-import { customersSamsung } from '../../react-bricks-ui/shared/defaultImages'
-import blockNames from '../../react-bricks-ui/blockNames'
-import { bgColors } from '../../react-bricks-ui/colors'
-import Container from '../../react-bricks-ui/shared/components/Container'
-import Section from '../../react-bricks-ui/shared/components/Section'
+} from '../../LayoutSideProps'
+import { customers } from '../../shared/defaultImages'
+import blockNames from '../../blockNames'
+import { bgColors } from '../../colors'
+import Container from '../../shared/components/Container'
+import Section from '../../shared/components/Section'
 
 export interface CustomersProps extends LayoutProps {
   grayscale?: boolean
@@ -31,44 +31,19 @@ const Customers: types.Brick<CustomersProps> = ({
       backgroundColor={backgroundColor}
       borderTop={borderTop}
       borderBottom={borderBottom}
-      className="max-w-[1440px] mx-auto font-samsung"
     >
-      <Container
-        paddingTop={paddingTop}
-        paddingBottom={paddingBottom}
-        className="mx-0 xl:mx-0 px-[24px]"
-      >
-        <Text
-          propName="title"
-          renderBlock={(props) => (
-            <p
-              className="mb-[32px] font-black text-5xl leading-[60px] text-center dark:text-white"
-              {...props.attributes}
-            >
-              {props.children}
-            </p>
-          )}
-          placeholder="Title..."
-        />
+      <Container paddingTop={paddingTop} paddingBottom={paddingBottom}>
         <div
           className={classNames(
-            'flex no-wrap justify-center items-center mx-auto h-[100px]'
+            'flex flex-wrap justify-center items-center -mx-4 md:-mx-5 -my-4',
+            {
+              'md:justify-between':
+                customers.length >= 4 && customers.length <= 5,
+            }
           )}
         >
           <Repeater propName="customers" itemProps={{ grayscale }} />
         </div>
-        <RichText
-          propName="description"
-          renderBlock={(props) => (
-            <p
-              className="mt-[64px] text-lg leading-[24px] text-center mx-auto tracking-[0.16px] dark:text-white/80"
-              {...props.attributes}
-            >
-              {props.children}
-            </p>
-          )}
-          placeholder="Description..."
-        />
       </Container>
     </Section>
   )
@@ -89,22 +64,22 @@ Customers.schema = {
     paddingBottom: '12',
     borderTop: 'none',
     borderBottom: 'none',
-    grayscale: false,
-    title: 'Success stories',
-    description:
-      'Knox has developed over 20,000 business in 100+ countries achieve their goals',
+    grayscale: true,
     customers: [
       {
-        image: customersSamsung.WALMART,
+        image: customers.WOOSMAP,
       },
       {
-        image: customersSamsung.PEPSICO,
+        image: customers.CAPBASE,
       },
       {
-        image: customersSamsung.HARLEY_DAVISON,
+        image: customers.CASAVO,
       },
       {
-        image: customersSamsung.KIA,
+        image: customers.EVERFUND,
+      },
+      {
+        image: customers.NEOSKOP,
       },
     ],
   }),

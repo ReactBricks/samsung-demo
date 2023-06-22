@@ -3,7 +3,7 @@ import { Repeater, types, Link, Text } from 'react-bricks/frontend'
 import { useReactBricksContext, useAdminContext } from 'react-bricks/frontend'
 import { bgColors } from '../react-bricks-ui/colors'
 import {
-  backgroundColorsEditProps,
+  neutralBackgroundSideGroup,
   borderBottomEditProp,
   LayoutProps,
 } from '../react-bricks-ui/LayoutSideProps'
@@ -74,12 +74,11 @@ const HeaderKnox: types.Brick<HeaderKnoxProps> = ({
             />
           </div>
 
-          <div className="flex h-[80px] transition-all">
+          <div className="flex h-[80px] transition-all" {...eventHandlers}>
             <button
               className={classNames(
                 'inline-flex hover:text-[#565656] items-center text-sm font-bold py-1.5 px-2 rounded-[5px] transition-colors ease-out dark:text-white'
               )}
-              {...eventHandlers}
             >
               <Text
                 propName="partners"
@@ -118,21 +117,21 @@ const HeaderKnox: types.Brick<HeaderKnoxProps> = ({
                 renderItemWrapper={(item) => <div key={item.key}>{item}</div>}
               />
             </div>
-            {mounted && (
-              <button
-                type="button"
-                className="flex items-center justify-center w-8 h-8 mr-4 ml-auto text-gray-400 dark:text-gray-200 my-auto"
-                onClick={toggleColorMode}
-              >
-                {theme === 'light' ? (
-                  <BsMoonFill />
-                ) : (
-                  <BsSunFill className="text-xl" />
-                )}
-              </button>
-            )}
           </div>
         </div>
+        {mounted && (
+          <button
+            type="button"
+            className="flex items-center justify-center w-8 h-8 mr-4 ml-auto text-gray-400 dark:text-gray-200 my-auto"
+            onClick={toggleColorMode}
+          >
+            {theme === 'light' ? (
+              <BsMoonFill />
+            ) : (
+              <BsSunFill className="text-xl" />
+            )}
+          </button>
+        )}
       </nav>
     </Section>
   )
@@ -155,13 +154,7 @@ HeaderKnox.schema = {
       max: 4,
     },
   ],
-  sideEditProps: [
-    {
-      groupName: 'Layout',
-      defaultOpen: true,
-      props: [backgroundColorsEditProps, borderBottomEditProp],
-    },
-  ],
+  sideEditProps: [neutralBackgroundSideGroup, borderBottomEditProp],
   getDefaultProps: () => ({
     backgroundColor: bgColors.WHITE.value,
     borderBottom: 'none',

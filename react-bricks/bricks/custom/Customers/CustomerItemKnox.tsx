@@ -6,14 +6,14 @@ import { customersSamsung } from '../../react-bricks-ui/shared/defaultImages'
 export interface CustomerProps {
   grayscale?: boolean
   image: types.IImageSource
-  href?: string
+  href: string
 }
 
-const Customer: types.Brick<CustomerProps> = ({ grayscale, href }) => {
+const CustomerItemKnox: types.Brick<CustomerProps> = ({ grayscale, href }) => {
   return (
     <Link
       href={href}
-      className="inline-flex items-center px-[15px] h-full max-w-[25%] no-wrap font-samsung"
+      className="inline-flex items-center no-wrap h-full max-w-[25%] px-[15px] font-samsung"
     >
       <Image
         propName="image"
@@ -26,32 +26,23 @@ const Customer: types.Brick<CustomerProps> = ({ grayscale, href }) => {
   )
 }
 
-Customer.schema = {
-  name: blockNames.Customer,
+CustomerItemKnox.schema = {
+  name: 'customer-item-knox',
   label: 'Customer',
-  category: 'logos',
   hideFromAddMenu: true,
-  playgroundLinkLabel: 'View source code on Github',
-  playgroundLinkUrl:
-    'https://github.com/ReactBricks/react-bricks-ui/blob/master/src/website/Customers/CustomerItem.tsx',
-
   getDefaultProps: () => ({
     image: customersSamsung.KIA,
+    href: '',
   }),
+
   sideEditProps: [
     {
-      groupName: 'functionality',
-      defaultOpen: true,
-      props: [
-        {
-          name: 'href',
-          label: 'Link (external or path)',
-          type: types.SideEditPropType.Text,
-          show: (props) => props.type === 'link',
-        },
-      ],
+      name: 'href',
+      label: 'Link (external or path)',
+      type: types.SideEditPropType.Text,
+      show: (props) => props.type === 'link',
     },
   ],
 }
 
-export default Customer
+export default CustomerItemKnox

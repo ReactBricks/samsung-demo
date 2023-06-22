@@ -2,7 +2,7 @@ import classNames from 'classnames'
 import * as React from 'react'
 import { Repeater, RichText, Text, types } from 'react-bricks/frontend'
 import {
-  backgroundSideGroup,
+  neutralBackgroundSideGroup,
   LayoutProps,
   paddingBordersSideGroup,
   sectionDefaults,
@@ -32,9 +32,9 @@ const CtaSamsung: types.Brick<CallToActionProps> = ({
         size="full"
         paddingTop={paddingTop}
         paddingBottom={paddingBottom}
-        className="mx-0 xl:mx-0 px-[142px] pt-[96px] pb-[96px] lg:pb-[96px] sm:mx-0"
+        className="mx-0 xl:mx-0 sm:mx-0"
       >
-        <div className="flex">
+        <div className="flex px-[142px] pt-[96px] pb-[96px]">
           <div className="basis-9/12 px-[15px]">
             <Text
               propName="title"
@@ -80,15 +80,12 @@ CtaSamsung.schema = {
   name: 'cta-samsung',
   label: 'Call to action',
   playgroundLinkLabel: 'View source code on Github',
-  previewImageUrl: `/bricks-preview-images/${blockNames.CallToAction}.png`,
-  playgroundLinkUrl:
-    'https://github.com/ReactBricks/react-bricks-ui/blob/master/src/website/CallToAction/CallToAction.tsx',
   getDefaultProps: () => ({
     ...sectionDefaults,
     backgroundColor: { color: '#f7f7f7', className: 'bg-[#f7f7f7]' },
     borderTop: 'none',
-    paddingTop: '12',
-    paddingBottom: '20',
+    paddingTop: '0',
+    paddingBottom: '0',
     title: 'What do you need?',
     description:
       'We can help you find the right Samsung Knox products and services for your needs',
@@ -115,7 +112,7 @@ CtaSamsung.schema = {
       max: 1,
     },
   ],
-  sideEditProps: [backgroundSideGroup, paddingBordersSideGroup],
+  sideEditProps: [neutralBackgroundSideGroup, paddingBordersSideGroup],
 }
 
 export default CtaSamsung
