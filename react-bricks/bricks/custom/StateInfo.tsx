@@ -1,6 +1,8 @@
 import { Image, RichText, Text, types, Link } from 'react-bricks/frontend'
 import { LayoutProps } from '../react-bricks-ui/LayoutSideProps'
 import { useState } from 'react'
+import Section from '../react-bricks-ui/shared/components/Section'
+import Container from '../react-bricks-ui/shared/components/Container'
 
 interface StateInfoProps extends LayoutProps {
   title: string
@@ -77,354 +79,361 @@ const StateInfo: types.Brick<StateInfoProps> = ({
 }) => {
   const [currentRow, setCurrentRow] = useState(1)
   return (
-    <div className="px-3 md:pl-14 lg:pl-[90px] md:pr-6 mt-[86px] font-samsung">
-      <Text
-        renderBlock={(props) => (
-          <h2 className="mt-0 mb-12 text-center md:text-left font-bold text-[36px] leading-[45px] text-gray-900 dark:text-white">
-            {props.children}
-          </h2>
-        )}
-        placeholder="Type a title..."
-        propName="title"
-      />
+    <Section className="max-w-[1440px] mx-auto font-samsung dark:bg-[#101827]">
+      <Container
+        size="full"
+        className="mx-0 xl:mx-0 px-[142px] pt-[96px] pb-[96px] lg:pb-[96px] sm:mx-0"
+      >
+        <div className="p-3 font-samsung">
+          <Text
+            renderBlock={(props) => (
+              <h2 className="mt-0 mb-12 text-center md:text-left font-bold text-[36px] leading-[45px] text-gray-900 dark:text-white">
+                {props.children}
+              </h2>
+            )}
+            placeholder="Type a title..."
+            propName="title"
+          />
 
-      <div className="flex my-8 gap-4 items-center">
-        {/* Single features */}
-        <div className="basis-1/3">
-          {/* Feature 1 */}
-          <div
-            className={`flex border rounded ${
-              currentRow === 1 ? 'shadow-xl' : ''
-            } hover:shadow-xl hover:cursor-pointer p-4 gap-6 max-w-full lg:max-w-md transition-shadow duration-500 mb-2`}
-            onClick={() => setCurrentRow(1)}
-          >
-            <Image
-              propName="imageFeature1"
-              alt="Icon"
-              maxWidth={41}
-              aspectRatio={1}
-              imageClassName=""
-            />
+          <div className="flex my-8 gap-4 items-center">
+            {/* Single features */}
+            <div className="basis-1/3">
+              {/* Feature 1 */}
+              <div
+                className={`flex border rounded ${
+                  currentRow === 1 ? 'shadow-xl' : ''
+                } hover:shadow-xl hover:cursor-pointer p-4 gap-6 max-w-full lg:max-w-md transition-shadow duration-500 mb-2`}
+                onClick={() => setCurrentRow(1)}
+              >
+                <Image
+                  propName="imageFeature1"
+                  alt="Icon"
+                  maxWidth={41}
+                  aspectRatio={1}
+                  imageClassName=""
+                />
 
-            <div>
-              <Text
-                renderBlock={(props) => (
-                  <h3 className="text-gray-900 dark:text-white text-base mb-1 font-bold">
-                    {props.children}
-                  </h3>
-                )}
-                placeholder="Type a title..."
-                propName="titleFeature1"
-              />
+                <div>
+                  <Text
+                    renderBlock={(props) => (
+                      <h3 className="text-gray-900 dark:text-white text-base mb-1 font-bold">
+                        {props.children}
+                      </h3>
+                    )}
+                    placeholder="Type a title..."
+                    propName="titleFeature1"
+                  />
 
-              <RichText
-                renderBlock={(props) => (
-                  <p className="font-normal text-gray-700 dark:text-gray-100 text-sm">
-                    {props.children}
-                  </p>
-                )}
-                placeholder="Type a text..."
-                propName="textFeature1"
-                allowedFeatures={[
-                  types.RichTextFeatures.Bold,
-                  types.RichTextFeatures.Italic,
-                  types.RichTextFeatures.Highlight,
-                  types.RichTextFeatures.Code,
-                  types.RichTextFeatures.Link,
-                ]}
-                renderCode={(props) => (
-                  <code className="text-sm py-1 px-2 bg-gray-200 dark:bg-gray-700 rounded">
-                    {props.children}
-                  </code>
-                )}
-              />
+                  <RichText
+                    renderBlock={(props) => (
+                      <p className="font-normal text-gray-700 dark:text-gray-100 text-sm">
+                        {props.children}
+                      </p>
+                    )}
+                    placeholder="Type a text..."
+                    propName="textFeature1"
+                    allowedFeatures={[
+                      types.RichTextFeatures.Bold,
+                      types.RichTextFeatures.Italic,
+                      types.RichTextFeatures.Highlight,
+                      types.RichTextFeatures.Code,
+                      types.RichTextFeatures.Link,
+                    ]}
+                    renderCode={(props) => (
+                      <code className="text-sm py-1 px-2 bg-gray-200 dark:bg-gray-700 rounded">
+                        {props.children}
+                      </code>
+                    )}
+                  />
+                </div>
+              </div>
+
+              {/* Feature 2 */}
+              <div
+                className={`flex border rounded ${
+                  currentRow === 2 ? 'shadow-xl' : ''
+                } hover:shadow-xl hover:cursor-pointer p-4 gap-6 max-w-full lg:max-w-md transition-shadow duration-500 mb-2`}
+                onClick={() => setCurrentRow(2)}
+              >
+                <Image
+                  propName="imageFeature2"
+                  alt="Icon"
+                  maxWidth={41}
+                  aspectRatio={1}
+                  imageClassName=""
+                />
+
+                <div>
+                  <Text
+                    renderBlock={(props) => (
+                      <h3 className="text-gray-900 dark:text-white text-base mb-1 font-bold">
+                        {props.children}
+                      </h3>
+                    )}
+                    placeholder="Type a title..."
+                    propName="titleFeature2"
+                  />
+
+                  <RichText
+                    renderBlock={(props) => (
+                      <p className="font-normal text-gray-700 dark:text-gray-100 text-sm">
+                        {props.children}
+                      </p>
+                    )}
+                    placeholder="Type a text..."
+                    propName="textFeature2"
+                    allowedFeatures={[
+                      types.RichTextFeatures.Bold,
+                      types.RichTextFeatures.Italic,
+                      types.RichTextFeatures.Highlight,
+                      types.RichTextFeatures.Code,
+                      types.RichTextFeatures.Link,
+                    ]}
+                    renderCode={(props) => (
+                      <code className="text-sm py-1 px-2 bg-gray-200 dark:bg-gray-700 rounded">
+                        {props.children}
+                      </code>
+                    )}
+                  />
+                </div>
+              </div>
+
+              {/* Feature 3 */}
+              <div
+                className={`flex border rounded ${
+                  currentRow === 3 ? 'shadow-xl' : ''
+                } hover:shadow-xl hover:cursor-pointer p-4 gap-6 max-w-full lg:max-w-md transition-shadow duration-500 mb-2`}
+                onClick={() => setCurrentRow(3)}
+              >
+                <Image
+                  propName="imageFeature3"
+                  alt="Icon"
+                  maxWidth={41}
+                  aspectRatio={1}
+                  imageClassName=""
+                />
+
+                <div>
+                  <Text
+                    renderBlock={(props) => (
+                      <h3 className="text-gray-900 dark:text-white text-base mb-1 font-bold">
+                        {props.children}
+                      </h3>
+                    )}
+                    placeholder="Type a title..."
+                    propName="titleFeature3"
+                  />
+
+                  <RichText
+                    renderBlock={(props) => (
+                      <p className="font-normal text-gray-700 dark:text-gray-100 text-sm">
+                        {props.children}
+                      </p>
+                    )}
+                    placeholder="Type a text..."
+                    propName="textFeature3"
+                    allowedFeatures={[
+                      types.RichTextFeatures.Bold,
+                      types.RichTextFeatures.Italic,
+                      types.RichTextFeatures.Highlight,
+                      types.RichTextFeatures.Code,
+                      types.RichTextFeatures.Link,
+                    ]}
+                    renderCode={(props) => (
+                      <code className="text-sm py-1 px-2 bg-gray-200 dark:bg-gray-700 rounded">
+                        {props.children}
+                      </code>
+                    )}
+                  />
+                </div>
+              </div>
+
+              {/* Feature 4 */}
+              <div
+                className={`flex border rounded ${
+                  currentRow === 4 ? 'shadow-xl' : ''
+                } hover:shadow-xl hover:cursor-pointer p-4 gap-6 max-w-full lg:max-w-md transition-shadow duration-500 mb-2`}
+                onClick={() => setCurrentRow(4)}
+              >
+                <Image
+                  propName="imageFeature4"
+                  alt="Icon"
+                  maxWidth={41}
+                  aspectRatio={1}
+                  imageClassName=""
+                />
+
+                <div>
+                  <Text
+                    renderBlock={(props) => (
+                      <h3 className="text-gray-900 dark:text-white text-base mb-1 font-bold">
+                        {props.children}
+                      </h3>
+                    )}
+                    placeholder="Type a title..."
+                    propName="titleFeature4"
+                  />
+
+                  <RichText
+                    renderBlock={(props) => (
+                      <p className="font-normal text-gray-700 dark:text-gray-100 text-sm">
+                        {props.children}
+                      </p>
+                    )}
+                    placeholder="Type a text..."
+                    propName="textFeature4"
+                    allowedFeatures={[
+                      types.RichTextFeatures.Bold,
+                      types.RichTextFeatures.Italic,
+                      types.RichTextFeatures.Highlight,
+                      types.RichTextFeatures.Code,
+                      types.RichTextFeatures.Link,
+                    ]}
+                    renderCode={(props) => (
+                      <code className="text-sm py-1 px-2 bg-gray-200 dark:bg-gray-700 rounded">
+                        {props.children}
+                      </code>
+                    )}
+                  />
+                </div>
+              </div>
             </div>
-          </div>
 
-          {/* Feature 2 */}
-          <div
-            className={`flex border rounded ${
-              currentRow === 2 ? 'shadow-xl' : ''
-            } hover:shadow-xl hover:cursor-pointer p-4 gap-6 max-w-full lg:max-w-md transition-shadow duration-500 mb-2`}
-            onClick={() => setCurrentRow(2)}
-          >
-            <Image
-              propName="imageFeature2"
-              alt="Icon"
-              maxWidth={41}
-              aspectRatio={1}
-              imageClassName=""
-            />
+            {/* Preview */}
+            <div className="basis-2/3 h-fit">
+              {/* Feature 1 */}
+              <div
+                className={`${
+                  currentRow === 1 ? 'block' : 'hidden'
+                } h-fit bg-no-repeat relative`}
+              >
+                <Image
+                  propName="sideImageFeature1"
+                  alt="Icon"
+                  maxWidth={805}
+                  aspectRatio={1}
+                />
 
-            <div>
-              <Text
-                renderBlock={(props) => (
-                  <h3 className="text-gray-900 dark:text-white text-base mb-1 font-bold">
-                    {props.children}
+                <img
+                  alt="Icon"
+                  src={`/overlay/${overlayFeature1}.png`}
+                  className="absolute h-full top-0 bottom-0 z-10"
+                />
+
+                <div className="px-11 py-3 w-full lg:w-3/5 xl:w-2/5 h-fit text-white absolute top-1/2 bottom-1/2 m-auto z-20">
+                  <h3 className="text-[24px] tracking-[0.01rem] font-bold mb-6">
+                    {sideTitleFeature1}
                   </h3>
-                )}
-                placeholder="Type a title..."
-                propName="titleFeature2"
-              />
+                  <p className="text-base mb-4">{sideTextFeature1}</p>
+                  <Link
+                    href={sideButtonLinkFeature1}
+                    className="border-2 rounded-full py-2 px-6 mt-2 hover:bg-white hover:text-black transition text-[12px] font-bold"
+                  >
+                    {sideButtonLabelFeature1}
+                  </Link>
+                </div>
+              </div>
 
-              <RichText
-                renderBlock={(props) => (
-                  <p className="font-normal text-gray-700 dark:text-gray-100 text-sm">
-                    {props.children}
-                  </p>
-                )}
-                placeholder="Type a text..."
-                propName="textFeature2"
-                allowedFeatures={[
-                  types.RichTextFeatures.Bold,
-                  types.RichTextFeatures.Italic,
-                  types.RichTextFeatures.Highlight,
-                  types.RichTextFeatures.Code,
-                  types.RichTextFeatures.Link,
-                ]}
-                renderCode={(props) => (
-                  <code className="text-sm py-1 px-2 bg-gray-200 dark:bg-gray-700 rounded">
-                    {props.children}
-                  </code>
-                )}
-              />
-            </div>
-          </div>
-
-          {/* Feature 3 */}
-          <div
-            className={`flex border rounded ${
-              currentRow === 3 ? 'shadow-xl' : ''
-            } hover:shadow-xl hover:cursor-pointer p-4 gap-6 max-w-full lg:max-w-md transition-shadow duration-500 mb-2`}
-            onClick={() => setCurrentRow(3)}
-          >
-            <Image
-              propName="imageFeature3"
-              alt="Icon"
-              maxWidth={41}
-              aspectRatio={1}
-              imageClassName=""
-            />
-
-            <div>
-              <Text
-                renderBlock={(props) => (
-                  <h3 className="text-gray-900 dark:text-white text-base mb-1 font-bold">
-                    {props.children}
+              {/* Feature 2 */}
+              <div
+                className={`${
+                  currentRow === 2 ? 'block' : 'hidden'
+                } h-full bg-no-repeat relative`}
+              >
+                <Image
+                  propName="sideImageFeature2"
+                  alt="Icon"
+                  maxWidth={805}
+                  aspectRatio={1}
+                  imageClassName="mb-5"
+                />
+                <img
+                  alt="Icon"
+                  src={`/overlay/${overlayFeature2}.png`}
+                  className="absolute h-full top-0 bottom-0 z-10"
+                />
+                <div className="px-11 py-3 w-full lg:w-3/5 xl:w-2/5 h-fit text-white absolute top-1/2 bottom-1/2 m-auto z-20">
+                  <h3 className="text-[24px] tracking-[0.01rem] font-bold mb-6">
+                    {sideTitleFeature2}
                   </h3>
-                )}
-                placeholder="Type a title..."
-                propName="titleFeature3"
-              />
+                  <p className="text-base mb-4">{sideTextFeature2}</p>
+                  <Link
+                    href={sideButtonLinkFeature2}
+                    className="border-2 rounded-full py-2 px-6 mt-2 hover:bg-white hover:text-black transition text-[12px] font-bold"
+                  >
+                    {sideButtonLabelFeature2}
+                  </Link>
+                </div>
+              </div>
 
-              <RichText
-                renderBlock={(props) => (
-                  <p className="font-normal text-gray-700 dark:text-gray-100 text-sm">
-                    {props.children}
-                  </p>
-                )}
-                placeholder="Type a text..."
-                propName="textFeature3"
-                allowedFeatures={[
-                  types.RichTextFeatures.Bold,
-                  types.RichTextFeatures.Italic,
-                  types.RichTextFeatures.Highlight,
-                  types.RichTextFeatures.Code,
-                  types.RichTextFeatures.Link,
-                ]}
-                renderCode={(props) => (
-                  <code className="text-sm py-1 px-2 bg-gray-200 dark:bg-gray-700 rounded">
-                    {props.children}
-                  </code>
-                )}
-              />
-            </div>
-          </div>
-
-          {/* Feature 4 */}
-          <div
-            className={`flex border rounded ${
-              currentRow === 4 ? 'shadow-xl' : ''
-            } hover:shadow-xl hover:cursor-pointer p-4 gap-6 max-w-full lg:max-w-md transition-shadow duration-500 mb-2`}
-            onClick={() => setCurrentRow(4)}
-          >
-            <Image
-              propName="imageFeature4"
-              alt="Icon"
-              maxWidth={41}
-              aspectRatio={1}
-              imageClassName=""
-            />
-
-            <div>
-              <Text
-                renderBlock={(props) => (
-                  <h3 className="text-gray-900 dark:text-white text-base mb-1 font-bold">
-                    {props.children}
+              {/* Feature 3 */}
+              <div
+                className={`${
+                  currentRow === 3 ? 'block' : 'hidden'
+                } h-full bg-no-repeat relative`}
+              >
+                <Image
+                  propName="sideImageFeature3"
+                  alt="Icon"
+                  maxWidth={805}
+                  aspectRatio={1}
+                  imageClassName="mb-5"
+                />
+                <img
+                  alt="Icon"
+                  src={`/overlay/${overlayFeature3}.png`}
+                  className="absolute h-full top-0 bottom-0 z-10"
+                />
+                <div className="px-11 py-3 w-full lg:w-3/5 xl:w-2/5 h-fit text-white absolute top-1/2 bottom-1/2 m-auto z-20">
+                  <h3 className="text-[24px] tracking-[0.01rem] font-bold mb-6">
+                    {sideTitleFeature3}
                   </h3>
-                )}
-                placeholder="Type a title..."
-                propName="titleFeature4"
-              />
+                  <p className="text-base mb-4">{sideTextFeature3}</p>
+                  <Link
+                    href={sideButtonLinkFeature3}
+                    className="border-2 rounded-full py-2 px-6 mt-2 hover:bg-white hover:text-black transition text-[12px] font-bold"
+                  >
+                    {sideButtonLabelFeature3}
+                  </Link>
+                </div>
+              </div>
 
-              <RichText
-                renderBlock={(props) => (
-                  <p className="font-normal text-gray-700 dark:text-gray-100 text-sm">
-                    {props.children}
-                  </p>
-                )}
-                placeholder="Type a text..."
-                propName="textFeature4"
-                allowedFeatures={[
-                  types.RichTextFeatures.Bold,
-                  types.RichTextFeatures.Italic,
-                  types.RichTextFeatures.Highlight,
-                  types.RichTextFeatures.Code,
-                  types.RichTextFeatures.Link,
-                ]}
-                renderCode={(props) => (
-                  <code className="text-sm py-1 px-2 bg-gray-200 dark:bg-gray-700 rounded">
-                    {props.children}
-                  </code>
-                )}
-              />
+              {/* Feature 4 */}
+              <div
+                className={`${
+                  currentRow === 4 ? 'block' : 'hidden'
+                } h-full bg-no-repeat relative`}
+              >
+                <Image
+                  propName="sideImageFeature4"
+                  alt="Icon"
+                  maxWidth={805}
+                  aspectRatio={1}
+                  imageClassName="mb-5"
+                />
+                <img
+                  alt="Icon"
+                  src={`/overlay/${overlayFeature4}.png`}
+                  className="absolute h-full top-0 bottom-0 z-10"
+                />
+                <div className="px-11 py-3 w-full lg:w-3/5 xl:w-2/5 h-fit text-white absolute top-1/2 bottom-1/2 m-auto z-20">
+                  <h3 className="text-[24px] tracking-[0.01rem] font-bold mb-6">
+                    {sideTitleFeature4}
+                  </h3>
+                  <p className="text-base mb-4">{sideTextFeature4}</p>
+                  <Link
+                    href={sideButtonLinkFeature4}
+                    className="border-2 rounded-full py-2 px-6 mt-2 hover:bg-white hover:text-black transition text-[12px] font-bold"
+                  >
+                    {sideButtonLabelFeature4}
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-
-        {/* Preview */}
-        <div className="basis-2/3 h-fit">
-          {/* Feature 1 */}
-          <div
-            className={`${
-              currentRow === 1 ? 'block' : 'hidden'
-            } h-fit bg-no-repeat relative`}
-          >
-            <Image
-              propName="sideImageFeature1"
-              alt="Icon"
-              maxWidth={805}
-              aspectRatio={1}
-            />
-
-            <img
-              alt="Icon"
-              src={`/overlay/${overlayFeature1}.png`}
-              className="absolute h-full top-0 bottom-0 z-10"
-            />
-
-            <div className="px-11 py-3 w-full lg:w-3/5 xl:w-2/5 h-fit text-white absolute top-1/2 bottom-1/2 m-auto z-20">
-              <h3 className="text-[24px] tracking-[0.01rem] font-bold mb-6">
-                {sideTitleFeature1}
-              </h3>
-              <p className="text-base mb-4">{sideTextFeature1}</p>
-              <Link
-                href={sideButtonLinkFeature1}
-                className="border-2 rounded-full py-2 px-6 mt-2 hover:bg-white hover:text-black transition text-[12px] font-bold"
-              >
-                {sideButtonLabelFeature1}
-              </Link>
-            </div>
-          </div>
-
-          {/* Feature 2 */}
-          <div
-            className={`${
-              currentRow === 2 ? 'block' : 'hidden'
-            } h-full bg-no-repeat relative`}
-          >
-            <Image
-              propName="sideImageFeature2"
-              alt="Icon"
-              maxWidth={805}
-              aspectRatio={1}
-              imageClassName="mb-5"
-            />
-            <img
-              alt="Icon"
-              src={`/overlay/${overlayFeature2}.png`}
-              className="absolute h-full top-0 bottom-0 z-10"
-            />
-            <div className="px-11 py-3 w-full lg:w-3/5 xl:w-2/5 h-fit text-white absolute top-1/2 bottom-1/2 m-auto z-20">
-              <h3 className="text-[24px] tracking-[0.01rem] font-bold mb-6">
-                {sideTitleFeature2}
-              </h3>
-              <p className="text-base mb-4">{sideTextFeature2}</p>
-              <Link
-                href={sideButtonLinkFeature2}
-                className="border-2 rounded-full py-2 px-6 mt-2 hover:bg-white hover:text-black transition text-[12px] font-bold"
-              >
-                {sideButtonLabelFeature2}
-              </Link>
-            </div>
-          </div>
-
-          {/* Feature 3 */}
-          <div
-            className={`${
-              currentRow === 3 ? 'block' : 'hidden'
-            } h-full bg-no-repeat relative`}
-          >
-            <Image
-              propName="sideImageFeature3"
-              alt="Icon"
-              maxWidth={805}
-              aspectRatio={1}
-              imageClassName="mb-5"
-            />
-            <img
-              alt="Icon"
-              src={`/overlay/${overlayFeature3}.png`}
-              className="absolute h-full top-0 bottom-0 z-10"
-            />
-            <div className="px-11 py-3 w-full lg:w-3/5 xl:w-2/5 h-fit text-white absolute top-1/2 bottom-1/2 m-auto z-20">
-              <h3 className="text-[24px] tracking-[0.01rem] font-bold mb-6">
-                {sideTitleFeature3}
-              </h3>
-              <p className="text-base mb-4">{sideTextFeature3}</p>
-              <Link
-                href={sideButtonLinkFeature3}
-                className="border-2 rounded-full py-2 px-6 mt-2 hover:bg-white hover:text-black transition text-[12px] font-bold"
-              >
-                {sideButtonLabelFeature3}
-              </Link>
-            </div>
-          </div>
-
-          {/* Feature 4 */}
-          <div
-            className={`${
-              currentRow === 4 ? 'block' : 'hidden'
-            } h-full bg-no-repeat relative`}
-          >
-            <Image
-              propName="sideImageFeature4"
-              alt="Icon"
-              maxWidth={805}
-              aspectRatio={1}
-              imageClassName="mb-5"
-            />
-            <img
-              alt="Icon"
-              src={`/overlay/${overlayFeature4}.png`}
-              className="absolute h-full top-0 bottom-0 z-10"
-            />
-            <div className="px-11 py-3 w-full lg:w-3/5 xl:w-2/5 h-fit text-white absolute top-1/2 bottom-1/2 m-auto z-20">
-              <h3 className="text-[24px] tracking-[0.01rem] font-bold mb-6">
-                {sideTitleFeature4}
-              </h3>
-              <p className="text-base mb-4">{sideTextFeature4}</p>
-              <Link
-                href={sideButtonLinkFeature4}
-                className="border-2 rounded-full py-2 px-6 mt-2 hover:bg-white hover:text-black transition text-[12px] font-bold"
-              >
-                {sideButtonLabelFeature4}
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+      </Container>
+    </Section>
   )
 }
 
