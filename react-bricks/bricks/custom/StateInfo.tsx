@@ -69,10 +69,10 @@ const StateInfo: types.Brick<StateInfoProps> = ({
 }) => {
   const [currentRow, setCurrentRow] = useState(1)
   return (
-    <div className="px-3 md:pl-14 lg:pl-[90px] md:pr-6 mt-[56px] font-samsung">
+    <div className="px-3 md:pl-14 lg:pl-[90px] md:pr-6 mt-[86px] font-samsung">
       <Text
         renderBlock={(props) => (
-          <h2 className="mt-0 mb-12 text-center md:text-left font-bold text-[36px] leading-[45px] text-gray-900 dark:text-white">
+          <h2 className="mt-0 mb-12 text-center md:text-left font-bold text-[36px] leading-[45px] w-1/3 text-gray-900 dark:text-white">
             {props.children}
           </h2>
         )}
@@ -87,7 +87,7 @@ const StateInfo: types.Brick<StateInfoProps> = ({
           <div
             className={`flex border rounded ${
               currentRow === 1 ? 'shadow-xl' : ''
-            } hover:shadow-xl hover:cursor-pointer p-4 gap-6 transition-shadow duration-500 mb-2`}
+            } hover:shadow-xl hover:cursor-pointer p-4 gap-6 max-w-full lg:max-w-md transition-shadow duration-500 mb-2`}
             onClick={() => setCurrentRow(1)}
           >
             <Image
@@ -289,10 +289,16 @@ const StateInfo: types.Brick<StateInfoProps> = ({
           <div
             className={`${
               currentRow === 1 ? 'block' : 'hidden'
-            } h-full bg-no-repeat bg-cover`}
-            style={{ backgroundImage: `url("${sideImageFeature1?.src}")` }}
+            } h-full bg-no-repeat relative`}
           >
-            <div className="p-11 w-3/5 text-white">
+            <Image
+              propName="sideImageFeature1"
+              alt="Icon"
+              maxWidth={805}
+              aspectRatio={1}
+              imageClassName="mb-5"
+            />
+            <div className="px-11 py-3 w-full lg:w-3/5 xl:w-2/5 h-fit text-white absolute top-0 bottom-0 mx-auto">
               <h3 className="text-[24px] tracking-[0.01rem] font-bold mb-6">
                 {sideTitleFeature1}
               </h3>
@@ -309,10 +315,16 @@ const StateInfo: types.Brick<StateInfoProps> = ({
           <div
             className={`${
               currentRow === 2 ? 'block' : 'hidden'
-            } h-full bg-no-repeat bg-cover`}
-            style={{ backgroundImage: `url("${sideImageFeature2?.src}")` }}
+            } h-full bg-no-repeat relative`}
           >
-            <div className="p-11 w-3/5 text-white">
+            <Image
+              propName="sideImageFeature2"
+              alt="Icon"
+              maxWidth={805}
+              aspectRatio={1}
+              imageClassName="mb-5"
+            />
+            <div className="px-11 py-3 w-full lg:w-3/5 xl:w-2/5 h-fit text-white absolute top-0 bottom-0 mx-auto">
               <h3 className="text-[24px] tracking-[0.01rem] font-bold mb-6">
                 {sideTitleFeature2}
               </h3>
@@ -329,10 +341,16 @@ const StateInfo: types.Brick<StateInfoProps> = ({
           <div
             className={`${
               currentRow === 3 ? 'block' : 'hidden'
-            } h-full  bg-no-repeat bg-cover`}
-            style={{ backgroundImage: `url("${sideImageFeature3?.src}")` }}
+            } h-full bg-no-repeat relative`}
           >
-            <div className="p-11 w-3/5 text-white">
+            <Image
+              propName="sideImageFeature3"
+              alt="Icon"
+              maxWidth={805}
+              aspectRatio={1}
+              imageClassName="mb-5"
+            />
+            <div className="px-11 py-3 w-full lg:w-3/5 xl:w-2/5 h-fit text-white absolute top-0 bottom-0 mx-auto">
               <h3 className="text-[24px] tracking-[0.01rem] font-bold mb-6">
                 {sideTitleFeature3}
               </h3>
@@ -349,10 +367,16 @@ const StateInfo: types.Brick<StateInfoProps> = ({
           <div
             className={`${
               currentRow === 4 ? 'block' : 'hidden'
-            } h-full  bg-no-repeat bg-cover`}
-            style={{ backgroundImage: `url("${sideImageFeature4?.src}")` }}
+            } h-full bg-no-repeat relative`}
           >
-            <div className="p-11 w-3/5 text-white">
+            <Image
+              propName="sideImageFeature4"
+              alt="Icon"
+              maxWidth={805}
+              aspectRatio={1}
+              imageClassName="mb-5"
+            />
+            <div className="px-11 py-3 w-full lg:w-3/5 xl:w-2/5 h-fit text-white absolute top-0 bottom-0 mx-auto">
               <h3 className="text-[24px] tracking-[0.01rem] font-bold mb-6">
                 {sideTitleFeature4}
               </h3>
