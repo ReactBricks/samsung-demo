@@ -1,7 +1,13 @@
 import blockNames from '../react-bricks-ui/blockNames'
 import classNames from 'classnames'
 import React, { useState } from 'react'
-import { Text, Repeater, types, Link } from 'react-bricks/frontend'
+import {
+  Text,
+  Repeater,
+  types,
+  Link,
+  useAdminContext,
+} from 'react-bricks/frontend'
 
 interface HeaderMenuItemProps {
   linkPath: string
@@ -14,6 +20,12 @@ const HeaderMenuItem: types.Brick<HeaderMenuItemProps> = ({
   submenuColumns,
 }) => {
   const [open, setOpen] = useState(false)
+
+  const { isAdmin } = useAdminContext()
+
+  const eventHandlers = isAdmin
+    ? { onClick: () => setOpen((open) => !open) }
+    : { onMouseEnter: () => setOpen(true), onMouseLeave: () => setOpen(false) }
 
   if (!submenuColumns || !submenuColumns.length) {
     return (
@@ -34,11 +46,7 @@ const HeaderMenuItem: types.Brick<HeaderMenuItemProps> = ({
 
   return (
     <div>
-      <div
-        className="flex h-[80px]"
-        onMouseEnter={() => setOpen(true)}
-        onMouseLeave={() => setOpen(false)}
-      >
+      <div className="flex h-[80px]" {...eventHandlers}>
         <button
           className={classNames(
             'inline-flex hover:text-[#565656] items-center text-sm font-bold  px-2 rounded-[5px] transition-colors ease-out '
