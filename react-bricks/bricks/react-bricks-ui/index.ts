@@ -1,13 +1,13 @@
 import { types } from 'react-bricks/frontend'
 
 // LAYOUT
-import Header from '../custom/Header'
-import HeaderMenuItem from '../custom/HeaderMenuItem'
-import HeaderMenuSubItem from '../custom/HeaderMenuSubItem'
-import HeaderMenuSubColumn from '../custom/HeaderMenuColumn'
-import Footer from '../custom/Footer'
-import FooterColumn from '../custom/FooterColumn'
-import FooterLink from '../custom/FooterLink'
+import Header from '../custom/HeaderKnox'
+import HeaderMenuItem from '../custom/HeaderMenuItemKnox'
+import HeaderMenuSubItem from '../custom/HeaderMenuSubItemKnox'
+import HeaderMenuSubColumn from '../custom/HeaderMenuColumnKnox'
+import Footer from '../custom/FooterKnox'
+import FooterColumn from '../custom/FooterColumnKnox'
+import FooterLink from '../custom/FooterLinkKnox'
 
 // SHARED
 import Badge from './shared/bricks/Badge'
