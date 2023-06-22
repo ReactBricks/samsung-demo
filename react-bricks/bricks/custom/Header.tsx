@@ -47,12 +47,20 @@ const Header: types.Brick<HeaderProps> = ({
           aria-label="home"
           className="inline-flex py-[0.25rem] mr-[16px]"
         >
-          <Image
-            propName="logo"
-            alt="Logo"
-            maxWidth={300}
-            imageClassName="block w-[169px] h-4 object-contain object-left"
-          />
+          {isDarkColorMode ? (
+            <img
+              className="block w-[169px] h-4 object-contain object-left max-w-[300px]"
+              alt="samsung-knox"
+              src="/image.png"
+            />
+          ) : (
+            <Image
+              propName="logo"
+              alt="Logo"
+              maxWidth={300}
+              imageClassName="block w-[169px] h-4 object-contain object-left"
+            />
+          )}
         </Link>
         <div className="flex flex-grow  space-x-2 px-[15px] ml-[3%] h-full justify-between">
           <div className="flex h-full items-centers">
@@ -72,14 +80,17 @@ const Header: types.Brick<HeaderProps> = ({
           <div className="flex h-[80px] transition-all" {...eventHandlers}>
             <button
               className={classNames(
-                'inline-flex hover:text-[#565656] items-center text-sm font-bold py-1.5 px-2 rounded-[5px] transition-colors ease-out'
+                'inline-flex hover:text-[#565656] items-center text-sm font-bold py-1.5 px-2 rounded-[5px] transition-colors ease-out dark:text-white'
               )}
             >
               <Text
                 propName="partners"
                 placeholder="Type a text..."
+                renderPlaceholder={(props) => (
+                  <div className="w-[40px]">{props.children}</div>
+                )}
                 renderBlock={({ children }) => (
-                  <div className="min-w-[20px]">{children}</div>
+                  <div className="">{children}</div>
                 )}
               />
 
@@ -87,7 +98,7 @@ const Header: types.Brick<HeaderProps> = ({
                 viewBox="0 1 13 13"
                 width="14px"
                 height="14px"
-                stroke="black"
+                stroke="black dark:text-white"
                 className="inline-block w-[12px] h-[12px] ml-[6px]"
               >
                 <path
@@ -100,7 +111,7 @@ const Header: types.Brick<HeaderProps> = ({
             <div
               className={classNames(
                 open ? 'visible opacity-100' : 'invisible',
-                'transition-all delay-0 duration-500 opacity-0 overflow-hidden absolute top-[70px] bg-white border-2 rounded-3xl w-[200px] right-2'
+                'transition-all delay-0 duration-500 opacity-0 overflow-hidden absolute top-[70px] bg-white border-2 rounded-3xl w-[200px] right-2 z-[99999] dark:bg-[#101827] dark:border-white'
               )}
             >
               <Repeater

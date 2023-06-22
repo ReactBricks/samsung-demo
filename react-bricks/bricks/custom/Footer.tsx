@@ -30,7 +30,7 @@ const Footer: types.Brick<FooterProps> = ({
         backgroundColor={backgroundColor}
         borderTop={borderTop}
         borderBottom={borderBottom}
-        className="mx-auto max-w-[1440px]"
+        className="mx-auto max-w-[1440px] dark:bg-[#101827]"
       >
         <Container
           paddingTop={paddingTop}

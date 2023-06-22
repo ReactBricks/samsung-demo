@@ -17,7 +17,9 @@ const HeaderMenuSubColumn: types.Brick<HeaderMenuSubColumnProps> = ({
           propName="title"
           placeholder="Column title.."
           renderBlock={({ children }) => (
-            <div className="mb-[8px] text-sm uppercase">{children}</div>
+            <div className="mb-[8px] text-sm uppercase text-[#555] font-bold dark:text-white">
+              {children}
+            </div>
           )}
         />
       </div>

@@ -32,11 +32,14 @@ const HeaderMenuItem: types.Brick<HeaderMenuItemProps> = ({
       <div className="font-samsung">
         <Link
           href={linkPath}
-          className="hidden lg:inline-flex justify-center items-center text-sm font-bold px-[8px] py-[7px] hover:text-[#565656]"
+          className="hidden lg:inline-flex justify-center items-center text-sm font-bold px-[8px] py-[7px] hover:text-[#565656] dark:text-white"
         >
           <Text
             propName="linkText"
             placeholder="Type a text..."
+            renderPlaceholder={(props) => (
+              <div className="w-[40px]">{props.children}</div>
+            )}
             renderBlock={({ children }) => <span>{children}</span>}
           />
         </Link>
@@ -49,12 +52,15 @@ const HeaderMenuItem: types.Brick<HeaderMenuItemProps> = ({
       <div className="flex h-[80px]" {...eventHandlers}>
         <button
           className={classNames(
-            'inline-flex hover:text-[#565656] items-center text-sm font-bold  px-2 rounded-[5px] transition-colors ease-out '
+            'inline-flex hover:text-[#565656] items-center text-sm font-bold  px-2 rounded-[5px] transition-colors ease-out dark:text-white'
           )}
         >
           <Text
             propName="linkText"
             placeholder="Type a text..."
+            renderPlaceholder={(props) => (
+              <div className="w-[40px] ">{props.children}</div>
+            )}
             renderBlock={({ children }) => <div>{children}</div>}
           />
 
@@ -62,7 +68,7 @@ const HeaderMenuItem: types.Brick<HeaderMenuItemProps> = ({
             viewBox="0 1 13 13"
             width="14px"
             height="14px"
-            stroke="black"
+            stroke="black dark:white"
             className="inline-block w-[12px] h-[12px] ml-[6px]"
           >
             <path
@@ -75,7 +81,7 @@ const HeaderMenuItem: types.Brick<HeaderMenuItemProps> = ({
         <div
           className={classNames(
             open ? 'visible opacity-100' : 'invisible',
-            'transition-all delay-0 duration-500 opacity-0 overflow-hidden ease-in-out w-full bg-white p-3 border absolute top-[80px] start-[0] z-[1000] border-t-0  pt-[47px] pb-[28px] px-[150px]'
+            'transition-all delay-0 duration-500 opacity-0 overflow-hidden ease-in-out w-full bg-white p-3 border absolute top-[80px] start-[0] z-[1000] border-t-0  pt-[47px] pb-[28px] px-[150px] dark:bg-[#101827] dark:border-white'
           )}
         >
           <Repeater

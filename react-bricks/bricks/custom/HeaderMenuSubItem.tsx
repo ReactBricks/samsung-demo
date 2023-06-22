@@ -13,7 +13,10 @@ const HeaderMenuSubItem: types.Brick<HeaderMenuSubItemProps> = ({
   linkPath,
 }) => {
   return (
-    <Link href={linkPath} className="group p-0 mb-3 lg:p-3 flex items-start font-samsung">
+    <Link
+      href={linkPath}
+      className="group p-0 mb-3 lg:p-3 flex items-start font-samsung"
+    >
       <div className="text-sky-500 lg:hidden mr-2">
         <FiChevronRight />
       </div>
@@ -24,7 +27,7 @@ const HeaderMenuSubItem: types.Brick<HeaderMenuSubItemProps> = ({
           renderBlock={({ children }) => (
             <div
               className={classNames(
-                'text-sm truncate lg:overflow-auto lg:whitespace-normal font-bold transition-colors ease-out group-hover:underline leading-4'
+                'text-sm truncate lg:overflow-auto lg:whitespace-normal font-bold transition-colors ease-out group-hover:underline leading-4 dark:text-white'
               )}
             >
               {children}
@@ -38,7 +41,7 @@ const HeaderMenuSubItem: types.Brick<HeaderMenuSubItemProps> = ({
             renderBlock={({ children }) => (
               <div
                 className={classNames(
-                  'text-sm transition-colors ease-out text-gray-600'
+                  'text-xs transition-colors ease-out dark:text-white/80'
                 )}
               >
                 {children}
