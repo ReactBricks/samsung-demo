@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { types, usePageValues, Text } from 'react-bricks/frontend'
 import BlogListItem from '../../../../components/BlogListItem'
 import Section from '../../react-bricks-ui/shared/components/Section'
@@ -20,6 +20,11 @@ interface ExternalData {
 }
 export interface BlogListProps extends LayoutProps {}
 
+interface src {
+  prev: string
+  next: string
+}
+
 const BlogList: types.Brick<BlogListProps> = ({
   backgroundColor,
   borderTop,
@@ -29,6 +34,16 @@ const BlogList: types.Brick<BlogListProps> = ({
 }) => {
   const [pageValues] = usePageValues()
   const { theme } = useTheme()
+  const [src, setSrc] = useState<any>()
+
+  useEffect(() => {
+    if (theme === 'light')
+      setSrc({
+        next: 'https://kp4-cdn.samsungknox.com/img/next_IHDI.png',
+        prev: 'https://kp4-cdn.samsungknox.com/img/next_IHDI.png',
+      })
+    else setSrc({ next: '/next_white.png', prev: '/prev_white.png' })
+  }, [theme])
   const settings = {
     arrows: true,
     infinite: true,
@@ -36,27 +51,11 @@ const BlogList: types.Brick<BlogListProps> = ({
     touchThreshold: 1000,
     slidesToShow: 3,
     accessibility: true,
-    prevArrow: (
-      <img
-        className=""
-        src={
-          theme === 'light'
-            ? 'https://kp4-cdn.samsungknox.com/img/previous_brRh.png'
-            : '/prev_white.png'
-        }
-      />
-    ),
-    nextArrow: (
-      <img
-        className=""
-        src={
-          theme === 'light'
-            ? 'https://kp4-cdn.samsungknox.com/img/next_IHDI.png'
-            : '/next_white.png'
-        }
-      />
-    ),
+    prevArrow: <img className="" src={src?.prev} />,
+    nextArrow: <img className="" src={src?.next} />,
   }
+
+  console.log(theme)
 
   const { externalData } = pageValues
   const { pagesByTag } = externalData as ExternalData
