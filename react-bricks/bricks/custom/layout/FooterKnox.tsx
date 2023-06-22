@@ -1,14 +1,11 @@
 import React from 'react'
-import { RichText, Image, Repeater, types, Link } from 'react-bricks/frontend'
-import blockNames from '../../react-bricks-ui/blockNames'
-import { bgColors, textColors } from '../../react-bricks-ui/colors'
+import { Repeater, types } from 'react-bricks/frontend'
 import {
   LayoutProps,
   neutralBackgroundSideGroup,
   paddingBordersSideGroup,
   sectionDefaults,
 } from '../../react-bricks-ui/LayoutSideProps'
-import { logos } from '../../react-bricks-ui/shared/defaultImages'
 import Container from '../../react-bricks-ui/shared/components/Container'
 import Section from '../../react-bricks-ui/shared/components/Section'
 
@@ -22,7 +19,6 @@ const FooterKnox: types.Brick<FooterKnoxProps> = ({
   borderBottom,
   paddingTop,
   paddingBottom,
-  siteUrl,
 }) => {
   return (
     <footer>
@@ -62,13 +58,10 @@ FooterKnox.schema = {
       max: 4,
     },
   ],
-
-  // Defaults when a new brick is added
   getDefaultProps: () => ({
     ...sectionDefaults,
     backgroundColor: { color: 'ffffff', className: 'bg-white' },
-    borderTop: 'full',
-    siteUrl: '',
+    borderTop: 'none',
     copyright: [
       {
         type: 'paragraph',
@@ -174,8 +167,6 @@ FooterKnox.schema = {
       },
     ],
   }),
-
-  // Sidebar Edit controls for props
   sideEditProps: [neutralBackgroundSideGroup, paddingBordersSideGroup],
 }
 

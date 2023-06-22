@@ -9,7 +9,11 @@ export interface CustomerProps {
   href: string
 }
 
-const CustomerItemKnox: types.Brick<CustomerProps> = ({ grayscale, href }) => {
+const CustomerItemKnox: types.Brick<CustomerProps> = ({
+  grayscale,
+  href,
+  image,
+}) => {
   return (
     <Link
       href={href}

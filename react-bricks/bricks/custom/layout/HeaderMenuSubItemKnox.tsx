@@ -15,9 +15,9 @@ const HeaderMenuSubItemKnox: types.Brick<HeaderMenuSubItemKnoxProps> = ({
   return (
     <Link
       href={linkPath}
-      className="group mb-3 p-3 flex items-start font-samsung"
+      className="flex items-start mb-3 p-3 group font-samsung"
     >
-      <div className="flex-1 overflow-hidden lg:overflow-auto">
+      <div className="flex-1 overflow-auto">
         <Text
           propName="linkText"
           placeholder="Type a text..."

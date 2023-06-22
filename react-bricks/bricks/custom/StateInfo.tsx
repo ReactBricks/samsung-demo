@@ -1,5 +1,9 @@
 import { Image, RichText, Text, types, Link } from 'react-bricks/frontend'
-import { LayoutProps } from '../react-bricks-ui/LayoutSideProps'
+import {
+  LayoutProps,
+  neutralBackgroundSideGroup,
+  paddingBordersSideGroup,
+} from '../react-bricks-ui/LayoutSideProps'
 import { useState } from 'react'
 import Section from '../react-bricks-ui/shared/components/Section'
 import Container from '../react-bricks-ui/shared/components/Container'
@@ -487,6 +491,8 @@ StateInfo.schema = {
     overlayFeature4: 'green',
   }),
   sideEditProps: [
+    neutralBackgroundSideGroup,
+    paddingBordersSideGroup,
     {
       groupName: 'Feature 1',
       defaultOpen: true,

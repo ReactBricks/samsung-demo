@@ -78,7 +78,7 @@ const HeaderMenuItemKnox: types.Brick<HeaderMenuItemKnoxProps> = ({
         <div
           className={classNames(
             open ? 'visible opacity-100' : 'invisible',
-            'transition-all delay-0 duration-500 opacity-0 overflow-hidden ease-in-out w-full bg-white p-3 border absolute top-[80px] start-[0] z-[1000] border-t-0  pt-[47px] pb-[28px] px-[150px] dark:bg-[#101827] dark:border-white'
+            'absolute top-[80px] start-[0] z-[1000] overflow-hidden w-full pt-[47px] pb-[28px] px-[150px] transition-all delay-0 duration-500 opacity-0 ease-in-out bg-white p-3 border border-t-0 dark:bg-[#101827] dark:border-white'
           )}
         >
           <Repeater

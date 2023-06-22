@@ -42,7 +42,7 @@ const HeaderKnox: types.Brick<HeaderKnoxProps> = ({
       borderBottom={borderBottom}
       className="font-samsung"
     >
-      <nav className="mx-auto max-w-[1440px] h-[80px] border-b border-[#dddddd] flex items-center px-[16px] relative">
+      <nav className="relative flex items-center mx-auto px-[16px] max-w-[1440px] h-[80px] border-b border-[#dddddd]">
         <Link
           href="/"
           aria-label="home"
@@ -59,14 +59,14 @@ const HeaderKnox: types.Brick<HeaderKnoxProps> = ({
             />
           )}
         </Link>
-        <div className="flex flex-grow space-x-2 px-[15px] ml-[3%] h-full justify-between">
-          <div className="flex h-full items-centers">
+        <div className="flex flex-grow justify-between px-[15px] ml-[3%] h-full space-x-2 ">
+          <div className="flex items-centers h-full">
             <Repeater
               propName="menuItems"
               renderItemWrapper={(item) => (
                 <div
                   key={item.key}
-                  className="px-[7px] h-full flex items-center"
+                  className="flex items-center px-[7px] h-full"
                 >
                   {item}
                 </div>
@@ -77,7 +77,7 @@ const HeaderKnox: types.Brick<HeaderKnoxProps> = ({
           <div className="flex h-[80px] transition-all" {...eventHandlers}>
             <button
               className={classNames(
-                'inline-flex hover:text-[#565656] items-center text-sm font-bold py-1.5 px-2 rounded-[5px] transition-colors ease-out dark:text-white'
+                'inline-flex items-center py-1.5 px-2 rounded-[5px] text-sm font-bold transition-colors ease-out hover:text-[#565656] dark:text-white'
               )}
             >
               <Text
@@ -108,7 +108,7 @@ const HeaderKnox: types.Brick<HeaderKnoxProps> = ({
             <div
               className={classNames(
                 open ? 'visible opacity-100' : 'invisible',
-                'transition-all delay-0 duration-500 opacity-0 overflow-hidden absolute top-[70px] bg-white border-2 rounded-3xl w-[200px] right-2 z-[99999] dark:bg-[#101827] dark:border-white'
+                'absolute overflow-hidden right-2 top-[70px] z-[99999] w-[200px] transition-all delay-0 duration-500 opacity-0 bg-white border-2 rounded-3xl dark:bg-[#101827] dark:border-white'
               )}
             >
               <Repeater

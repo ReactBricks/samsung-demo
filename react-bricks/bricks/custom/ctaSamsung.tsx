@@ -8,9 +8,9 @@ import {
   sectionDefaults,
 } from '../react-bricks-ui/LayoutSideProps'
 import blockNames from '../react-bricks-ui/blockNames'
-import { bgColors, buttonColors, textColors } from '../react-bricks-ui/colors'
+import { buttonColors } from '../react-bricks-ui/colors'
 import Container from '../react-bricks-ui/shared/components/Container'
-import Section, { Border } from '../react-bricks-ui/shared/components/Section'
+import Section from '../react-bricks-ui/shared/components/Section'
 
 export interface CallToActionProps extends LayoutProps {}
 

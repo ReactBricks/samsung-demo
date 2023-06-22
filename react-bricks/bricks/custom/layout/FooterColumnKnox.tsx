@@ -1,18 +1,7 @@
 import React from 'react'
-import {
-  Text,
-  RichText,
-  Image,
-  File,
-  Repeater,
-  types,
-} from 'react-bricks/frontend'
-import blockNames from '../../react-bricks-ui/blockNames'
-import { textColors } from '../../react-bricks-ui/colors'
+import { Text, Repeater, types } from 'react-bricks/frontend'
 
-interface FooterColumnKnoxProps {}
-
-const FooterColumnKnox: types.Brick<FooterColumnKnoxProps> = (props) => {
+const FooterColumnKnox: types.Brick = (props) => {
   return (
     <div className="mb-8">
       <Text
@@ -20,7 +9,7 @@ const FooterColumnKnox: types.Brick<FooterColumnKnoxProps> = (props) => {
         placeholder="Title..."
         renderBlock={({ children }) => (
           <div
-            className={`mb-3 text-lg font-bold uppercase  min-w-[120px] leading-6 dark:text-white`}
+            className={`mb-3 text-lg font-bold uppercase leading-6 dark:text-white`}
           >
             {children}
           </div>
@@ -41,20 +30,15 @@ FooterColumnKnox.schema = {
   label: 'Column',
   category: 'layout',
   hideFromAddMenu: true,
-  // tags: [],
   repeaterItems: [
     {
       name: 'links',
       itemType: 'footer-link-knox',
     },
   ],
-
-  // Defaults when a new brick is added
   getDefaultProps: () => ({
     title: 'Features',
   }),
-
-  // Sidebar Edit controls for props
   sideEditProps: [],
 }
 
