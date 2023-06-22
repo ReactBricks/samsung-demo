@@ -18,7 +18,7 @@ const BlogListItem: React.FC<PostListItemProps> = ({
   return (
     <Link
       href={`/blog/post/${href}`}
-      className="flex flex-col hover:shadow-2xl group transition-shadow duration-500 my-[16px] border border-[#cccccc] mx-[12px] rounded-xl h-[460px] dark:border-white"
+      className="flex flex-col hover:shadow-2xl group transition-shadow duration-500 my-[16px] bg-white dark:bg-gray-900 border border-gray-300 mx-[12px] rounded-xl h-[460px] dark:border-white/20"
     >
       <img
         src={featuredImg}
