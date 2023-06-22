@@ -285,20 +285,28 @@ const StateInfo: types.Brick<StateInfoProps> = ({
         </div>
 
         {/* Preview */}
-        <div className="basis-2/3">
+        <div className="basis-2/3 h-fit">
+          {/* Feature 1 */}
           <div
             className={`${
               currentRow === 1 ? 'block' : 'hidden'
-            } h-full bg-no-repeat relative`}
+            } h-fit bg-no-repeat relative`}
           >
             <Image
               propName="sideImageFeature1"
               alt="Icon"
               maxWidth={805}
               aspectRatio={1}
-              imageClassName="mb-5"
             />
-            <div className="px-11 py-3 w-full lg:w-3/5 xl:w-2/5 h-fit text-white absolute top-0 bottom-0 mx-auto">
+
+            <Image
+              propName="sideImageOverlayFeature1"
+              alt="Icon"
+              maxWidth={805}
+              imageClassName="absolute h-[-webkit-fill-available] top-0 bottom-0 z-10"
+            />
+
+            <div className="px-11 py-3 w-full lg:w-3/5 xl:w-2/5 h-fit text-white absolute top-0 bottom-0 mx-auto z-20">
               <h3 className="text-[24px] tracking-[0.01rem] font-bold mb-6">
                 {sideTitleFeature1}
               </h3>
@@ -312,6 +320,7 @@ const StateInfo: types.Brick<StateInfoProps> = ({
             </div>
           </div>
 
+          {/* Feature 2 */}
           <div
             className={`${
               currentRow === 2 ? 'block' : 'hidden'
@@ -323,6 +332,12 @@ const StateInfo: types.Brick<StateInfoProps> = ({
               maxWidth={805}
               aspectRatio={1}
               imageClassName="mb-5"
+            />
+            <Image
+              propName="sideImageOverlayFeature2"
+              alt="Icon"
+              maxWidth={805}
+              imageClassName="absolute h-[-webkit-fill-available] top-0 bottom-0"
             />
             <div className="px-11 py-3 w-full lg:w-3/5 xl:w-2/5 h-fit text-white absolute top-0 bottom-0 mx-auto">
               <h3 className="text-[24px] tracking-[0.01rem] font-bold mb-6">
@@ -338,6 +353,7 @@ const StateInfo: types.Brick<StateInfoProps> = ({
             </div>
           </div>
 
+          {/* Feature 3 */}
           <div
             className={`${
               currentRow === 3 ? 'block' : 'hidden'
@@ -349,6 +365,12 @@ const StateInfo: types.Brick<StateInfoProps> = ({
               maxWidth={805}
               aspectRatio={1}
               imageClassName="mb-5"
+            />
+            <Image
+              propName="sideImageOverlayFeature3"
+              alt="Icon"
+              maxWidth={805}
+              imageClassName="absolute h-[-webkit-fill-available] top-0 bottom-0"
             />
             <div className="px-11 py-3 w-full lg:w-3/5 xl:w-2/5 h-fit text-white absolute top-0 bottom-0 mx-auto">
               <h3 className="text-[24px] tracking-[0.01rem] font-bold mb-6">
@@ -364,6 +386,7 @@ const StateInfo: types.Brick<StateInfoProps> = ({
             </div>
           </div>
 
+          {/* Feature 4 */}
           <div
             className={`${
               currentRow === 4 ? 'block' : 'hidden'
@@ -375,6 +398,12 @@ const StateInfo: types.Brick<StateInfoProps> = ({
               maxWidth={805}
               aspectRatio={1}
               imageClassName="mb-5"
+            />
+            <Image
+              propName="sideImageOverlayFeature4"
+              alt="Icon"
+              maxWidth={805}
+              imageClassName="absolute h-[-webkit-fill-available] top-0 bottom-0"
             />
             <div className="px-11 py-3 w-full lg:w-3/5 xl:w-2/5 h-fit text-white absolute top-0 bottom-0 mx-auto">
               <h3 className="text-[24px] tracking-[0.01rem] font-bold mb-6">
