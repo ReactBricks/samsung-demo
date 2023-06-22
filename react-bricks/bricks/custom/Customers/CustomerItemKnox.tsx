@@ -40,7 +40,6 @@ CustomerItemKnox.schema = {
       name: 'href',
       label: 'Link (external or path)',
       type: types.SideEditPropType.Text,
-      show: (props) => props.type === 'link',
     },
   ],
 }

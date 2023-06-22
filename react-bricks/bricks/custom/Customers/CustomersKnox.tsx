@@ -38,37 +38,39 @@ const CustomersKnox: types.Brick<CustomersProps> = ({
         paddingBottom={paddingBottom}
         className="mx-0 xl:mx-0 px-[24px]"
       >
-        <Text
-          propName="title"
-          renderBlock={(props) => (
-            <p
-              className="mb-[32px] font-black text-5xl leading-[60px] text-center dark:text-white"
-              {...props.attributes}
-            >
-              {props.children}
-            </p>
-          )}
-          placeholder="Title..."
-        />
-        <div
-          className={classNames(
-            'flex no-wrap justify-center items-center mx-auto h-[100px]'
-          )}
-        >
-          <Repeater propName="customers" itemProps={{ grayscale }} />
+        <div className="py-[96px]">
+          <Text
+            propName="title"
+            renderBlock={(props) => (
+              <p
+                className="mb-[32px] font-black text-5xl leading-[60px] text-center dark:text-white"
+                {...props.attributes}
+              >
+                {props.children}
+              </p>
+            )}
+            placeholder="Title..."
+          />
+          <div
+            className={classNames(
+              'flex no-wrap justify-center items-center mx-auto h-[100px]'
+            )}
+          >
+            <Repeater propName="customers" itemProps={{ grayscale }} />
+          </div>
+          <RichText
+            propName="description"
+            renderBlock={(props) => (
+              <p
+                className="mt-[64px] mx-auto text-lg leading-[24px] text-center tracking-[0.16px] dark:text-white/80"
+                {...props.attributes}
+              >
+                {props.children}
+              </p>
+            )}
+            placeholder="Description..."
+          />
         </div>
-        <RichText
-          propName="description"
-          renderBlock={(props) => (
-            <p
-              className="mt-[64px] text-lg leading-[24px] text-center mx-auto tracking-[0.16px] dark:text-white/80"
-              {...props.attributes}
-            >
-              {props.children}
-            </p>
-          )}
-          placeholder="Description..."
-        />
       </Container>
     </Section>
   )
@@ -79,8 +81,8 @@ CustomersKnox.schema = {
   label: 'Customers',
   getDefaultProps: () => ({
     backgroundColor: bgColors.WHITE.value,
-    paddingTop: '12',
-    paddingBottom: '12',
+    paddingTop: '0',
+    paddingBottom: '0',
     borderTop: 'none',
     borderBottom: 'none',
     grayscale: false,

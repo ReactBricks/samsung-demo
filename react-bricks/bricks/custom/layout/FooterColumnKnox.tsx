@@ -7,8 +7,8 @@ import {
   Repeater,
   types,
 } from 'react-bricks/frontend'
-import blockNames from '../react-bricks-ui/blockNames'
-import { textColors } from '../react-bricks-ui/colors'
+import blockNames from '../../react-bricks-ui/blockNames'
+import { textColors } from '../../react-bricks-ui/colors'
 
 interface FooterColumnKnoxProps {}
 

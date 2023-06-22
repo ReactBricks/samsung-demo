@@ -1,16 +1,16 @@
 import React from 'react'
 import { RichText, Image, Repeater, types, Link } from 'react-bricks/frontend'
-import blockNames from '../react-bricks-ui/blockNames'
-import { bgColors, textColors } from '../react-bricks-ui/colors'
+import blockNames from '../../react-bricks-ui/blockNames'
+import { bgColors, textColors } from '../../react-bricks-ui/colors'
 import {
   LayoutProps,
   neutralBackgroundSideGroup,
   paddingBordersSideGroup,
   sectionDefaults,
-} from '../react-bricks-ui/LayoutSideProps'
-import { logos } from '../react-bricks-ui/shared/defaultImages'
-import Container from '../react-bricks-ui/shared/components/Container'
-import Section from '../react-bricks-ui/shared/components/Section'
+} from '../../react-bricks-ui/LayoutSideProps'
+import { logos } from '../../react-bricks-ui/shared/defaultImages'
+import Container from '../../react-bricks-ui/shared/components/Container'
+import Section from '../../react-bricks-ui/shared/components/Section'
 
 interface FooterKnoxProps extends LayoutProps {
   siteUrl: string

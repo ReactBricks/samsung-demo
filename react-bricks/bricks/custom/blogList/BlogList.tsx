@@ -1,19 +1,19 @@
 import React from 'react'
 import { types, usePageValues, Text } from 'react-bricks/frontend'
-import BlogListItem from '../../../components/BlogListItem'
-import Section from '../react-bricks-ui/shared/components/Section'
-//import Container from '../react-bricks-ui/shared/components/Container'
+import BlogListItem from '../../../../components/BlogListItem'
+import Section from '../../react-bricks-ui/shared/components/Section'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
+import { useTheme } from 'next-themes'
 import ArrowStyles from './ArrowStyle'
 import {
   LayoutProps,
   sectionDefaults,
   neutralBackgroundSideGroup,
   paddingBordersSideGroup,
-} from '../react-bricks-ui/LayoutSideProps'
-import Container from '../react-bricks-ui/shared/components/Container'
+} from '../../react-bricks-ui/LayoutSideProps'
+import Container from '../../react-bricks-ui/shared/components/Container'
 interface ExternalData {
   allTags: string[]
   pagesByTag: types.PageFromList[]
@@ -28,26 +28,32 @@ const BlogList: types.Brick<BlogListProps> = ({
   paddingBottom,
 }) => {
   const [pageValues] = usePageValues()
-
+  const { theme } = useTheme()
   const settings = {
     arrows: true,
     infinite: true,
     draggable: true,
-    // autoplay: !!autoplay,
-    // autoplaySpeed: speed ? parseInt(speed) * 1000 : 3000,
     touchThreshold: 1000,
     slidesToShow: 3,
     accessibility: true,
     prevArrow: (
       <img
-        className="arrow"
-        src="https://kp4-cdn.samsungknox.com/img/previous_brRh.png"
+        className=""
+        src={
+          theme === 'light'
+            ? 'https://kp4-cdn.samsungknox.com/img/previous_brRh.png'
+            : '/prev_white.png'
+        }
       />
     ),
     nextArrow: (
       <img
-        className="arrow"
-        src="https://kp4-cdn.samsungknox.com/img/next_IHDI.png"
+        className=""
+        src={
+          theme === 'light'
+            ? 'https://kp4-cdn.samsungknox.com/img/next_IHDI.png'
+            : '/next_white.png'
+        }
       />
     ),
   }
@@ -113,8 +119,6 @@ BlogList.schema = {
     paddingTop: '0',
     paddingBottom: '0',
   }),
-
-  // Sidebar Edit controls for props
   sideEditProps: [neutralBackgroundSideGroup, paddingBordersSideGroup],
 }
 

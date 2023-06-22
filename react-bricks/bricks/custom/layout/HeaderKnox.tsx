@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import { Repeater, types, Link, Text } from 'react-bricks/frontend'
 import { useReactBricksContext, useAdminContext } from 'react-bricks/frontend'
-import { bgColors } from '../react-bricks-ui/colors'
+import { bgColors } from '../../react-bricks-ui/colors'
 import {
   neutralBackgroundSideGroup,
   borderBottomEditProp,
   LayoutProps,
-} from '../react-bricks-ui/LayoutSideProps'
-import Section from '../react-bricks-ui/shared/components/Section'
+} from '../../react-bricks-ui/LayoutSideProps'
+import Section from '../../react-bricks-ui/shared/components/Section'
 import classNames from 'classnames'
 import { BsMoonFill, BsSunFill } from 'react-icons/bs'
 import Image from 'next/image'

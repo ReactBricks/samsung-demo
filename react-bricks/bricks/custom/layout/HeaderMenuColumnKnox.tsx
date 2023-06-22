@@ -1,4 +1,4 @@
-import blockNames from '../react-bricks-ui/blockNames'
+import blockNames from '../../react-bricks-ui/blockNames'
 import { Text, types, Repeater } from 'react-bricks/frontend'
 import React from 'react'
 interface HeaderMenuSubColumnKnoxProps {
