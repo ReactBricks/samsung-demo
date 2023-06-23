@@ -96,30 +96,16 @@ HeroUnit.schema = {
         text: 'Learn more',
         href: '',
         isTargetBlank: false,
-        buttonColor: {
-          color: '#4b72ff',
-          classNameSolid:
-            'bg-blueSamsung-500 text-white hover:bg-blueSamsung-900',
-          classNameOutline:
-            'border border-blueSamsung-600 text-blueSamsung-600 dark:border-white dark:text-white',
-          classNameGhost: 'text-blueSamsung-600 dark:text-white font-normal',
-        },
+        buttonColor: buttonColors.BLUE_SAMSUNG.value,
         variant: 'solid',
         padding: 'normal',
       },
       {
         type: 'link',
-        text: 'Learn more',
+        text: 'find solutions',
         href: '',
         isTargetBlank: false,
-        buttonColor: {
-          color: '#4b72ff',
-          classNameSolid:
-            'bg-blueSamsung-500 text-white hover:bg-blueSamsung-900',
-          classNameOutline:
-            'border border-blueSamsung-600 text-blueSamsung-600 dark:border-white dark:text-white',
-          classNameGhost: 'text-blueSamsung-600 dark:text-white font-normal',
-        },
+        buttonColor: buttonColors.BLUE_SAMSUNG.value,
         variant: 'ghost',
         padding: 'normal',
       },

@@ -40,7 +40,7 @@ const BlogList: types.Brick<BlogListProps> = ({
     if (theme === 'light')
       setSrc({
         next: 'https://kp4-cdn.samsungknox.com/img/next_IHDI.png',
-        prev: 'https://kp4-cdn.samsungknox.com/img/next_IHDI.png',
+        prev: 'https://kp4-cdn.samsungknox.com/img/previous_brRh.png',
       })
     else setSrc({ next: '/next_white.png', prev: '/prev_white.png' })
   }, [theme])

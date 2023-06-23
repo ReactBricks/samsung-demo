@@ -91,19 +91,12 @@ CallToAction.schema = {
       'We can help you find the right Samsung Knox products and services for your needs',
     buttons: [
       {
-        text: 'FIND SOLUTIONS',
-        type: 'solid',
-        buttonColor: {
-          color: '#4b72ff',
-          classNameSolid:
-            'bg-blueSamsung-700 text-white hover:bg-blueSamsung-900 uppercase',
-          classNameOutline:
-            'border border-blueSamsung-800 text-blueSamsung-800 dark:border-white dark:text-white uppercase',
-          classNameGhost:
-            'text-blueSamsung-800 dark:text-white uppercase hover:underline',
-        },
-        href: 'https://reactbricks.com',
-        isTargetBlank: true,
+        type: 'link',
+        text: 'find solutions',
+        href: '',
+        isTargetBlank: false,
+        buttonColor: buttonColors.BLUE_SAMSUNG.value,
+        variant: 'solid',
         padding: 'normal',
       },
     ],

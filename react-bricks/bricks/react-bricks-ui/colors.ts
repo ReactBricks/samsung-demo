@@ -105,6 +105,11 @@ const tailwindColors = {
     label: 'Rose',
     color500: '#f43f5e',
   },
+  BLUE_SAMSUNG: {
+    name: 'blue-samsung',
+    label: 'Blue Samsung',
+    color500: '#2138e3',
+  },
 } as const satisfies TailwindColors
 
 //====================
@@ -736,6 +741,18 @@ export const buttonColors = {
       classNameOutline:
         'border border-rose-600 text-rose-600 dark:border-white dark:text-white',
       classNameGhost: 'text-rose-600 dark:text-white',
+    },
+  },
+  BLUE_SAMSUNG: {
+    label: tailwindColors.BLUE_SAMSUNG.label,
+    value: {
+      color: tailwindColors.BLUE_SAMSUNG.color500,
+      classNameSolid:
+        'bg-blueSamsung-700 text-white hover:bg-blueSamsung-900 uppercase',
+      classNameOutline:
+        'border border-blueSamsung-700 text-blueSamsung-700 dark:border-white dark:text-white uppercase',
+      classNameGhost:
+        'text-blueSamsung-700 dark:text-white hover:underline uppercase',
     },
   },
 } as const satisfies ButtonColors
