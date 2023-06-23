@@ -32,7 +32,6 @@ const NextArrow = (props) => {
 
 const PrevArrow = (props) => {
   const { className, style, onClick, src } = props
-  console.log({ props })
   return <img className={className} style={style} src={src} onClick={onClick} />
 }
 
