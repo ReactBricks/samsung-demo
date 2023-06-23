@@ -21,7 +21,7 @@ const CustomerItemKnox: types.Brick<CustomerProps> = ({
       <Image
         propName="image"
         alt="customer"
-        imageClassName={classNames('block object-contain', {
+        imageClassName={classNames('block object-contain w-[200px] h-[100px]', {
           'opacity-50 grayscale dark:invert': grayscale,
         })}
       />

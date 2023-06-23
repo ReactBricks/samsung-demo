@@ -57,7 +57,7 @@ export const customers = {
 
 export const customersSamsung = {
   WALMART: {
-    src: '/walmart-cov1_McqX.png',
+    src: '/walmart.svg',
     placeholderSrc:
       'https://kp4-cdn.samsungknox.com/resource/walmart-cov1_McqX.png',
     srcSet: '',
@@ -67,7 +67,7 @@ export const customersSamsung = {
     height: 198.205,
   },
   PEPSICO: {
-    src: '/pepsico-cov1_T66v.png',
+    src: '/pepsico_logo.svg',
     placeholderSrc:
       'https://kp4-cdn.samsungknox.com/resource/pepsico-cov1_T66v.png',
     srcSet: '',
@@ -77,7 +77,7 @@ export const customersSamsung = {
     height: 300,
   },
   HARLEY_DAVISON: {
-    src: '/harley-davidson-cov1_duqR.png',
+    src: '/harley-davidson-1.svg',
     placeholderSrc:
       'https://kp4-cdn.samsungknox.com/resource/harley-davidson-cov1_duQr.png',
     srcSet: '',
@@ -87,7 +87,7 @@ export const customersSamsung = {
     height: 135.83,
   },
   KIA: {
-    src: '/kia-cov1_Mh-H.png',
+    src: '/kia_logo.svg',
     placeholderSrc:
       'https://kp4-cdn.samsungknox.com/resource/kia-cov1_Mh-H.png',
     srcSet: '',
