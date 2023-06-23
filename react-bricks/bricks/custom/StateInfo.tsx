@@ -101,20 +101,19 @@ const StateInfo: types.Brick<StateInfoProps> = ({
         className="mx-0 xl:mx-0 sm:mx-0"
       >
         <div className="pl-24 pr-3 py-12">
-          <Text
-            renderBlock={(props) => (
-              <h2 className="mt-0 mb-12 text-center md:text-left font-bold text-[36px] leading-[45px] text-gray-900 dark:text-white">
-                {props.children}
-              </h2>
-            )}
-            placeholder="Type a title..."
-            propName="title"
-          />
-
           <div className="flex my-8 gap-4 items-center">
             {/* Single features */}
-            <div className="basis-1/3">
+            <div className="basis-1/3 py-[20px]">
               {/* Feature 1 */}
+              <Text
+                renderBlock={(props) => (
+                  <h2 className="max-w-[350px] mt-0 mb-10 text-center md:text-left font-bold text-[36px] leading-[45px] text-gray-900 dark:text-white">
+                    {props.children}
+                  </h2>
+                )}
+                placeholder="Type a title..."
+                propName="title"
+              />
               <div
                 className={`flex border rounded ${
                   currentRow === 1 ? 'shadow-xl' : ''
@@ -147,6 +146,9 @@ const StateInfo: types.Brick<StateInfoProps> = ({
                       </p>
                     )}
                     placeholder="Type a text..."
+                    renderPlaceholder={(props) => (
+                      <div className="min-w-[30px]">{props.children}</div>
+                    )}
                     propName="textFeature1"
                     allowedFeatures={[
                       types.RichTextFeatures.Bold,
@@ -197,6 +199,9 @@ const StateInfo: types.Brick<StateInfoProps> = ({
                       </p>
                     )}
                     placeholder="Type a text..."
+                    renderPlaceholder={(props) => (
+                      <div className="min-w-[30px]">{props.children}</div>
+                    )}
                     propName="textFeature2"
                     allowedFeatures={[
                       types.RichTextFeatures.Bold,
@@ -247,6 +252,9 @@ const StateInfo: types.Brick<StateInfoProps> = ({
                       </p>
                     )}
                     placeholder="Type a text..."
+                    renderPlaceholder={(props) => (
+                      <div className="min-w-[30px]">{props.children}</div>
+                    )}
                     propName="textFeature3"
                     allowedFeatures={[
                       types.RichTextFeatures.Bold,
@@ -297,6 +305,9 @@ const StateInfo: types.Brick<StateInfoProps> = ({
                       </p>
                     )}
                     placeholder="Type a text..."
+                    renderPlaceholder={(props) => (
+                      <div className="min-w-[30px]">{props.children}</div>
+                    )}
                     propName="textFeature4"
                     allowedFeatures={[
                       types.RichTextFeatures.Bold,
