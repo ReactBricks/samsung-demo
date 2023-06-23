@@ -53,7 +53,11 @@ const Header: types.Brick<HeaderProps> = ({
               priority={true}
               className="block object-contain object-left"
               alt="samsung-knox"
-              src={`${theme === 'light' ? '/image_black.png' : '/image.png'}`}
+              src={`${
+                theme === 'light'
+                  ? '/samsung_knox_logo.svg'
+                  : '/samsung_knox_white_logo.svg'
+              }`}
               width={169}
               height={16}
             />
