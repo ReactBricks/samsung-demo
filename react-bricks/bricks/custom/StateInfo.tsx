@@ -1,4 +1,11 @@
-import { Image, RichText, Text, types, Link } from 'react-bricks/frontend'
+import {
+  Image,
+  RichText,
+  Text,
+  types,
+  Link,
+  Repeater,
+} from 'react-bricks/frontend'
 import {
   LayoutProps,
   neutralBackgroundSideGroup,
@@ -338,7 +345,7 @@ const StateInfo: types.Brick<StateInfoProps> = ({
                   propName="sideImageFeature1"
                   alt="Icon"
                   maxWidth={805}
-                  aspectRatio={1.8}
+                  aspectRatio={1.61}
                 />
 
                 <img
@@ -348,16 +355,26 @@ const StateInfo: types.Brick<StateInfoProps> = ({
                 />
 
                 <div className="px-11 py-3 w-full lg:w-3/5 xl:w-2/5 h-fit text-white absolute top-1/2 bottom-1/2 m-auto z-20">
-                  <h3 className="text-[24px] tracking-[0.01rem] font-bold mb-6">
-                    {sideTitleFeature1}
-                  </h3>
-                  <p className="text-base mb-4">{sideTextFeature1}</p>
-                  <Link
-                    href={sideButtonLinkFeature1}
-                    className="border-2 rounded-full py-2 px-6 mt-2 hover:bg-white hover:text-black transition text-[12px] font-bold"
-                  >
-                    {sideButtonLabelFeature1}
-                  </Link>
+                  <Text
+                    propName="sideTitleFeature1"
+                    placeholder="Title..."
+                    renderBlock={(props) => (
+                      <h3 className="text-[24px] tracking-[0.01rem] font-bold mb-6">
+                        {props.children}
+                      </h3>
+                    )}
+                  />
+                  <RichText
+                    propName="sideTextFeature1"
+                    placeholder="Text..."
+                    renderBlock={(props) => (
+                      <p className="text-base mb-4">{props.children}</p>
+                    )}
+                  />
+                  <Repeater
+                    propName="buttons"
+                    itemProps={{ href: sideButtonLinkFeature1 }}
+                  />
                 </div>
               </div>
 
@@ -371,8 +388,7 @@ const StateInfo: types.Brick<StateInfoProps> = ({
                   propName="sideImageFeature2"
                   alt="Icon"
                   maxWidth={805}
-                  aspectRatio={1.8}
-                  imageClassName=""
+                  aspectRatio={1.61}
                 />
                 <img
                   alt="Icon"
@@ -380,16 +396,26 @@ const StateInfo: types.Brick<StateInfoProps> = ({
                   className="absolute h-full top-0 bottom-0 z-10"
                 />
                 <div className="px-11 py-3 w-full lg:w-3/5 xl:w-2/5 h-fit text-white absolute top-1/2 bottom-1/2 m-auto z-20">
-                  <h3 className="text-[24px] tracking-[0.01rem] font-bold mb-6">
-                    {sideTitleFeature2}
-                  </h3>
-                  <p className="text-base mb-4">{sideTextFeature2}</p>
-                  <Link
-                    href={sideButtonLinkFeature2}
-                    className="border-2 rounded-full py-2 px-6 mt-2 hover:bg-white hover:text-black transition text-[12px] font-bold"
-                  >
-                    {sideButtonLabelFeature2}
-                  </Link>
+                  <Text
+                    propName="sideTitleFeature2"
+                    placeholder="Title..."
+                    renderBlock={(props) => (
+                      <h3 className="text-[24px] tracking-[0.01rem] font-bold mb-6">
+                        {props.children}
+                      </h3>
+                    )}
+                  />
+                  <RichText
+                    propName="sideTextFeature2"
+                    placeholder="Text..."
+                    renderBlock={(props) => (
+                      <p className="text-base mb-4">{props.children}</p>
+                    )}
+                  />
+                  <Repeater
+                    propName="buttons"
+                    itemProps={{ href: sideButtonLinkFeature2 }}
+                  />
                 </div>
               </div>
 
@@ -403,8 +429,7 @@ const StateInfo: types.Brick<StateInfoProps> = ({
                   propName="sideImageFeature3"
                   alt="Icon"
                   maxWidth={805}
-                  aspectRatio={1.8}
-                  imageClassName=""
+                  aspectRatio={1.61}
                 />
                 <img
                   alt="Icon"
@@ -412,16 +437,26 @@ const StateInfo: types.Brick<StateInfoProps> = ({
                   className="absolute h-full top-0 bottom-0 z-10"
                 />
                 <div className="px-11 py-3 w-full lg:w-3/5 xl:w-2/5 h-fit text-white absolute top-1/2 bottom-1/2 m-auto z-20">
-                  <h3 className="text-[24px] tracking-[0.01rem] font-bold mb-6">
-                    {sideTitleFeature3}
-                  </h3>
-                  <p className="text-base mb-4">{sideTextFeature3}</p>
-                  <Link
-                    href={sideButtonLinkFeature3}
-                    className="border-2 rounded-full py-2 px-6 mt-2 hover:bg-white hover:text-black transition text-[12px] font-bold"
-                  >
-                    {sideButtonLabelFeature3}
-                  </Link>
+                  <Text
+                    propName="sideTitleFeature3"
+                    placeholder="Title..."
+                    renderBlock={(props) => (
+                      <h3 className="text-[24px] tracking-[0.01rem] font-bold mb-6">
+                        {props.children}
+                      </h3>
+                    )}
+                  />
+                  <RichText
+                    propName="sideTextFeature3"
+                    placeholder="Text..."
+                    renderBlock={(props) => (
+                      <p className="text-base mb-4">{props.children}</p>
+                    )}
+                  />
+                  <Repeater
+                    propName="buttons"
+                    itemProps={{ href: sideButtonLinkFeature3 }}
+                  />
                 </div>
               </div>
 
@@ -435,8 +470,7 @@ const StateInfo: types.Brick<StateInfoProps> = ({
                   propName="sideImageFeature4"
                   alt="Icon"
                   maxWidth={805}
-                  aspectRatio={1.8}
-                  imageClassName=""
+                  aspectRatio={1.61}
                 />
                 <img
                   alt="Icon"
@@ -444,16 +478,26 @@ const StateInfo: types.Brick<StateInfoProps> = ({
                   className="absolute h-full top-0 bottom-0 z-10"
                 />
                 <div className="px-11 py-3 w-full lg:w-3/5 xl:w-2/5 h-fit text-white absolute top-1/2 bottom-1/2 m-auto z-20">
-                  <h3 className="text-[24px] tracking-[0.01rem] font-bold mb-6">
-                    {sideTitleFeature4}
-                  </h3>
-                  <p className="text-base mb-4">{sideTextFeature4}</p>
-                  <Link
-                    href={sideButtonLinkFeature4}
-                    className="border-2 rounded-full py-2 px-6 mt-2 hover:bg-white hover:text-black transition text-[12px] font-bold"
-                  >
-                    {sideButtonLabelFeature4}
-                  </Link>
+                  <Text
+                    propName="sideTitleFeature4"
+                    placeholder="Title..."
+                    renderBlock={(props) => (
+                      <h3 className="text-[24px] tracking-[0.01rem] font-bold mb-6">
+                        {props.children}
+                      </h3>
+                    )}
+                  />
+                  <RichText
+                    propName="sideTextFeature4"
+                    placeholder="Text..."
+                    renderBlock={(props) => (
+                      <p className="text-base mb-4">{props.children}</p>
+                    )}
+                  />
+                  <Repeater
+                    propName="buttons"
+                    itemProps={{ href: sideButtonLinkFeature4 }}
+                  />
                 </div>
               </div>
             </div>
@@ -516,6 +560,21 @@ StateInfo.schema = {
     paddingTop: '12',
     borderBottom: 'none',
     borderTop: 'none',
+    buttons: [
+      {
+        type: 'link',
+        text: 'Learn more',
+        href: '',
+        isTargetBlank: false,
+        buttonColor: {
+          color: '',
+          classNameSolid:
+            'border-2 rounded-full py-2 px-6 mt-2 hover:bg-white hover:text-black transition text-[12px] font-bold',
+        },
+        variant: 'solid',
+        padding: 'normal',
+      },
+    ],
   }),
   sideEditProps: [
     neutralBackgroundSideGroup,
@@ -525,29 +584,9 @@ StateInfo.schema = {
       defaultOpen: true,
       props: [
         {
-          name: 'sideTitleFeature1',
-          label: 'Side title feature',
-          type: types.SideEditPropType.Text,
-        },
-        {
-          name: 'sideTextFeature1',
-          label: 'Side text feature',
-          type: types.SideEditPropType.Text,
-        },
-        {
           name: 'sideButtonLinkFeature1',
           label: 'Side button link feature',
           type: types.SideEditPropType.Text,
-        },
-        {
-          name: 'sideButtonLabelFeature1',
-          label: 'Side button label feature',
-          type: types.SideEditPropType.Text,
-        },
-        {
-          name: 'sideImageFeature1',
-          label: 'Side image feature',
-          type: types.SideEditPropType.Image,
         },
         {
           name: 'overlayFeature1',
@@ -571,29 +610,9 @@ StateInfo.schema = {
       defaultOpen: false,
       props: [
         {
-          name: 'sideTitleFeature2',
-          label: 'Side title feature',
-          type: types.SideEditPropType.Text,
-        },
-        {
-          name: 'sideTextFeature2',
-          label: 'Side text feature',
-          type: types.SideEditPropType.Text,
-        },
-        {
           name: 'sideButtonLinkFeature2',
           label: 'Side button link feature',
           type: types.SideEditPropType.Text,
-        },
-        {
-          name: 'sideButtonLabelFeature2',
-          label: 'Side button label feature',
-          type: types.SideEditPropType.Text,
-        },
-        {
-          name: 'sideImageFeature2',
-          label: 'Side image feature',
-          type: types.SideEditPropType.Image,
         },
         {
           name: 'overlayFeature2',
@@ -617,29 +636,9 @@ StateInfo.schema = {
       defaultOpen: false,
       props: [
         {
-          name: 'sideTitleFeature3',
-          label: 'Side title feature',
-          type: types.SideEditPropType.Text,
-        },
-        {
-          name: 'sideTextFeature3',
-          label: 'Side text feature',
-          type: types.SideEditPropType.Text,
-        },
-        {
           name: 'sideButtonLinkFeature3',
           label: 'Side button link feature',
           type: types.SideEditPropType.Text,
-        },
-        {
-          name: 'sideButtonLabelFeature3',
-          label: 'Side button label feature',
-          type: types.SideEditPropType.Text,
-        },
-        {
-          name: 'sideImageFeature3',
-          label: 'Side image feature',
-          type: types.SideEditPropType.Image,
         },
         {
           name: 'overlayFeature3',
@@ -663,29 +662,9 @@ StateInfo.schema = {
       defaultOpen: false,
       props: [
         {
-          name: 'sideTitleFeature4',
-          label: 'Side title feature',
-          type: types.SideEditPropType.Text,
-        },
-        {
-          name: 'sideTextFeature4',
-          label: 'Side text feature',
-          type: types.SideEditPropType.Text,
-        },
-        {
           name: 'sideButtonLinkFeature4',
           label: 'Side button link feature',
           type: types.SideEditPropType.Text,
-        },
-        {
-          name: 'sideButtonLabelFeature4',
-          label: 'Side button label feature',
-          type: types.SideEditPropType.Text,
-        },
-        {
-          name: 'sideImageFeature4',
-          label: 'Side image feature',
-          type: types.SideEditPropType.Image,
         },
         {
           name: 'overlayFeature4',
@@ -702,6 +681,15 @@ StateInfo.schema = {
           },
         },
       ],
+    },
+  ],
+  repeaterItems: [
+    {
+      name: 'buttons',
+      itemType: 'custom-button',
+      itemLabel: 'Button',
+      min: 1,
+      max: 1,
     },
   ],
 }
