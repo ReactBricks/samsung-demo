@@ -41,7 +41,7 @@ const CtaSamsung: types.Brick<CallToActionProps> = ({
               renderBlock={(props) => (
                 <h2
                   className={classNames(
-                    'font-black text-5xl leading-[60px] mb-[16px] dark:text-white'
+                    'font-bold text-5xl leading-[60px] mb-[16px] dark:text-white'
                   )}
                   {...props.attributes}
                 >
