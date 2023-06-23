@@ -154,7 +154,7 @@ HeaderKnox.schema = {
       max: 4,
     },
   ],
-  sideEditProps: [neutralBackgroundSideGroup, borderBottomEditProp],
+  sideEditProps: [neutralBackgroundSideGroup],
   getDefaultProps: () => ({
     backgroundColor: bgColors.WHITE.value,
     borderBottom: 'none',

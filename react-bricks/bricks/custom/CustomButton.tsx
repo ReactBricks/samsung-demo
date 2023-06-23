@@ -42,7 +42,7 @@ const Button: types.Brick<ButtonProps> = ({
         href={href}
         {...target}
         className={classNames(
-          'inline-block whitespace-nowrap text-center rounded-full font-samsung font-bold leading-none hover:shadow-lg transition-all ease-out duration-150 hover:-translate-y-0.5',
+          'transition-colors duration-300 ease-in-out inline-block whitespace-nowrap text-center rounded-full font-samsung font-bold leading-none',
           padding === 'small'
             ? 'py-2 px-4 text-sm min-w-[75px]'
             : 'py-3 px-5 min-w-[120px]',
@@ -76,7 +76,7 @@ const Button: types.Brick<ButtonProps> = ({
       type={isAdmin && !previewMode ? 'button' : buttonType}
       //disabled={isAdmin && !previewMode}
       className={classNames(
-        'inline-block whitespace-nowrap text-center rounded-full font-samsung font-bold leading-none hover:shadow-lg transition-all ease-out duration-150 hover:-translate-y-0.5',
+        'transition-colors duration-300 ease-in-out inline-block whitespace-nowrap text-center rounded-full font-samsung font-bold leading-none',
         padding === 'small'
           ? 'py-2 px-4 text-sm min-w-[75px]'
           : 'py-3 px-5 min-w-[120px]',
@@ -116,10 +116,13 @@ Button.schema = {
     isTargetBlank: false,
     buttonType: 'submit',
     buttonColor: {
-      color: '#555',
-      classNameSolid: '',
-      classNameOutline: '',
-      classNameGhost: '',
+      color: '#4b72ff',
+      classNameSolid:
+        'bg-blueSamsung-700 text-white hover:bg-blueSamsung-900 uppercase',
+      classNameOutline:
+        'border border-blueSamsung-800 text-blueSamsung-800 dark:border-white dark:text-white uppercase',
+      classNameGhost:
+        'text-blueSamsung-800 dark:text-white uppercase hover:underline',
     },
     variant: 'solid',
     padding: 'normal',

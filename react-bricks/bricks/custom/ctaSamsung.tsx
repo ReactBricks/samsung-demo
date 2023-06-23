@@ -94,8 +94,13 @@ CtaSamsung.schema = {
         text: 'FIND SOLUTIONS',
         type: 'solid',
         buttonColor: {
-          ...buttonColors.BLUE.value,
-          classNameSolid: 'bg-blue-700 text-white hover:bg-blue-800',
+          color: '#4b72ff',
+          classNameSolid:
+            'bg-blueSamsung-700 text-white hover:bg-blueSamsung-900 uppercase',
+          classNameOutline:
+            'border border-blueSamsung-800 text-blueSamsung-800 dark:border-white dark:text-white uppercase',
+          classNameGhost:
+            'text-blueSamsung-800 dark:text-white uppercase hover:underline',
         },
         href: 'https://reactbricks.com',
         isTargetBlank: true,
@@ -106,7 +111,7 @@ CtaSamsung.schema = {
   repeaterItems: [
     {
       name: 'buttons',
-      itemType: blockNames.Button,
+      itemType: 'custom-button',
       itemLabel: 'Button',
       min: 0,
       max: 1,
