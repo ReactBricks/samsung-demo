@@ -38,8 +38,10 @@ const Footer: types.Brick<FooterProps> = ({
             renderWrapper={(props) => (
               <div className="pt-[56px] flex w-full ">{props}</div>
             )}
-            renderItemWrapper={(props) => (
-              <div className="p-[24px] w-1/4">{props}</div>
+            renderItemWrapper={(item) => (
+              <div key={item.key} className="p-[24px] w-1/4">
+                {item}
+              </div>
             )}
           />
         </Container>

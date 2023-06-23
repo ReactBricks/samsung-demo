@@ -26,7 +26,11 @@ const HeaderMenuSubColumn: types.Brick<HeaderMenuSubColumnProps> = ({
       <Repeater
         propName="submenuItems"
         renderItemWrapper={(item) => (
-          <div onClick={() => handler(false)} className="px-[15px]">
+          <div
+            key={item.key}
+            onClick={() => handler(false)}
+            className="px-[15px]"
+          >
             {item}
           </div>
         )}
