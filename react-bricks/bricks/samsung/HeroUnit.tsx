@@ -86,6 +86,7 @@ const HeroUnit: types.Brick<HeroUnitProps> = ({
 HeroUnit.schema = {
   name: 'samsung-hero-unit',
   label: 'Hero Unit',
+  previewImageUrl: '/bricks-preview-images/samsung-hero-unit.png',
   getDefaultProps: () => ({
     title: 'Lorem ipsum dolor et security.',
     text: 'Discover the lorem ipsum dolor business solutions',

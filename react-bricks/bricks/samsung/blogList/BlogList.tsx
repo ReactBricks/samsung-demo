@@ -121,6 +121,7 @@ const BlogList: types.Brick<BlogListProps> = ({
 BlogList.schema = {
   name: 'samsung-blog-list',
   label: 'Blog List',
+  previewImageUrl: '/bricks-preview-images/samsung-blog-list.png',
   getDefaultProps: () => ({
     title: "What's new",
     ...sectionDefaults,

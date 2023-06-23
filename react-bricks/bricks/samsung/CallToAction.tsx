@@ -79,6 +79,7 @@ const CallToAction: types.Brick<CallToActionProps> = ({
 CallToAction.schema = {
   name: 'samsung-call-to-action',
   label: 'Call to action',
+  previewImageUrl: '/bricks-preview-images/samsung-call-to-action.png',
   playgroundLinkLabel: 'View source code on Github',
   getDefaultProps: () => ({
     ...sectionDefaults,

@@ -53,6 +53,7 @@ const Footer: types.Brick<FooterProps> = ({
 Footer.schema = {
   name: 'samsung-footer',
   label: 'Footer',
+  previewImageUrl: '/bricks-preview-images/samsung-footer.png',
   repeaterItems: [
     {
       name: 'columns',

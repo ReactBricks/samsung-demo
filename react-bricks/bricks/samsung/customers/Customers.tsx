@@ -78,6 +78,7 @@ const CustomersKnox: types.Brick<CustomersProps> = ({
 CustomersKnox.schema = {
   name: 'samsung-customers',
   label: 'Customers',
+  previewImageUrl: '/bricks-preview-images/samsung-customers.png',
   getDefaultProps: () => ({
     backgroundColor: bgColors.WHITE.value,
     paddingTop: '0',

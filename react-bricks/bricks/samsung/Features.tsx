@@ -476,6 +476,7 @@ const Features: types.Brick<FeaturesProps> = ({
 Features.schema = {
   name: 'samsung-features',
   label: 'Features',
+  previewImageUrl: '/bricks-preview-images/samsung-features.png',
   getDefaultProps: () => ({
     title: 'What Knox can do for you',
 

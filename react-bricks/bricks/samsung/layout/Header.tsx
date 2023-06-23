@@ -144,6 +144,7 @@ const Header: types.Brick<HeaderProps> = ({
 Header.schema = {
   name: 'samsung-header',
   label: 'Header',
+  previewImageUrl: '/bricks-preview-images/samsung-header.png',
   repeaterItems: [
     {
       name: 'menuItems',
