@@ -125,7 +125,7 @@ const StateInfo: types.Brick<StateInfoProps> = ({
                   propName="imageFeature1"
                   alt="Icon"
                   maxWidth={41}
-                  aspectRatio={1}
+                  aspectRatio={1.8}
                   imageClassName=""
                 />
 
@@ -175,7 +175,7 @@ const StateInfo: types.Brick<StateInfoProps> = ({
                   propName="imageFeature2"
                   alt="Icon"
                   maxWidth={41}
-                  aspectRatio={1}
+                  aspectRatio={1.8}
                   imageClassName=""
                 />
 
@@ -225,7 +225,7 @@ const StateInfo: types.Brick<StateInfoProps> = ({
                   propName="imageFeature3"
                   alt="Icon"
                   maxWidth={41}
-                  aspectRatio={1}
+                  aspectRatio={1.8}
                   imageClassName=""
                 />
 
@@ -275,7 +275,7 @@ const StateInfo: types.Brick<StateInfoProps> = ({
                   propName="imageFeature4"
                   alt="Icon"
                   maxWidth={41}
-                  aspectRatio={1}
+                  aspectRatio={1.8}
                   imageClassName=""
                 />
 
@@ -327,7 +327,7 @@ const StateInfo: types.Brick<StateInfoProps> = ({
                   propName="sideImageFeature1"
                   alt="Icon"
                   maxWidth={805}
-                  aspectRatio={1}
+                  aspectRatio={1.8}
                 />
 
                 <img
@@ -360,7 +360,7 @@ const StateInfo: types.Brick<StateInfoProps> = ({
                   propName="sideImageFeature2"
                   alt="Icon"
                   maxWidth={805}
-                  aspectRatio={1}
+                  aspectRatio={1.8}
                   imageClassName="mb-5"
                 />
                 <img
@@ -392,7 +392,7 @@ const StateInfo: types.Brick<StateInfoProps> = ({
                   propName="sideImageFeature3"
                   alt="Icon"
                   maxWidth={805}
-                  aspectRatio={1}
+                  aspectRatio={1.8}
                   imageClassName="mb-5"
                 />
                 <img
@@ -424,7 +424,7 @@ const StateInfo: types.Brick<StateInfoProps> = ({
                   propName="sideImageFeature4"
                   alt="Icon"
                   maxWidth={805}
-                  aspectRatio={1}
+                  aspectRatio={1.8}
                   imageClassName="mb-5"
                 />
                 <img
