@@ -1,11 +1,4 @@
-import {
-  Image,
-  RichText,
-  Text,
-  types,
-  Link,
-  Repeater,
-} from 'react-bricks/frontend'
+import { Image, RichText, Text, types, Repeater } from 'react-bricks/frontend'
 import {
   LayoutProps,
   neutralBackgroundSideGroup,
@@ -63,29 +56,9 @@ interface StateInfoProps extends LayoutProps {
 // Component to be rendered
 //=============================
 const StateInfo: types.Brick<StateInfoProps> = ({
-  sideTitleFeature1,
-  sideTextFeature1,
-  sideButtonLinkFeature1,
-  sideButtonLabelFeature1,
-  sideImageFeature1,
   overlayFeature1 = 'black',
-  sideTitleFeature2,
-  sideTextFeature2,
-  sideButtonLinkFeature2,
-  sideButtonLabelFeature2,
-  sideImageFeature2,
   overlayFeature2 = 'blue',
-  sideTitleFeature3,
-  sideTextFeature3,
-  sideButtonLinkFeature3,
-  sideButtonLabelFeature3,
-  sideImageFeature3,
   overlayFeature3 = 'cerulean',
-  sideTitleFeature4,
-  sideTextFeature4,
-  sideButtonLinkFeature4,
-  sideButtonLabelFeature4,
-  sideImageFeature4,
   overlayFeature4 = 'green',
   backgroundColor,
   borderTop,
