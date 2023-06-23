@@ -13,8 +13,9 @@ export interface ButtonProps {
     color: string
     classNameSolid: string
     classNameOutline: string
+    classNameGhost: string
   }
-  variant: 'solid' | 'outline'
+  variant: 'solid' | 'outline' | 'ghost'
   padding: 'normal' | 'small'
   className?: string
   simpleAnchorLink: boolean
@@ -51,6 +52,9 @@ const Button: types.Brick<ButtonProps> = ({
           {
             [buttonColor.classNameOutline]: variant === 'outline',
           },
+          {
+            [buttonColor.classNameGhost]: variant === 'ghost',
+          },
           className
         )}
         simpleAnchor={simpleAnchorLink}
@@ -82,6 +86,9 @@ const Button: types.Brick<ButtonProps> = ({
         {
           [buttonColor?.classNameOutline]: variant === 'outline',
         },
+        {
+          [buttonColor.classNameGhost]: variant === 'ghost',
+        },
         className
       )}
     >
@@ -108,7 +115,12 @@ Button.schema = {
     href: '',
     isTargetBlank: false,
     buttonType: 'submit',
-    buttonColor: { color: '#555', classNameSolid: '', classNameOutline: '' },
+    buttonColor: {
+      color: '#555',
+      classNameSolid: '',
+      classNameOutline: '',
+      classNameGhost: '',
+    },
     variant: 'solid',
     padding: 'normal',
   }),
@@ -177,6 +189,7 @@ Button.schema = {
             options: [
               { value: 'solid', label: 'Solid' },
               { value: 'outline', label: 'Outline' },
+              { value: 'ghost', label: 'Ghost' },
             ],
           },
         },
