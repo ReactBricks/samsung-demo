@@ -44,7 +44,7 @@ const Header: types.Brick<HeaderProps> = ({
     >
       <nav className="relative flex items-center mx-auto px-[16px] max-w-[1440px] h-[80px] border-b border-[#dddddd]">
         <Link
-          href="/"
+          href="/samsung"
           aria-label="home"
           className="inline-flex py-[0.25rem] mr-[16px]"
         >
