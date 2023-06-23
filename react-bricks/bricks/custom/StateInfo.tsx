@@ -100,7 +100,7 @@ const StateInfo: types.Brick<StateInfoProps> = ({
         size="full"
         className="mx-0 xl:mx-0 sm:mx-0"
       >
-        <div className="px-[142px] py-12">
+        <div className="pl-24 pr-3 py-12">
           <Text
             renderBlock={(props) => (
               <h2 className="mt-0 mb-12 text-center md:text-left font-bold text-[36px] leading-[45px] text-gray-900 dark:text-white">

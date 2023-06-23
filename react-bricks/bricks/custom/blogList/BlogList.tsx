@@ -55,8 +55,6 @@ const BlogList: types.Brick<BlogListProps> = ({
     nextArrow: <img className="" src={src?.next} />,
   }
 
-  console.log(theme)
-
   const { externalData } = pageValues
   const { pagesByTag } = externalData as ExternalData
 
