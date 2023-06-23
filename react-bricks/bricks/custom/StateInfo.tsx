@@ -361,7 +361,7 @@ const StateInfo: types.Brick<StateInfoProps> = ({
                   alt="Icon"
                   maxWidth={805}
                   aspectRatio={1.8}
-                  imageClassName="mb-5"
+                  imageClassName=""
                 />
                 <img
                   alt="Icon"
@@ -393,7 +393,7 @@ const StateInfo: types.Brick<StateInfoProps> = ({
                   alt="Icon"
                   maxWidth={805}
                   aspectRatio={1.8}
-                  imageClassName="mb-5"
+                  imageClassName=""
                 />
                 <img
                   alt="Icon"
@@ -425,7 +425,7 @@ const StateInfo: types.Brick<StateInfoProps> = ({
                   alt="Icon"
                   maxWidth={805}
                   aspectRatio={1.8}
-                  imageClassName="mb-5"
+                  imageClassName=""
                 />
                 <img
                   alt="Icon"
