@@ -45,7 +45,7 @@ const Button: types.Brick<ButtonProps> = ({
           'transition-colors duration-300 ease-in-out inline-block whitespace-nowrap text-center rounded-full font-samsung font-bold leading-none',
           padding === 'small'
             ? 'py-2 px-4 text-sm min-w-[75px]'
-            : 'py-3 px-5 min-w-[120px]',
+            : 'py-3 px-5 min-w-[120px] text-sm',
           {
             [buttonColor.classNameSolid]: variant === 'solid',
           },
@@ -55,7 +55,8 @@ const Button: types.Brick<ButtonProps> = ({
           {
             [buttonColor.classNameGhost]: variant === 'ghost',
           },
-          className
+          className,
+          variant === 'ghost' ? 'font-normal' : ''
         )}
         simpleAnchor={simpleAnchorLink}
       >
@@ -79,7 +80,7 @@ const Button: types.Brick<ButtonProps> = ({
         'transition-colors duration-300 ease-in-out inline-block whitespace-nowrap text-center rounded-full font-samsung font-bold leading-none',
         padding === 'small'
           ? 'py-2 px-4 text-sm min-w-[75px]'
-          : 'py-3 px-5 min-w-[120px]',
+          : 'py-3 px-5 min-w-[120px] text-sm',
         {
           [buttonColor?.classNameSolid]: variant === 'solid',
         },

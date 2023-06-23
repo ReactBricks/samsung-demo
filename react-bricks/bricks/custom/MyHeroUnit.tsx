@@ -102,7 +102,7 @@ MyHeroUnit.schema = {
             'bg-blueSamsung-500 text-white hover:bg-blueSamsung-900',
           classNameOutline:
             'border border-blueSamsung-600 text-blueSamsung-600 dark:border-white dark:text-white',
-          classNameGhost: 'text-blueSamsung-600 dark:text-white',
+          classNameGhost: 'text-blueSamsung-600 dark:text-white font-normal',
         },
         variant: 'solid',
         padding: 'normal',
