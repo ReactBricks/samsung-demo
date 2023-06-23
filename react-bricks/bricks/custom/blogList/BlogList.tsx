@@ -72,7 +72,7 @@ const BlogList: types.Brick<BlogListProps> = ({
         paddingTop={paddingTop}
         paddingBottom={paddingBottom}
       >
-        <div className="px-[24px] pt-[96px] ">
+        <div className="px-[24px] pt-12">
           <Text
             propName="title"
             renderBlock={(props) => (
@@ -113,9 +113,8 @@ BlogList.schema = {
   getDefaultProps: () => ({
     title: "What's new",
     ...sectionDefaults,
-    backgroundColor: { color: '#f7f7f7', className: 'bg-[#f7f7f7]' },
     borderTop: 'none',
-    paddingTop: '0',
+    paddingTop: '12',
     paddingBottom: '0',
   }),
   sideEditProps: [neutralBackgroundSideGroup, paddingBordersSideGroup],

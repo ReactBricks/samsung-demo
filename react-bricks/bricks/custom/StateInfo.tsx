@@ -100,7 +100,7 @@ const StateInfo: types.Brick<StateInfoProps> = ({
         size="full"
         className="mx-0 xl:mx-0 sm:mx-0"
       >
-        <div className="px-[142px] pt-[96px] pb-[96px]">
+        <div className="px-[142px] py-12">
           <Text
             renderBlock={(props) => (
               <h2 className="mt-0 mb-12 text-center md:text-left font-bold text-[36px] leading-[45px] text-gray-900 dark:text-white">
@@ -118,7 +118,7 @@ const StateInfo: types.Brick<StateInfoProps> = ({
               <div
                 className={`flex border rounded ${
                   currentRow === 1 ? 'shadow-xl' : ''
-                } hover:shadow-xl hover:cursor-pointer p-4 gap-6 max-w-full lg:max-w-md transition-shadow duration-500 mb-2`}
+                } hover:shadow-xl hover:cursor-pointer p-4 gap-6 max-w-full lg:max-w-md transition-shadow duration-500 mb-2 bg-white dark:bg-gray-900 dark:border-white/20`}
                 onClick={() => setCurrentRow(1)}
               >
                 <Image
@@ -168,7 +168,7 @@ const StateInfo: types.Brick<StateInfoProps> = ({
               <div
                 className={`flex border rounded ${
                   currentRow === 2 ? 'shadow-xl' : ''
-                } hover:shadow-xl hover:cursor-pointer p-4 gap-6 max-w-full lg:max-w-md transition-shadow duration-500 mb-2`}
+                } hover:shadow-xl hover:cursor-pointer p-4 gap-6 max-w-full lg:max-w-md transition-shadow duration-500 mb-2 bg-white dark:bg-gray-900 dark:border-white/20`}
                 onClick={() => setCurrentRow(2)}
               >
                 <Image
@@ -218,7 +218,7 @@ const StateInfo: types.Brick<StateInfoProps> = ({
               <div
                 className={`flex border rounded ${
                   currentRow === 3 ? 'shadow-xl' : ''
-                } hover:shadow-xl hover:cursor-pointer p-4 gap-6 max-w-full lg:max-w-md transition-shadow duration-500 mb-2`}
+                } hover:shadow-xl hover:cursor-pointer p-4 gap-6 max-w-full lg:max-w-md transition-shadow duration-500 mb-2 bg-white dark:bg-gray-900 dark:border-white/20`}
                 onClick={() => setCurrentRow(3)}
               >
                 <Image
@@ -268,7 +268,7 @@ const StateInfo: types.Brick<StateInfoProps> = ({
               <div
                 className={`flex border rounded ${
                   currentRow === 4 ? 'shadow-xl' : ''
-                } hover:shadow-xl hover:cursor-pointer p-4 gap-6 max-w-full lg:max-w-md transition-shadow duration-500 mb-2`}
+                } hover:shadow-xl hover:cursor-pointer p-4 gap-6 max-w-full lg:max-w-md transition-shadow duration-500 mb-2 bg-white dark:bg-gray-900 dark:border-white/20`}
                 onClick={() => setCurrentRow(4)}
               >
                 <Image
@@ -502,7 +502,7 @@ StateInfo.schema = {
     sideButtonLabelFeature4: 'Learn more',
     overlayFeature4: 'green',
     paddingBottom: '0',
-    paddingTop: '0',
+    paddingTop: '12',
     borderBottom: 'none',
     borderTop: 'none',
   }),

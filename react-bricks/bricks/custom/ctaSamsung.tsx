@@ -34,7 +34,7 @@ const CtaSamsung: types.Brick<CallToActionProps> = ({
         paddingBottom={paddingBottom}
         className="mx-0 xl:mx-0 sm:mx-0"
       >
-        <div className="flex px-[142px] pt-[96px] pb-[96px]">
+        <div className="flex px-[142px] py-12">
           <div className="basis-9/12 px-[15px]">
             <Text
               propName="title"
@@ -84,8 +84,8 @@ CtaSamsung.schema = {
     ...sectionDefaults,
     backgroundColor: { color: '#f7f7f7', className: 'bg-[#f7f7f7]' },
     borderTop: 'none',
-    paddingTop: '0',
-    paddingBottom: '0',
+    paddingTop: '12',
+    paddingBottom: '12',
     title: 'What do you need?',
     description:
       'We can help you find the right Samsung Knox products and services for your needs',

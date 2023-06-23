@@ -38,7 +38,7 @@ const CustomersKnox: types.Brick<CustomersProps> = ({
         paddingBottom={paddingBottom}
         className="mx-0 xl:mx-0 px-[24px]"
       >
-        <div className="py-[96px]">
+        <div className="py-12">
           <Text
             propName="title"
             renderBlock={(props) => (
@@ -82,7 +82,7 @@ CustomersKnox.schema = {
   getDefaultProps: () => ({
     backgroundColor: bgColors.WHITE.value,
     paddingTop: '0',
-    paddingBottom: '0',
+    paddingBottom: '12',
     borderTop: 'none',
     borderBottom: 'none',
     grayscale: false,
