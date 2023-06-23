@@ -72,6 +72,7 @@ const BlogList: React.FC<HomeProps> = ({
                 {posts?.map((post) => {
                   return (
                     <PostListItem
+                      tag={tags}
                       key={post.id}
                       title={post.meta.title}
                       href={post.slug}
