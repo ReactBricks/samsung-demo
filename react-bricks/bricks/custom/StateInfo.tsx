@@ -345,7 +345,7 @@ const StateInfo: types.Brick<StateInfoProps> = ({
                   propName="sideImageFeature1"
                   alt="Icon"
                   maxWidth={805}
-                  aspectRatio={1.61}
+                  aspectRatio={1.615}
                 />
 
                 <img
@@ -371,10 +371,7 @@ const StateInfo: types.Brick<StateInfoProps> = ({
                       <p className="text-base mb-4">{props.children}</p>
                     )}
                   />
-                  <Repeater
-                    propName="buttons"
-                    itemProps={{ href: sideButtonLinkFeature1 }}
-                  />
+                  <Repeater propName="button1" />
                 </div>
               </div>
 
@@ -388,7 +385,7 @@ const StateInfo: types.Brick<StateInfoProps> = ({
                   propName="sideImageFeature2"
                   alt="Icon"
                   maxWidth={805}
-                  aspectRatio={1.61}
+                  aspectRatio={1.615}
                 />
                 <img
                   alt="Icon"
@@ -412,10 +409,7 @@ const StateInfo: types.Brick<StateInfoProps> = ({
                       <p className="text-base mb-4">{props.children}</p>
                     )}
                   />
-                  <Repeater
-                    propName="buttons"
-                    itemProps={{ href: sideButtonLinkFeature2 }}
-                  />
+                  <Repeater propName="button2" />
                 </div>
               </div>
 
@@ -429,7 +423,7 @@ const StateInfo: types.Brick<StateInfoProps> = ({
                   propName="sideImageFeature3"
                   alt="Icon"
                   maxWidth={805}
-                  aspectRatio={1.61}
+                  aspectRatio={1.615}
                 />
                 <img
                   alt="Icon"
@@ -453,10 +447,7 @@ const StateInfo: types.Brick<StateInfoProps> = ({
                       <p className="text-base mb-4">{props.children}</p>
                     )}
                   />
-                  <Repeater
-                    propName="buttons"
-                    itemProps={{ href: sideButtonLinkFeature3 }}
-                  />
+                  <Repeater propName="button3" />
                 </div>
               </div>
 
@@ -470,7 +461,7 @@ const StateInfo: types.Brick<StateInfoProps> = ({
                   propName="sideImageFeature4"
                   alt="Icon"
                   maxWidth={805}
-                  aspectRatio={1.61}
+                  aspectRatio={1.615}
                 />
                 <img
                   alt="Icon"
@@ -494,10 +485,7 @@ const StateInfo: types.Brick<StateInfoProps> = ({
                       <p className="text-base mb-4">{props.children}</p>
                     )}
                   />
-                  <Repeater
-                    propName="buttons"
-                    itemProps={{ href: sideButtonLinkFeature4 }}
-                  />
+                  <Repeater propName="button4" />
                 </div>
               </div>
             </div>
@@ -560,7 +548,52 @@ StateInfo.schema = {
     paddingTop: '12',
     borderBottom: 'none',
     borderTop: 'none',
-    buttons: [
+    button1: [
+      {
+        type: 'link',
+        text: 'Learn more',
+        href: '',
+        isTargetBlank: false,
+        buttonColor: {
+          color: '',
+          classNameSolid:
+            'border-2 rounded-full py-2 px-6 mt-2 hover:bg-white hover:text-black transition text-[12px] font-bold',
+        },
+        variant: 'solid',
+        padding: 'normal',
+      },
+    ],
+    button2: [
+      {
+        type: 'link',
+        text: 'Learn more',
+        href: '',
+        isTargetBlank: false,
+        buttonColor: {
+          color: '',
+          classNameSolid:
+            'border-2 rounded-full py-2 px-6 mt-2 hover:bg-white hover:text-black transition text-[12px] font-bold',
+        },
+        variant: 'solid',
+        padding: 'normal',
+      },
+    ],
+    button3: [
+      {
+        type: 'link',
+        text: 'Learn more',
+        href: '',
+        isTargetBlank: false,
+        buttonColor: {
+          color: '',
+          classNameSolid:
+            'border-2 rounded-full py-2 px-6 mt-2 hover:bg-white hover:text-black transition text-[12px] font-bold',
+        },
+        variant: 'solid',
+        padding: 'normal',
+      },
+    ],
+    button4: [
       {
         type: 'link',
         text: 'Learn more',
@@ -685,7 +718,28 @@ StateInfo.schema = {
   ],
   repeaterItems: [
     {
-      name: 'buttons',
+      name: 'button1',
+      itemType: 'custom-button',
+      itemLabel: 'Button',
+      min: 1,
+      max: 1,
+    },
+    {
+      name: 'button2',
+      itemType: 'custom-button',
+      itemLabel: 'Button',
+      min: 1,
+      max: 1,
+    },
+    {
+      name: 'button3',
+      itemType: 'custom-button',
+      itemLabel: 'Button',
+      min: 1,
+      max: 1,
+    },
+    {
+      name: 'button4',
       itemType: 'custom-button',
       itemLabel: 'Button',
       min: 1,
