@@ -1,11 +1,10 @@
 import { Image, RichText, Text, types, Repeater } from 'react-bricks/frontend'
-import blockNames from '../react-bricks-ui/blockNames'
-import { buttonColors } from '../react-bricks-ui/colors'
 import {
   backgroundImageEditProps,
   LayoutProps,
 } from '../react-bricks-ui/LayoutSideProps'
 import Section from '../react-bricks-ui/shared/components/Section'
+import { buttonColors } from '../react-bricks-ui/colors'
 
 interface HeroUnitProps extends LayoutProps {
   title: string
@@ -88,8 +87,8 @@ HeroUnit.schema = {
   name: 'samsung-hero-unit',
   label: 'Hero Unit',
   getDefaultProps: () => ({
-    title: 'Stay connected, protected, and productive.',
-    text: 'Discover the Knox security platform and business solutions',
+    title: 'Lorem ipsum dolor et security.',
+    text: 'Discover the lorem ipsum dolor business solutions',
     buttons: [
       {
         type: 'link',
@@ -102,7 +101,7 @@ HeroUnit.schema = {
       },
       {
         type: 'link',
-        text: 'find solutions',
+        text: 'Find solutions',
         href: '',
         isTargetBlank: false,
         buttonColor: buttonColors.BLUE_SAMSUNG.value,

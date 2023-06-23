@@ -84,7 +84,6 @@ const Features: types.Brick<FeaturesProps> = ({
           <div className="flex my-8 gap-4 items-center">
             {/* Single features */}
             <div className="basis-1/3 py-[20px]">
-              {/* Feature 1 */}
               <Text
                 renderBlock={(props) => (
                   <h2 className="max-w-[350px] mt-0 mb-10 text-center md:text-left font-bold text-[36px] leading-[45px] text-gray-900 dark:text-white">
@@ -94,6 +93,8 @@ const Features: types.Brick<FeaturesProps> = ({
                 placeholder="Type a title..."
                 propName="title"
               />
+
+              {/* Feature 1 */}
               <div
                 className={`flex border rounded ${
                   currentRow === 1 ? 'shadow-xl' : ''
@@ -103,8 +104,8 @@ const Features: types.Brick<FeaturesProps> = ({
                 <Image
                   propName="imageFeature1"
                   alt="Icon"
-                  maxWidth={41}
-                  aspectRatio={1.8}
+                  maxWidth={100}
+                  aspectRatio={1}
                   imageClassName=""
                 />
 
@@ -156,8 +157,8 @@ const Features: types.Brick<FeaturesProps> = ({
                 <Image
                   propName="imageFeature2"
                   alt="Icon"
-                  maxWidth={41}
-                  aspectRatio={1.8}
+                  maxWidth={100}
+                  aspectRatio={1}
                   imageClassName=""
                 />
 
@@ -209,8 +210,8 @@ const Features: types.Brick<FeaturesProps> = ({
                 <Image
                   propName="imageFeature3"
                   alt="Icon"
-                  maxWidth={41}
-                  aspectRatio={1.8}
+                  maxWidth={100}
+                  aspectRatio={1}
                   imageClassName=""
                 />
 
@@ -262,8 +263,8 @@ const Features: types.Brick<FeaturesProps> = ({
                 <Image
                   propName="imageFeature4"
                   alt="Icon"
-                  maxWidth={41}
-                  aspectRatio={1.8}
+                  maxWidth={100}
+                  aspectRatio={1}
                   imageClassName=""
                 />
 
@@ -481,14 +482,14 @@ Features.schema = {
     titleFeature1: 'Secured by Knox',
     textFeature1: 'Most Samsung devices are Secured by Knox',
 
-    titleFeature2: 'Unified Endpoint Management',
-    textFeature2: 'Manage devices for work',
+    titleFeature2: 'Feature 2',
+    textFeature2: 'Lorem ipsum dolor sit amet.',
 
-    titleFeature3: 'Rebranding and Customization',
-    textFeature3: 'Tailor Samsung devices to your needs',
+    titleFeature3: 'Feature 3',
+    textFeature3: 'Lorem ipsum dolor sit amet.',
 
-    titleFeature4: 'Fraud and Theft Protection',
-    textFeature4: 'Safeguards for businesses with device financing plans',
+    titleFeature4: 'Feature 4',
+    textFeature4: 'Lorem ipsum dolor sit amet.',
 
     sideTitleFeature1: 'Secured by Knox',
     sideTextFeature1:
@@ -497,23 +498,23 @@ Features.schema = {
     sideButtonLabelFeature1: 'Learn more',
     overlayFeature1: 'black',
 
-    sideTitleFeature2: 'Unified Endpoint Management',
+    sideTitleFeature2: 'Feature 2',
     sideTextFeature2:
-      'Knox solutions allow enterprise IT admins to easily secure, deploy, manage, and analyze mobile devices for business use, while allowing device users to stay protected and productive. Ensure your devices for work are always under IT control with Knox.',
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi. Lorem ipsum dolor sit amet.',
     sideButtonLinkFeature2: '/',
     sideButtonLabelFeature2: 'Learn more',
     overlayFeature2: 'blue',
 
-    sideTitleFeature3: 'Rebranding and Customization',
+    sideTitleFeature3: 'Feature 3',
     sideTextFeature3:
-      'With Samsung Knox, any off-the-shelf Samsung devices can turn into a special edition, or the unique tool for your business. Transform devices and fulfill use cases such as media-bundled tablets, interactive store kiosks and more – all without opening the box.',
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi. Lorem ipsum dolor sit amet.',
     sideButtonLinkFeature3: '/',
     sideButtonLabelFeature3: 'Learn more',
     overlayFeature3: 'cerulean',
 
-    sideTitleFeature4: 'Fraud and Theft Protection',
+    sideTitleFeature4: 'Feature 4',
     sideTextFeature4:
-      'Guard your company’s device payment plans and maintain control of mobile device assets outside your reach. Knox allows carriers, insurance firms, or any businesses to remotely protect Samsung devices against financial risk.',
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi. Lorem ipsum dolor sit amet.',
     sideButtonLinkFeature4: '/',
     sideButtonLabelFeature4: 'Learn more',
     overlayFeature4: 'green',
@@ -581,6 +582,16 @@ Features.schema = {
         padding: 'normal',
       },
     ],
+    imageFeature1: {
+      src: 'https://images.reactbricks.com/original/e0f458a9-28b7-47ba-bb85-38fddb0a0643.svg',
+      placeholderSrc:
+        'https://images.reactbricks.com/original/e0f458a9-28b7-47ba-bb85-38fddb0a0643.svg',
+      srcSet: '',
+      width: 41,
+      height: 40,
+      alt: 'Icon',
+      seoName: '',
+    },
   }),
   sideEditProps: [
     neutralBackgroundSideGroup,

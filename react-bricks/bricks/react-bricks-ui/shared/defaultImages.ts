@@ -150,12 +150,9 @@ export const logos = {
     height: 894,
   },
   REACT_BRICKS: {
-    // src: 'https://images.reactbricks.com/original/7fd7ef1a-928f-45d6-b7a7-ff34bf91c15e.svg',
-    // placeholderSrc:
-    //   'https://images.reactbricks.com/original/7fd7ef1a-928f-45d6-b7a7-ff34bf91c15e.svg',
-    src: 'https://images.reactbricks.com/original/193bc5b1-dcdd-4bca-8ae7-472780eead52.svg',
+    src: 'https://images.reactbricks.com/original/1adb822d-e809-4a86-9b96-c40450ba9eef.svg',
     placeholderSrc:
-      'https://images.reactbricks.com/original/193bc5b1-dcdd-4bca-8ae7-472780eead52.svg',
+      'https://images.reactbricks.com/original/1adb822d-e809-4a86-9b96-c40450ba9eef.svg',
     srcSet: '',
     alt: 'React Bricks',
     seoName: 'react-bricks',

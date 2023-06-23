@@ -7,7 +7,6 @@ import {
   paddingBordersSideGroup,
 } from '../../react-bricks-ui/LayoutSideProps'
 import { customersSamsung } from '../../react-bricks-ui/shared/defaultImages'
-import blockNames from '../../react-bricks-ui/blockNames'
 import { bgColors } from '../../react-bricks-ui/colors'
 import Container from '../../react-bricks-ui/shared/components/Container'
 import Section from '../../react-bricks-ui/shared/components/Section'
@@ -91,16 +90,30 @@ CustomersKnox.schema = {
       'Knox has developed over 20,000 business in 100+ countries achieve their goals',
     customers: [
       {
-        image: customersSamsung.WALMART,
+        image: {
+          src: 'https://images.reactbricks.com/original/b13de669-2b68-4cce-acbe-c76104d448cc.svg',
+          placeholderSrc:
+            'https://images.reactbricks.com/original/b13de669-2b68-4cce-acbe-c76104d448cc.svg',
+          srcSet: '',
+          alt: 'Samsung Knox',
+          seoName: 'samsung-knox',
+          width: 184.447,
+          height: 17.428,
+        },
+        href: '',
       },
       {
-        image: customersSamsung.PEPSICO,
-      },
-      {
-        image: customersSamsung.HARLEY_DAVISON,
-      },
-      {
-        image: customersSamsung.KIA,
+        image: {
+          src: 'https://images.reactbricks.com/original/1adb822d-e809-4a86-9b96-c40450ba9eef.svg',
+          placeholderSrc:
+            'https://images.reactbricks.com/original/1adb822d-e809-4a86-9b96-c40450ba9eef.svg',
+          srcSet: '',
+          alt: 'React Bricks',
+          seoName: 'react-bricks',
+          width: 1700.787,
+          height: 377.953,
+        },
+        href: '',
       },
     ],
   }),

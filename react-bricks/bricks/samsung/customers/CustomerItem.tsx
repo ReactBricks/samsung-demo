@@ -1,8 +1,7 @@
 import classNames from 'classnames'
 import * as React from 'react'
 import { Image, types, Link } from 'react-bricks/frontend'
-import blockNames from '../../react-bricks-ui/blockNames'
-import { customersSamsung } from '../../react-bricks-ui/shared/defaultImages'
+import { logos } from '../../react-bricks-ui/shared/defaultImages'
 export interface CustomerProps {
   grayscale?: boolean
   image: types.IImageSource
@@ -35,7 +34,7 @@ CustomerItemKnox.schema = {
   label: 'Customer',
   hideFromAddMenu: true,
   getDefaultProps: () => ({
-    image: customersSamsung.KIA,
+    image: logos.REACT_BRICKS,
     href: '',
   }),
 
