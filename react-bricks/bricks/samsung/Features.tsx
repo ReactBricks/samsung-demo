@@ -672,28 +672,28 @@ Features.schema = {
   repeaterItems: [
     {
       name: 'button1',
-      itemType: 'custom-button',
+      itemType: 'samsung-button',
       itemLabel: 'Button',
       min: 1,
       max: 1,
     },
     {
       name: 'button2',
-      itemType: 'custom-button',
+      itemType: 'samsung-button',
       itemLabel: 'Button',
       min: 1,
       max: 1,
     },
     {
       name: 'button3',
-      itemType: 'custom-button',
+      itemType: 'samsung-button',
       itemLabel: 'Button',
       min: 1,
       max: 1,
     },
     {
       name: 'button4',
-      itemType: 'custom-button',
+      itemType: 'samsung-button',
       itemLabel: 'Button',
       min: 1,
       max: 1,

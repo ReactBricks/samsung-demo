@@ -77,7 +77,7 @@ const CallToAction: types.Brick<CallToActionProps> = ({
 }
 
 CallToAction.schema = {
-  name: 'call-to-action',
+  name: 'samsung-call-to-action',
   label: 'Call to action',
   playgroundLinkLabel: 'View source code on Github',
   getDefaultProps: () => ({
@@ -111,7 +111,7 @@ CallToAction.schema = {
   repeaterItems: [
     {
       name: 'buttons',
-      itemType: 'custom-button',
+      itemType: 'samsung-button',
       itemLabel: 'Button',
       min: 0,
       max: 1,

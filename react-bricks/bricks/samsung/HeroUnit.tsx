@@ -128,7 +128,7 @@ HeroUnit.schema = {
   repeaterItems: [
     {
       name: 'buttons',
-      itemType: 'custom-button',
+      itemType: 'samsung-button',
       itemLabel: 'Button',
       min: 0,
       max: 2,

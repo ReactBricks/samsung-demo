@@ -107,7 +107,7 @@ CustomersKnox.schema = {
   repeaterItems: [
     {
       name: 'customers',
-      itemType: 'customer-item-knox',
+      itemType: 'samsung-customer-item',
       itemLabel: 'Customer',
       min: 0,
       max: 12,
