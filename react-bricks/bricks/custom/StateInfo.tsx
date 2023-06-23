@@ -617,11 +617,6 @@ StateInfo.schema = {
       defaultOpen: true,
       props: [
         {
-          name: 'sideButtonLinkFeature1',
-          label: 'Side button link feature',
-          type: types.SideEditPropType.Text,
-        },
-        {
           name: 'overlayFeature1',
           label: 'Overlay color',
           type: types.SideEditPropType.Select,
@@ -642,11 +637,6 @@ StateInfo.schema = {
       groupName: 'Feature 2',
       defaultOpen: false,
       props: [
-        {
-          name: 'sideButtonLinkFeature2',
-          label: 'Side button link feature',
-          type: types.SideEditPropType.Text,
-        },
         {
           name: 'overlayFeature2',
           label: 'Overlay color',
@@ -669,11 +659,6 @@ StateInfo.schema = {
       defaultOpen: false,
       props: [
         {
-          name: 'sideButtonLinkFeature3',
-          label: 'Side button link feature',
-          type: types.SideEditPropType.Text,
-        },
-        {
           name: 'overlayFeature3',
           label: 'Overlay color',
           type: types.SideEditPropType.Select,
@@ -694,11 +679,6 @@ StateInfo.schema = {
       groupName: 'Feature 4',
       defaultOpen: false,
       props: [
-        {
-          name: 'sideButtonLinkFeature4',
-          label: 'Side button link feature',
-          type: types.SideEditPropType.Text,
-        },
         {
           name: 'overlayFeature4',
           label: 'Overlay color',
