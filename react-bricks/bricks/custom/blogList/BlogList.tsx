@@ -77,7 +77,7 @@ const BlogList: types.Brick<BlogListProps> = ({
             propName="title"
             renderBlock={(props) => (
               <p
-                className="mb-[8px] font-black text-5xl leading-[60px] text-center dark:text-white"
+                className="mb-[8px] font-bold text-5xl leading-[60px] text-center dark:text-white"
                 {...props.attributes}
               >
                 {props.children}

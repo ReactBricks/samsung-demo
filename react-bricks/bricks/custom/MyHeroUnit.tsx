@@ -2,7 +2,7 @@ import { Image, RichText, Text, types, Repeater } from 'react-bricks/frontend'
 import blockNames from '../react-bricks-ui/blockNames'
 import { buttonColors } from '../react-bricks-ui/colors'
 import {
-  backgroundWithImageBgSideGroup,
+  backgroundImageEditProps,
   LayoutProps,
 } from '../react-bricks-ui/LayoutSideProps'
 import Section from '../react-bricks-ui/shared/components/Section'
@@ -28,7 +28,7 @@ const MyHeroUnit: types.Brick<HeroUnitProps> = ({
       className="relative bg-opacity-50 lg:bg-opacity-100 font-samsung max-w-[1440px] mx-auto"
     >
       <div className="flex flex-col lg:flex-row justify-around max-w-[1600px] mx-auto py-12 md:pl-14 pl-3 pr-3 lg:py-20 lg:pl-[90px] lg:pr-[24px] items-center">
-        <div className="text-left basis-0">
+        <div className="text-left grow-1 max-w-[596px]">
           <Text
             renderBlock={(props) => (
               <h1 className="sm:leading-[84px] leading-tight text-4xl sm:text-[68px] font-bold text-gray-900 dark:text-white mb-3">
@@ -40,9 +40,9 @@ const MyHeroUnit: types.Brick<HeroUnitProps> = ({
           />
           <RichText
             renderBlock={(props) => (
-              <p className="text-[21px] leading-[32px] font-normal text-gray-700 dark:text-gray-100">
+              <h3 className="text-[21px] leading-[32px] text-gray-700 dark:text-gray-100">
                 {props.children}
-              </p>
+              </h3>
             )}
             placeholder="Type a text..."
             propName="text"
@@ -74,7 +74,7 @@ const MyHeroUnit: types.Brick<HeroUnitProps> = ({
           alt="Icon"
           maxWidth={708}
           aspectRatio={1}
-          imageClassName="w-80 lg:w-[28rem] xl:w-[46rem] h-auto rounded-full mb-5 basis-0 absolute lg:static -z-10 lg:z-0"
+          imageClassName="max-w-[708px] lg:w-[28rem] xl:w-[46rem] h-auto rounded-full mb-5 basis-0 lg:static -z-10 lg:z-0 grow-1"
         />
       </div>
     </Section>
@@ -120,7 +120,9 @@ MyHeroUnit.schema = {
       max: 2,
     },
   ],
-  sideEditProps: [backgroundWithImageBgSideGroup],
+  sideEditProps: [
+    { groupName: 'background-image', props: backgroundImageEditProps },
+  ],
 }
 
 export default MyHeroUnit
