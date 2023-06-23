@@ -2,9 +2,9 @@ import { types } from 'react-bricks/frontend'
 import HeroUnit from './samsung/HeroUnit'
 import reactBricksUITheme from './react-bricks-ui'
 import BlogList from './samsung/blogList/BlogList'
-import CtaSamsung from './samsung/CallToAction'
-import StateInfo from './samsung/Features'
-import CustomButton from './samsung/Button'
+import CallToAction from './samsung/CallToAction'
+import Features from './samsung/Features'
+import Button from './samsung/Button'
 import Header from './samsung/layout/Header'
 import HeaderMenuItem from './samsung/layout/HeaderMenuItem'
 import HeaderMenuSubColumn from './samsung/layout/HeaderMenuColumn'
@@ -14,19 +14,28 @@ import FooterColumn from './samsung/layout/FooterColumn'
 import FooterLink from './samsung/layout/FooterLink'
 import CustomerItem from './samsung/customers/CustomerItem'
 import Customers from './samsung/customers/Customers'
+import SimpleHeroUnit from './samsung/SimpleHeroUnit'
 const bricks: types.Theme[] = [
   reactBricksUITheme, // React Bricks UI
   {
     themeName: 'Samsung knox',
     categories: [
       {
-        categoryName: 'layout',
+        categoryName: 'main content',
         bricks: [
           HeroUnit,
-          CustomButton,
+          Button,
           BlogList,
-          StateInfo,
-          CtaSamsung,
+          Features,
+          CallToAction,
+          Customers,
+          CustomerItem,
+          SimpleHeroUnit,
+        ],
+      },
+      {
+        categoryName: 'layout',
+        bricks: [
           Header,
           HeaderMenuItem,
           HeaderMenuSubColumn,
@@ -34,9 +43,7 @@ const bricks: types.Theme[] = [
           Footer,
           FooterColumn,
           FooterLink,
-          CustomerItem,
-          Customers,
-        ], // Custom Bricks
+        ],
       },
     ],
   },
