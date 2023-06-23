@@ -1,11 +1,14 @@
 import React from 'react'
 import Link from 'next/link'
+import { types } from 'react-bricks/frontend'
 interface PostListItemProps {
   title: string
   href: string
   content: string
   tag: string[]
   featuredImg?: string
+  author?: types.Author
+  date?: string
 }
 
 const BlogListItem: React.FC<PostListItemProps> = ({

@@ -10,7 +10,7 @@ import {
   useReactBricksContext,
 } from 'react-bricks/frontend'
 
-import PostListItem from '../../components/BlogListItem'
+import PostListItem from '../../components/PostListItem'
 import TagListItem from '../../components/TagListItem'
 import ErrorNoFooter from '../../components/errorNoFooter'
 import ErrorNoHeader from '../../components/errorNoHeader'

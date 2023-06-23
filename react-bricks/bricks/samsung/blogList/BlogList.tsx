@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { types, usePageValues, Text } from 'react-bricks/frontend'
-import BlogListItem from '../../../../components/BlogListItem'
+import PostListItem from '../../../../components/PostListItem'
 import Section from '../../react-bricks-ui/shared/components/Section'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
@@ -102,7 +102,7 @@ const BlogList: types.Brick<BlogListProps> = ({
           <Slider {...settings}>
             {/*@ts-ignore*/}
             {pagesByTag?.map((post) => (
-              <BlogListItem
+              <PostListItem
                 key={post.id}
                 title={post.meta.title}
                 href={post.slug}
