@@ -8,13 +8,13 @@ import {
   useAdminContext,
 } from 'react-bricks/frontend'
 
-interface HeaderMenuItemKnoxProps {
+interface HeaderMenuItemProps {
   linkPath: string
   linkText: any
   submenuColumns?: any
 }
 
-const HeaderMenuItemKnox: types.Brick<HeaderMenuItemKnoxProps> = ({
+const HeaderMenuItem: types.Brick<HeaderMenuItemProps> = ({
   linkPath,
   submenuColumns,
 }) => {
@@ -99,8 +99,8 @@ const HeaderMenuItemKnox: types.Brick<HeaderMenuItemKnoxProps> = ({
   )
 }
 
-HeaderMenuItemKnox.schema = {
-  name: 'header-menu-item-knox',
+HeaderMenuItem.schema = {
+  name: 'samsung-header-menu-item',
   label: 'Menu Item',
   category: 'layout',
   hideFromAddMenu: true,
@@ -108,7 +108,7 @@ HeaderMenuItemKnox.schema = {
   repeaterItems: [
     {
       name: 'submenuColumns',
-      itemType: 'header-menu-sub-column',
+      itemType: 'samsung-header-menu-sub-column',
     },
   ],
 
@@ -126,4 +126,4 @@ HeaderMenuItemKnox.schema = {
   ],
 }
 
-export default HeaderMenuItemKnox
+export default HeaderMenuItem

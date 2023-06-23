@@ -14,7 +14,7 @@ const pageTypes: types.IPageType[] = [
       const pages = await fetchPages(config.apiKey, {
         ...tagArgs,
         type: 'blog',
-        pageSize: 100,
+        pageSize: 4,
         sort: '-publishedAt',
       })
       const tags = await fetchTags(process.env.API_KEY)

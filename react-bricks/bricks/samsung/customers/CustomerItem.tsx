@@ -31,7 +31,7 @@ const CustomerItemKnox: types.Brick<CustomerProps> = ({
 }
 
 CustomerItemKnox.schema = {
-  name: 'customer-item-knox',
+  name: 'samsung-customer-item',
   label: 'Customer',
   hideFromAddMenu: true,
   getDefaultProps: () => ({

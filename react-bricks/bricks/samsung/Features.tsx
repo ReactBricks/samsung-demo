@@ -8,7 +8,7 @@ import { useState } from 'react'
 import Section from '../react-bricks-ui/shared/components/Section'
 import Container from '../react-bricks-ui/shared/components/Container'
 
-interface StateInfoProps extends LayoutProps {
+interface FeaturesProps extends LayoutProps {
   title: string
 
   titleFeature1: string
@@ -55,7 +55,7 @@ interface StateInfoProps extends LayoutProps {
 //=============================
 // Component to be rendered
 //=============================
-const StateInfo: types.Brick<StateInfoProps> = ({
+const Features: types.Brick<FeaturesProps> = ({
   overlayFeature1 = 'black',
   overlayFeature2 = 'blue',
   overlayFeature3 = 'cerulean',
@@ -472,9 +472,9 @@ const StateInfo: types.Brick<StateInfoProps> = ({
 //=============================
 // Brick Schema
 //=============================
-StateInfo.schema = {
-  name: 'state-info',
-  label: 'State info',
+Features.schema = {
+  name: 'samsung-features',
+  label: 'Features',
   getDefaultProps: () => ({
     title: 'What Knox can do for you',
 
@@ -701,4 +701,4 @@ StateInfo.schema = {
   ],
 }
 
-export default StateInfo
+export default Features

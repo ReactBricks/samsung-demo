@@ -77,7 +77,7 @@ const CustomersKnox: types.Brick<CustomersProps> = ({
 }
 
 CustomersKnox.schema = {
-  name: 'customers-knox',
+  name: 'samsung-customers',
   label: 'Customers',
   getDefaultProps: () => ({
     backgroundColor: bgColors.WHITE.value,

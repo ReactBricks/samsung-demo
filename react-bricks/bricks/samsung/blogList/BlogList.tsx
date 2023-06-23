@@ -106,7 +106,7 @@ const BlogList: types.Brick<BlogListProps> = ({
 }
 
 BlogList.schema = {
-  name: 'blog-list',
+  name: 'samsung-blog-list',
   label: 'Blog List',
   getDefaultProps: () => ({
     title: "What's new",

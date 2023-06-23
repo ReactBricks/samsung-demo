@@ -103,7 +103,7 @@ const Button: types.Brick<ButtonProps> = ({
 }
 
 Button.schema = {
-  name: 'custom-button',
+  name: 'samsung-button',
   label: 'Button',
   hideFromAddMenu: true,
   playgroundLinkLabel: 'View source code on Github',

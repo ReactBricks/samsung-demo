@@ -1,10 +1,10 @@
 import React from 'react'
 import { Text, types, Link } from 'react-bricks/frontend'
-interface FooterLinkKnoxProps {
+interface FooterLinkProps {
   linkPath: string
 }
 
-const FooterLinkKnox: types.Brick<FooterLinkKnoxProps> = ({ linkPath }) => {
+const FooterLink: types.Brick<FooterLinkProps> = ({ linkPath }) => {
   return (
     <Link href={linkPath}>
       <Text
@@ -20,8 +20,8 @@ const FooterLinkKnox: types.Brick<FooterLinkKnoxProps> = ({ linkPath }) => {
   )
 }
 
-FooterLinkKnox.schema = {
-  name: 'footer-link-knox',
+FooterLink.schema = {
+  name: 'samsung-footer-link',
   label: 'Link',
   category: 'layout',
   hideFromAddMenu: true,
@@ -38,4 +38,4 @@ FooterLinkKnox.schema = {
   ],
 }
 
-export default FooterLinkKnox
+export default FooterLink

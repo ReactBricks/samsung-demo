@@ -25,21 +25,13 @@ module.exports = {
       colors: {
         blueSamsung: {
           100: '#dbebff',
-
           200: '#bed9ff',
-
           300: '#96beff',
-
           400: '#6d98ff',
-
           500: '#4b72ff',
-
           600: '#2b48ff',
-
           700: '#2138e3',
-
           800: '#1c30b7',
-
           900: '#20328f',
         },
       },

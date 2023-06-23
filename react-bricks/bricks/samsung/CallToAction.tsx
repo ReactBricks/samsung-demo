@@ -14,7 +14,7 @@ import Section from '../react-bricks-ui/shared/components/Section'
 
 export interface CallToActionProps extends LayoutProps {}
 
-const CtaSamsung: types.Brick<CallToActionProps> = ({
+const CallToAction: types.Brick<CallToActionProps> = ({
   backgroundColor,
   borderTop,
   borderBottom,
@@ -76,8 +76,8 @@ const CtaSamsung: types.Brick<CallToActionProps> = ({
   )
 }
 
-CtaSamsung.schema = {
-  name: 'cta-samsung',
+CallToAction.schema = {
+  name: 'call-to-action',
   label: 'Call to action',
   playgroundLinkLabel: 'View source code on Github',
   getDefaultProps: () => ({
@@ -120,4 +120,4 @@ CtaSamsung.schema = {
   sideEditProps: [neutralBackgroundSideGroup, paddingBordersSideGroup],
 }
 
-export default CtaSamsung
+export default CallToAction

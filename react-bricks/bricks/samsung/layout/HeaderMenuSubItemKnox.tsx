@@ -5,11 +5,11 @@ import { Text, types, Link } from 'react-bricks/frontend'
 import classNames from 'classnames'
 import { FiChevronRight } from 'react-icons/fi'
 
-interface HeaderMenuSubItemKnoxProps {
+interface HeaderMenuSubItemProps {
   linkPath: string
 }
 
-const HeaderMenuSubItemKnox: types.Brick<HeaderMenuSubItemKnoxProps> = ({
+const HeaderMenuSubItem: types.Brick<HeaderMenuSubItemProps> = ({
   linkPath,
 }) => {
   return (
@@ -51,8 +51,8 @@ const HeaderMenuSubItemKnox: types.Brick<HeaderMenuSubItemKnoxProps> = ({
   )
 }
 
-HeaderMenuSubItemKnox.schema = {
-  name: 'header-menu-sub-item-knox',
+HeaderMenuSubItem.schema = {
+  name: 'samsung-header-menu-sub-item',
   label: 'Submenu Item',
   category: 'layout',
   hideFromAddMenu: true,
@@ -72,4 +72,4 @@ HeaderMenuSubItemKnox.schema = {
   ],
 }
 
-export default HeaderMenuSubItemKnox
+export default HeaderMenuSubItem

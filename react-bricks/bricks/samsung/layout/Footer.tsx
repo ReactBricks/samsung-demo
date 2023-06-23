@@ -9,11 +9,11 @@ import {
 import Container from '../../react-bricks-ui/shared/components/Container'
 import Section from '../../react-bricks-ui/shared/components/Section'
 
-interface FooterKnoxProps extends LayoutProps {
+interface FooterProps extends LayoutProps {
   siteUrl: string
 }
 
-const FooterKnox: types.Brick<FooterKnoxProps> = ({
+const Footer: types.Brick<FooterProps> = ({
   backgroundColor,
   borderTop,
   borderBottom,
@@ -48,13 +48,13 @@ const FooterKnox: types.Brick<FooterKnoxProps> = ({
   )
 }
 
-FooterKnox.schema = {
-  name: 'footer-knox',
+Footer.schema = {
+  name: 'samsung-footer',
   label: 'Footer',
   repeaterItems: [
     {
       name: 'columns',
-      itemType: 'footer-column-knox',
+      itemType: 'samsung-footer-column',
       max: 4,
     },
   ],
@@ -170,4 +170,4 @@ FooterKnox.schema = {
   sideEditProps: [neutralBackgroundSideGroup, paddingBordersSideGroup],
 }
 
-export default FooterKnox
+export default Footer

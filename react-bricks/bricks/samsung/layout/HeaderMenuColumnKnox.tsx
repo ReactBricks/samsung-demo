@@ -1,13 +1,13 @@
 import blockNames from '../../react-bricks-ui/blockNames'
 import { Text, types, Repeater } from 'react-bricks/frontend'
 import React from 'react'
-interface HeaderMenuSubColumnKnoxProps {
+interface HeaderMenuSubColumnProps {
   title: string
   refs?: React.MutableRefObject<HTMLDivElement>
   handler?: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-const HeaderMenuSubColumnKnox: types.Brick<HeaderMenuSubColumnKnoxProps> = ({
+const HeaderMenuSubColumn: types.Brick<HeaderMenuSubColumnProps> = ({
   handler,
 }) => {
   return (
@@ -35,8 +35,8 @@ const HeaderMenuSubColumnKnox: types.Brick<HeaderMenuSubColumnKnoxProps> = ({
   )
 }
 
-HeaderMenuSubColumnKnox.schema = {
-  name: 'header-menu-sub-column',
+HeaderMenuSubColumn.schema = {
+  name: 'samsung-header-menu-sub-column',
   label: 'Header menu columns',
   category: 'layout',
   hideFromAddMenu: true,
@@ -47,11 +47,11 @@ HeaderMenuSubColumnKnox.schema = {
   repeaterItems: [
     {
       name: 'submenuItems',
-      itemType: 'header-menu-sub-item-knox',
+      itemType: 'samsung-header-menu-sub-item',
     },
   ],
 
   sideEditProps: [],
 }
 
-export default HeaderMenuSubColumnKnox
+export default HeaderMenuSubColumn

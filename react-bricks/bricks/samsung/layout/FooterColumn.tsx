@@ -1,7 +1,7 @@
 import React from 'react'
 import { Text, Repeater, types } from 'react-bricks/frontend'
 
-const FooterColumnKnox: types.Brick = (props) => {
+const FooterColumn: types.Brick = (props) => {
   return (
     <div className="mb-8">
       <Text
@@ -25,15 +25,15 @@ const FooterColumnKnox: types.Brick = (props) => {
   )
 }
 
-FooterColumnKnox.schema = {
-  name: 'footer-column-knox',
+FooterColumn.schema = {
+  name: 'samsung-footer-column',
   label: 'Column',
   category: 'layout',
   hideFromAddMenu: true,
   repeaterItems: [
     {
       name: 'links',
-      itemType: 'footer-link-knox',
+      itemType: 'samsung-footer-link',
     },
   ],
   getDefaultProps: () => ({
@@ -42,4 +42,4 @@ FooterColumnKnox.schema = {
   sideEditProps: [],
 }
 
-export default FooterColumnKnox
+export default FooterColumn

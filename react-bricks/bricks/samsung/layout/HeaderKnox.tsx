@@ -13,12 +13,12 @@ import { BsMoonFill, BsSunFill } from 'react-icons/bs'
 import Image from 'next/image'
 import { useTheme } from 'next-themes'
 
-interface HeaderKnoxProps extends LayoutProps {
+interface HeaderProps extends LayoutProps {
   menuItems: any[]
   buttons: any[]
 }
 
-const HeaderKnox: types.Brick<HeaderKnoxProps> = ({
+const Header: types.Brick<HeaderProps> = ({
   backgroundColor,
   borderBottom,
 }) => {
@@ -137,20 +137,20 @@ const HeaderKnox: types.Brick<HeaderKnoxProps> = ({
   )
 }
 
-HeaderKnox.schema = {
-  name: 'header-knox',
-  label: 'Header Knox',
+Header.schema = {
+  name: 'samsung-header',
+  label: 'Header',
   repeaterItems: [
     {
       name: 'menuItems',
-      itemType: 'header-menu-item-knox',
+      itemType: 'samsung-header-menu-item',
       itemLabel: 'Item',
       min: 0,
       max: 6,
     },
     {
       name: 'submenuColumns',
-      itemType: 'header-menu-sub-column',
+      itemType: 'samsung-header-menu-sub-column',
       max: 4,
     },
   ],
@@ -294,4 +294,4 @@ HeaderKnox.schema = {
   // aggiungere story di prova
 }
 
-export default HeaderKnox
+export default Header

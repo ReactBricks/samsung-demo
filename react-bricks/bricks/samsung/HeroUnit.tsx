@@ -15,7 +15,7 @@ interface HeroUnitProps extends LayoutProps {
 //=============================
 // Component to be rendered
 //=============================
-const MyHeroUnit: types.Brick<HeroUnitProps> = ({
+const HeroUnit: types.Brick<HeroUnitProps> = ({
   backgroundColor,
   backgroundImage,
   backgroundImageDark,
@@ -84,9 +84,9 @@ const MyHeroUnit: types.Brick<HeroUnitProps> = ({
 //=============================
 // Brick Schema
 //=============================
-MyHeroUnit.schema = {
-  name: 'my-hero-unit',
-  label: 'Custom Hero Unit',
+HeroUnit.schema = {
+  name: 'samsung-hero-unit',
+  label: 'Hero Unit',
   getDefaultProps: () => ({
     title: 'Stay connected, protected, and productive.',
     text: 'Discover the Knox security platform and business solutions',
@@ -139,4 +139,4 @@ MyHeroUnit.schema = {
   ],
 }
 
-export default MyHeroUnit
+export default HeroUnit
