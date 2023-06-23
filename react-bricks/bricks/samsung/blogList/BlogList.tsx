@@ -25,6 +25,16 @@ interface src {
   next: string
 }
 
+const NextArrow = (props) => {
+  const { className, style, onClick, src } = props
+  return <img className={className} style={style} src={src} onClick={onClick} />
+}
+
+const PrevArrow = (props) => {
+  const { className, style, onClick, src } = props
+  return <img className={className} style={style} src={src} onClick={onClick} />
+}
+
 const BlogList: types.Brick<BlogListProps> = ({
   backgroundColor,
   borderTop,
@@ -34,7 +44,10 @@ const BlogList: types.Brick<BlogListProps> = ({
 }) => {
   const [pageValues] = usePageValues()
   const { theme } = useTheme()
-  const [src, setSrc] = useState<src>()
+  const [src, setSrc] = useState<src>({
+    next: 'https://kp4-cdn.samsungknox.com/img/next_IHDI.png',
+    prev: 'https://kp4-cdn.samsungknox.com/img/previous_brRh.png',
+  })
 
   useEffect(() => {
     if (theme === 'light')
@@ -51,8 +64,8 @@ const BlogList: types.Brick<BlogListProps> = ({
     touchThreshold: 1000,
     slidesToShow: 3,
     accessibility: true,
-    prevArrow: <img className="" src={src?.prev} />,
-    nextArrow: <img className="" src={src?.next} />,
+    prevArrow: <NextArrow src={src?.prev} />,
+    nextArrow: <PrevArrow src={src?.next} />,
   }
 
   const { externalData } = pageValues
