@@ -33,7 +33,7 @@ const Section: React.FC<SectionProps> = ({
 
   useEffect(() => {
     backgroundImage || backgroundImageDark
-      ? setImgClass('hero-bg-image')
+      ? setImgClass('hero-bg-img')
       : setImgClass('')
   }, [theme])
 
