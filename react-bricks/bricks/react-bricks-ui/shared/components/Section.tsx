@@ -47,12 +47,12 @@ const Section: React.FC<SectionProps> = ({
       }
 
       ${
-        backgroundImageDark !== undefined && backgroundImageDark
+        backgroundImageDark
           ? `.dark .hero-bg-img { background-image: url(${backgroundImageDark.fallbackSrc});}`
           : ``
       }
     `
-  console.log(backgroundImageDark)
+
   return (
     <>
       <style>{backgroundImageCss}</style>
