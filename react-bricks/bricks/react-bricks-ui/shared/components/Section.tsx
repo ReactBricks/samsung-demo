@@ -32,12 +32,8 @@ const Section: React.FC<SectionProps> = ({
   const [imgClass, setImgClass] = useState<string>('')
 
   useEffect(() => {
-    theme === 'light'
-      ? backgroundImage
-        ? setImgClass('hero-bg-img')
-        : setImgClass('')
-      : backgroundImageDark
-      ? setImgClass('hero-bg-img-dark')
+    backgroundImage || backgroundImageDark
+      ? setImgClass('hero-bg-image')
       : setImgClass('')
   }, [theme])
 
@@ -50,8 +46,8 @@ const Section: React.FC<SectionProps> = ({
 
       ${
         backgroundImageDark
-          ? ` .hero-bg-img-dark { background-image: url(${backgroundImageDark.fallbackSrc});}`
-          : ``
+          ? `.hero-bg-img-dark { background-image: url(${backgroundImageDark.fallbackSrc});}`
+          : `.dark .hero-bg-img-dark { background-image : none}`
       }
     `
 
