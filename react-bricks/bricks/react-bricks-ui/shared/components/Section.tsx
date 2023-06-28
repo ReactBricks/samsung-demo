@@ -7,7 +7,6 @@ import {
   useReactBricksContext,
 } from 'react-bricks/frontend'
 import Container from './Container'
-import { useTheme } from 'next-themes'
 export type Border = 'full' | 'boxed' | 'none'
 
 interface SectionProps {
@@ -42,36 +41,22 @@ const Section: React.FC<SectionProps> = ({
     : typeof window === 'undefined'
     ? ''
     : localStorage.getItem('color-mode')
-  const [imgClass, setImgClass] = useState<string>('')
-  useEffect(() => {
-    backgroundImage || backgroundImageDark
-      ? backgroundImageDark
-        ? setImgClass('hero-bg-img')
-        : setImgClass('hero-bg-img dark:bg-none')
-      : setImgClass('')
-  }, [currentTheme])
-  let backgroundImageCss = `
-      ${
-        backgroundImage
-          ? `.hero-bg-img { background-image: url(${backgroundImage.src}); }`
-          : ``
-      }
 
-      ${
-        backgroundImageDark
-          ? `.dark .hero-bg-img { background-image: url(${backgroundImageDark.src}); }`
-          : ``
-      }
-    `
+  const [bgStyle, setBgStyle] = useState<any>('')
+
+  useEffect(() => {
+    currentTheme === 'light'
+      ? setBgStyle(`url(${backgroundImage?.src}`)
+      : setBgStyle(`url(${backgroundImageDark?.src}`)
+  }, [currentTheme])
 
   return (
     <>
-      <style>{backgroundImageCss}</style>
       <section
+        style={{ backgroundImage: bgStyle }}
         className={classNames(
           bgColor,
           className,
-          imgClass,
           {
             'overflow-x-hidden': noOverflowX,
           },
