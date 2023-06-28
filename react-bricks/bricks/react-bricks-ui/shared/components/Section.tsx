@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import classNames from 'classnames'
 import { bgColors } from '../../colors'
-import { types } from 'react-bricks/frontend'
+import {
+  types,
+  useAdminContext,
+  useReactBricksContext,
+} from 'react-bricks/frontend'
 import Container from './Container'
 import { useTheme } from 'next-themes'
 export type Border = 'full' | 'boxed' | 'none'
@@ -28,27 +32,34 @@ const Section: React.FC<SectionProps> = ({
   children,
 }) => {
   const bgColor = backgroundColor.className
-  const { theme } = useTheme()
-  const [imgClass, setImgClass] = useState<string>('')
+  const { isAdmin } = useAdminContext()
+  const { isDarkColorMode, toggleColorMode } = useReactBricksContext()
 
+  const currentTheme = isAdmin
+    ? isDarkColorMode
+      ? 'dark'
+      : 'light'
+    : typeof window === 'undefined'
+    ? ''
+    : localStorage.getItem('color-mode')
+  const [imgClass, setImgClass] = useState<string>('')
   useEffect(() => {
     backgroundImage || backgroundImageDark
       ? backgroundImageDark
         ? setImgClass('hero-bg-img')
         : setImgClass('hero-bg-img dark:bg-none')
       : setImgClass('')
-  }, [theme])
-
+  }, [currentTheme])
   let backgroundImageCss = `
       ${
         backgroundImage
-          ? `.hero-bg-img { background-image: url(${backgroundImage.fallbackSrc});}`
+          ? `.hero-bg-img { background-image: url(${backgroundImage.src}); }`
           : ``
       }
 
       ${
         backgroundImageDark
-          ? `.dark .hero-bg-img { background-image: url(${backgroundImageDark.fallbackSrc});}`
+          ? `.dark .hero-bg-img { background-image: url(${backgroundImageDark.src}); }`
           : ``
       }
     `
@@ -61,7 +72,9 @@ const Section: React.FC<SectionProps> = ({
           bgColor,
           className,
           imgClass,
-          { 'overflow-x-hidden': noOverflowX },
+          {
+            'overflow-x-hidden': noOverflowX,
+          },
           `bg-no-repeat bg-cover bg-center`
         )}
       >
