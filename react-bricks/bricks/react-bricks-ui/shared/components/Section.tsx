@@ -46,8 +46,8 @@ const Section: React.FC<SectionProps> = ({
 
       ${
         backgroundImageDark
-          ? `.hero-bg-img-dark { background-image: url(${backgroundImageDark.fallbackSrc});}`
-          : `.dark .hero-bg-img-dark { background-image : none}`
+          ? `.hero-bg-img { background-image: url(${backgroundImageDark.fallbackSrc});}`
+          : `.dark .hero-bg-img { background-image : none}`
       }
     `
 
